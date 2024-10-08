@@ -1,1 +1,54 @@
-nav {background-color: rgb(0, 221, 255);} /*TEXTO DUMMIE: BORRAR Y ESCRIBIR LOS ESTILOS*/
+nav {
+    background-color: var(--colorBarraNavegacion);
+}
+
+nav ul {
+    display: grid;          /*ponemos una grid de 4 columnas, uno para cada elemento de la li del menú de navegación*/
+    grid-template-columns: repeat(4,1fr);  /*definimos las 4 columnas con 4 fracciones de grid*/
+    text-align: center;     /*centramos el texto de cada elemento de navegación dentro de su columna*/ 
+    list-style-type: none;  /*quitamos los bullet points de la lista que conforma la barra de navegación -no debe haberlos-*/
+    font-size: 1.6em;
+
+    max-width: var(--MaximaAnchuraPagina); /*tamaño máximo horizontal*/
+    margin: 0 auto; /*al definir tamaño máximo hay que centrarlo si no queda pegado a la izquierda. Usamos propiedad shorthand de margin.*/    
+}
+
+
+
+/* ---- ÁREA COMENTARIO 1 ---- : 
+
+Queremos separar cada elemento li de navegación de su elemento contiguo
+con una barra vertical; pero sin que la barra vertical esté duplicada.
+Para ello usaremos "border-right". Sin embargo, al usar "border-right" 
+debemos evitar también que esta barra aparezca en el último elemento [véase *A*]. 
+
+Queremos conseguir también que haya una border debajo de cada li de la barra 
+de navegación, y que esta sea exactament del mismo color que la border original 
+-que no la veamos-. De este modo podremos conseguir que el hover de cambio de color de 
+la border-bottom no nos mueva los elementos de la web que queden por debajo cada vez que 
+pasemos el ratón por encima [B]:*/
+
+nav ul li {
+    border-right: 1px solid white; /*A*/
+    border-bottom: 2px solid var(--colorBarraNavegacion); /*B*/
+
+    /*hacemos que cambios propiedades sean graduales 
+    en entrada y salida (para el hover)*/
+    transition: background-color var(--tiempoTransicionEstandar) ease-in-out, 
+                border-bottom var(--tiempoTransicionEstandar) ease-in-out;
+}
+
+nav ul li:last-child {border-right: none;/*A*/}
+
+/*queremos que cada elemento de navegación se mueva*/
+nav ul li:hover {
+    background-color: var(--colorBarraNavegacionHover);
+    border-bottom: 2px solid white;
+}   
+
+
+/* ---- FIN ÁREA COMENTARIO 1 ---- */
+
+nav ul li img {
+    margin: 0 0 .1em 0;
+}

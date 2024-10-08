@@ -1,1 +1,32 @@
-footer {background-color: orangered;} /*TEXTO DUMMIE: BORRAR Y ESCRIBIR LOS ESTILOS*/
+/*NOTA: ESTE ARCHIVO SE DEBERÍA CARGAR
+ EN TODAS LAS PÁGINAS DE LA WEB COMPLETA*/
+
+:root {
+
+    /*paleta de colores (mejorable
+     con mejores conocimientos)*/
+     --colorBarraNavegacion: rgb(12, 231, 45);
+     --colorBarraNavegacionHover: rgb(85, 162, 47);
+
+    --colorFinGradiente: #F652A2;
+    --colorInicioGradiente: #4b238f;
+
+
+
+    /*otras variables susceptibles
+    de cambio en función de decisiones futuras*/
+    --MaximaAnchuraPagina: 1000px;
+    --tiempoTransicionEstandar: 0.15s;
+}
+
+/*quitamos márgenes y padding de los elementos, 
+para ganar más control en el diseño de la web.*/
+*, html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/*buscamos una fuente similar a la que usa google*/
+body {
+    font-family: 'Roboto', sans-serif;
+}
