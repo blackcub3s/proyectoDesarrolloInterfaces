@@ -1,0 +1,1 @@
+El icono de VUE no se ha editado. Lo encontramos en wikipedia con el canal alpha ya eliminado
