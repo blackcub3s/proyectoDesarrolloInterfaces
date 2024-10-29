@@ -104,3 +104,13 @@ el ratón por encima*/
 .contenido div:last-child img:hover {
     transform: scale(1.02);
 }
+
+
+/*DEFINO LOS COLORES DEL TEXTO DE BLACK CODE DEL CONTENEDOR ONDA*/
+#colorBlackTitulo {
+    color: var(--colorGris);
+}
+#colorCodeTitulo {
+    color: var(--colorVerdeVue);
+}
+
