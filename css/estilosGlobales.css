@@ -5,8 +5,8 @@
 
     /*paleta de colores (mejorable
      con mejores conocimientos)*/
-     --colorBarraNavegacion: rgb(12, 231, 45);
-     --colorBarraNavegacionHover: rgb(85, 162, 47);
+     --colorBarraNavegacion: rgb(0, 0, 0);
+     --colorBarraNavegacionHover: rgb(170, 170, 170);
 
     --colorFinGradiente: #F652A2;
     --colorInicioGradiente: #4b238f;
@@ -17,7 +17,8 @@
 
     /*otras variables susceptibles
     de cambio en función de decisiones futuras*/
-    --MaximaAnchuraPagina: 1000px;
+    --MaximaAnchuraBarraNavegacion: 600px;
+    --MaximaAnchuraContenedorOnda: 1000px;
     --tiempoTransicionEstandar: 0.15s;
 }
 
@@ -28,7 +29,17 @@ para ganar más control en el diseño de la web.*/
     padding: 0;
 }
 
-/*buscamos una fuente similar a la que usa google*/
+/*buscamos la fuente que recomienda figma, roboto. La hemos */
 body {
     font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    /*Querríamos la semi-bold! Para ello podríamos usar la respuesta de Jesús Carrera 
+    donde se recomienda usar font-weight: 600
+    ( https://stackoverflow.com/questions/8735872/how-do-i-set-semi-bold-font-via-css-font-weight-of-600-doesnt-make-it-look-l ).
+    
+    Sin embargo font-weight: 600 usa una negrita excesiva más gruesa que la roboto semi-bold de figma, 
+    mientras que fontweight: 500 es lo mismo que dejar el font-weight por defecto. Por lo tanto no podemos definir 
+    la letra para la navbar exactamente igual que en figma.
+    */
+
 }

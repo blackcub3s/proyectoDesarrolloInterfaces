@@ -31,7 +31,7 @@
 
     padding: 1em;
 
-    max-width: var(--MaximaAnchuraPagina);
+    max-width: var(--MaximaAnchuraContenedorOnda);
     
 }
 
@@ -52,7 +52,10 @@
     la empresa NO va a a expandirse horizontalmente
     ni verticalmente más allá de lo que ocupa su texto*/
     margin: auto auto;
+
 }
+
+
 
 
 /*NOTA: VER NOTA EN .contenido > div:first-child*/
@@ -72,6 +75,7 @@
     position: absolute; /*[C]*/
     right: 10em;
     z-index: 2; /*el teléfono va delante del ordenador*/
+    width: 30%; /*anchura de la imagen del teléfono*/
     
 }
 
@@ -81,6 +85,7 @@
     left: 10em;
     top: -1em;
     z-index: 1; /*el ordenador va detrás del telefono*/
+    width: 50%; /*anchura de la imagen del ordenador*/
 }
 
 
@@ -110,6 +115,7 @@ el ratón por encima*/
 #colorBlackTitulo {
     color: var(--colorGris);
 }
+
 #colorCodeTitulo {
     color: var(--colorVerdeVue);
 }
