@@ -1,24 +1,27 @@
-/*NOTA: ESTE ARCHIVO SE DEBERÍA CARGAR
- EN TODAS LAS PÁGINAS DE LA WEB COMPLETA*/
-
 :root {
 
-    /*paleta de colores (mejorable
-     con mejores conocimientos)*/
+    /* ---- paleta de colores ---- */
+
      --colorBarraNavegacion: rgb(0, 0, 0);
      --colorBarraNavegacionHover: rgb(170, 170, 170);
 
-    --colorFinGradiente: #F652A2;
-    --colorInicioGradiente: #4b238f;
-    --colorVerdeVue: #41B883;
-    --colorGris: #A3A3A3;
+     --colorVerdeVue: #41B883;           /*contenedor onda*/
+     --colorGris: #A3A3A3;               /*contenedor onda*/
+    --colorFinGradiente: #F652A2;       /*contenedor onda*/
+    --colorInicioGradiente: #4b238f;    /*contenedor onda*/
 
+    --blancoGradiente: #FFFFFF;         /*parte front end landing*/
+    --azulClaroGradiente: #5474C4;      /*parte front end landing*/
+    --azulOscuroGradiente: #16203E;     /*parte front end landing*/
+    --grisTransparenteCard: #f4f4f43e;  /*parte front end landing*/ 
 
 
     /*otras variables susceptibles
     de cambio en función de decisiones futuras*/
     --MaximaAnchuraBarraNavegacion: 600px;
     --MaximaAnchuraContenedorOnda: 1000px;
+    --MaximaAnchuraTextosEncabezados: 1000px;
+    --MaximaAnchuraCards: 1400px;
     --tiempoTransicionEstandar: 0.15s;
 }
 
@@ -29,17 +32,30 @@ para ganar más control en el diseño de la web.*/
     padding: 0;
 }
 
+
 /*buscamos la fuente que recomienda figma, roboto. La hemos */
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     /*Querríamos la semi-bold! Para ello podríamos usar la respuesta de Jesús Carrera 
-    donde se recomienda usar font-weight: 600
-    ( https://stackoverflow.com/questions/8735872/how-do-i-set-semi-bold-font-via-css-font-weight-of-600-doesnt-make-it-look-l ).
+    donde se recomienda usar font-weight: 600 ( https://stackoverflow.com/questions/8735872/how-do-i-set-semi-bold-font-via-css-font-weight-of-600-doesnt-make-it-look-l ).
     
     Sin embargo font-weight: 600 usa una negrita excesiva más gruesa que la roboto semi-bold de figma, 
     mientras que fontweight: 500 es lo mismo que dejar el font-weight por defecto. Por lo tanto no podemos definir 
     la letra para la navbar exactamente igual que en figma.
     */
-
 }
+
+/* tamaños de letra */
+/* el tamaño por defecto es, justamente 16px. Si lo quitamos, de hecho, no cambia
+nada. Sin embargo, especificarlo explícitamente nos permite que si queremos 
+variar el tamaño de las fuentes de toda la web, podamos hacer cambios en toda 
+ella -para lo definido en rem o em-. */
+
+html {font-size: 16px;}  /*APUNTE NO MODIFICAR: Se destroza todo*/
+
+/*TAMAÑO DE LOS TITULOS QUE ENCABEZAN CADA SECCIÓN
+(FRONTEND, BACKEND, IA, ETC)*/
+.tituloSeccion {font-size: 2.5rem;}     /*son 40 px en figma. Con el font-size del root a 16 con 2.5rem tenemos los 40px (40 = 16*2.5)*/
+.subTituloSeccion {font-size: 1.45rem; margin-top: 1rem;}  /*TEORICAMENTE: son 26 px en figma. Si el font-size del root es 16 con 1.5rem tenemos los 24  (40 = 16*1.5). Pero lo hemos ajustado, porque la teoria no es igual que la practica*/
+
