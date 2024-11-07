@@ -1,11 +1,23 @@
-/*primer gradiente de parte frontend, de blanco a azul: solo fondo*/
+/*contenedor en blanco que tapará una línea vestigial 
+de la parte inferior del contenedor onda que no se ha podido eliminar.
+Esta línea aparece al hacer zoom y destroza la pulcritud de la web.*/
 #tec-front-end > div:first-child {
+    background-color: white;
+    height: .1em;
+    position: relative; /*ponemos position relative y un top negativo para tapar la linea vestigial*/
+    top: -.07em;
+}
+
+/*PRIMER gradiente de parte frontend, 
+ de blanco a azul: solo fondo*/
+#tec-front-end > div:nth-child(2) {
     height: 40em; /* ALTURA DEL PRIMER GRADIENT DE AZUL A NEGRO */
     background: linear-gradient(to bottom, var(--blancoGradiente), var(--azulClaroGradiente)); /* Primer gradiente */
 }
 
-/*segundo gradiente de parte frontend, de azul a negro: solo fondo*/
-#tec-front-end > div:nth-child(2) {
+/*SEGUNDO gradiente de parte frontend,
+  de azul a negro: solo fondo*/
+#tec-front-end > div:nth-child(3) {
     height: 40em; /* ALTURA DEL SEGON GRADIENT BLAU A NEGRE */
     background: linear-gradient(to bottom, var(--azulClaroGradiente), var(--azulOscuroGradiente)); /* Primer gradiente */
 }
@@ -22,9 +34,6 @@ que conforman los dos divs first i 2nd child*/
 }
 
 
-
-
-
 /*CONTENIDOR DE "Frontend: te llevamos las últimas tecnologías[...]"*/
 #tec-front-end section:first-child {
     max-width: var(--MaximaAnchuraTextosEncabezados); /*Limitamos ancho de los titulos */
@@ -32,23 +41,25 @@ que conforman los dos divs first i 2nd child*/
    
 }
 
-/*CONTENIDOR DE LAS CARDS DEL FRONTEND (CON GRID!*/
+/*Contenedor de las cards de la sección tecnologias front-end
+  (CON GRID!)*/
 #tec-front-end section:last-child {
     padding-top: 3.5em;
     max-width: var(--MaximaAnchuraCards);
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    text-align: center; /*MANTENGO EL TEXTO CENTRADO DENTRO DE CADA CARD*/
-    justify-items: center; /* CENTRO LAS 3 CARDS HORIZONTALMENTE*/
+    text-align: center;     /*MANTENGO EL TEXTO CENTRADO DENTRO DE CADA CARD*/
+    justify-items: center;  /* CENTRO LAS 3 CARDS HORIZONTALMENTE*/
     
 }
 
-/*La clase con la que definimos el estilo de cada card del frontend*/
+/*Esta es la clase con la que definimos 
+el estilo de cada card del frontend*/
 .cartaFrontEnd {
     width: 380px; /* Hemos optado para definir las cards con ancho fijo por más control */
     aspect-ratio: 1/1.618; /* Proporción aurea --> 1:618 (ancho:alto) */
-    background-color: #f4f4f43e; /* Color de fondo, por ejemplo */
+    background-color: var(--grisTransparenteCard); /* Color de fondo, por ejemplo u ngris con transparencia */
     border-radius: 1em;
     padding: 60px; /*damos espacio entre borde card y su contenido. Con esto tambien empequeñecemos anchura del text e imagenes*/
     box-sizing: border-box; /* Para asegurarse de que el padding no afecte el tamaño */
@@ -61,13 +72,15 @@ que conforman los dos divs first i 2nd child*/
 /*Tamaño imagen angular*/
 #tec-front-end .cartaFrontEnd:nth-child(2) img {width: 100%;}
 
-/*Tamaño imagen Vue y un margin específico para compensar diferencias en tamaño*/
+/*Tamaño imagen Vue y un margin específico para
+ compensar diferencias en tamaño*/
 #tec-front-end .cartaFrontEnd:last-child img {
     width: 85%;
     margin-top: .5em; 
 }
 
-/*Añadimos un padding a todos por igual para conseguir que bajen las imágenes*/
+/*Añadimos un padding a todos por igual 
+para conseguir que bajen las imágenes*/
 #tec-front-end .cartaFrontEnd img {
     padding-top: .3em;
 }
@@ -76,15 +89,12 @@ que conforman los dos divs first i 2nd child*/
 con padding top que lo separa de la imagen superior*/
 #tec-front-end .cartaFrontEnd p {
     font-size: 1.25em;
-    color: white;
+    color: white; /*POR DEFECTO ES BLANCO. ENFATIZAMOS QUE LO ES.*/
     padding-top: 3em;
 }
 
 /*hacemos un fine tuning de la posicion de los dos párrafos
-de react y vue, respectivamente, que no quedan suficientemente bien centrados */
+de react y vue, respectivamente, que no quedan suficientemente
+ bien centrados */
 #tec-front-end .cartaFrontEnd:first-child p {margin-top:.5em;}
 #tec-front-end .cartaFrontEnd:last-child p {margin-top:1.2em;}
-
-
-
-
