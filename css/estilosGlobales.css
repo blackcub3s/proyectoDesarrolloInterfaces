@@ -19,6 +19,8 @@
     de cambio en función de decisiones futuras*/
     --MaximaAnchuraBarraNavegacion: 600px;
     --MaximaAnchuraContenedorOnda: 1000px;
+    --MaximaAnchuraTextosEncabezados: 1000px;
+    --MaximaAnchuraCards: 1400px;
     --tiempoTransicionEstandar: 0.15s;
 }
 
@@ -29,17 +31,29 @@ para ganar más control en el diseño de la web.*/
     padding: 0;
 }
 
+
 /*buscamos la fuente que recomienda figma, roboto. La hemos */
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     /*Querríamos la semi-bold! Para ello podríamos usar la respuesta de Jesús Carrera 
-    donde se recomienda usar font-weight: 600
-    ( https://stackoverflow.com/questions/8735872/how-do-i-set-semi-bold-font-via-css-font-weight-of-600-doesnt-make-it-look-l ).
+    donde se recomienda usar font-weight: 600 ( https://stackoverflow.com/questions/8735872/how-do-i-set-semi-bold-font-via-css-font-weight-of-600-doesnt-make-it-look-l ).
     
     Sin embargo font-weight: 600 usa una negrita excesiva más gruesa que la roboto semi-bold de figma, 
     mientras que fontweight: 500 es lo mismo que dejar el font-weight por defecto. Por lo tanto no podemos definir 
     la letra para la navbar exactamente igual que en figma.
     */
-
 }
+
+/*TAMAÑOS DE LETRA*/
+/*EL TAMAÑO POR DEFECTO ES JUSTAMENTE 16px. SI LO QUITAMOS DE HECHO 
+NO CAMBIA NADA. SIN EMBARGO, ESPECIFICARLO EXPLÍCITAMENTE NOS PERMITE 
+QUE SI QUEREMOS VARIAR EL TAMAÑO DE TODA LA WEB, 
+LO PODAMOS HACER FÁCILMENTE DE GOLPE SIEMPRE QUE USEMOS rem o em. */
+html {font-size: 16px;}
+
+/*TAMAÑO DE LOS TITULOS QUE ENCABEZAN CADA SECCIOM 
+(FRONTEND, BACKEND, IA, ETC)*/
+.tituloSeccion {font-size: 2.5rem;}     /*son 40 px en figma. Con el font-size del root a 16 con 2.5rem tenemos los 40px (40 = 16*2.5)*/
+.subTituloSeccion {font-size: 1.45rem;}  /*TEORICAMENTE: son 26 px en figma. Si el font-size del root es 16 con 1.5rem tenemos los 24  (40 = 16*1.5). Pero lo hemos ajustado, porque la teoria no es igual que la practica*/
+

@@ -1,1 +1,75 @@
-#tec-front-end {background-color: aqua;} /*TEXTO DUMMIE: BORRAR Y ESCRIBIR LOS ESTILOS*/
+/*primer gradiente de parte frontend, de blanco a azul: solo fondo*/
+#tec-front-end > div:first-child {
+    height: 40em; /* ALTURA DEL PRIMER GRADIENT DE AZUL A NEGRO */
+    background: linear-gradient(to bottom, #FFFFFF, #5474C4); /* Primer gradiente */
+}
+
+/*segundo gradiente de parte frontend, de azul a negro: solo fondo*/
+#tec-front-end > div:nth-child(2) {
+    height: 40em; /* ALTURA DEL SEGON GRADIENT BLAU A NEGRE */
+    background: linear-gradient(to bottom, #5474C4, #16203E); /* Primer gradiente */
+}
+
+/*Contenedor con el texto del frontend y sus tres cards.
+se superpondrá a los fondos de gradiente blanco a azul y azul a negro
+que conforman los dos divs first i 2nd child*/
+#tec-front-end > div:last-child {
+    position: absolute; /* POSICIÓN ABSOLUTA EN RELACION A #tec-front-end. SI USÁSEMOS RELATIVE APARECE UN TROZO BLANCO DEBAJO */
+    top: 50em;          /*CON ESTO SUPERPONEMOS A LA ZONA DONDE QUEREMOS (30em + 20em de la altura de los otros dos divs sin texto solo con gradiente)*/
+    left: 0;
+    right: 0;
+    z-index: 1; /*USO z-index:1 porque si no, al hacer ZOOM el contenedor onda tapa el texto front-end, */
+}
+
+/*CONTENIDOR DE "Frontend: te llevamos las últimas tecnologías[...]"*/
+#tec-front-end section:first-child {
+    max-width: var(--MaximaAnchuraTextosEncabezados); /*Limitamos ancho de los titulos */
+    margin: 0 auto;
+   
+}
+
+/*CONTENIDOR DE LAS CARDS DEL FRONTEND (CON GRID!*/
+#tec-front-end section:last-child {
+    padding-top: 3.5em;
+    max-width: var(--MaximaAnchuraCards);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center; /*MANTENGO EL TEXTO CENTRADO DENTRO DE CADA CARD*/
+    justify-items: center; /* CENTRO LAS 3 CARDS HORIZONTALMENTE*/
+    
+}
+
+/*La clase con la que definimos el estilo de cada card del frontend*/
+.cartaFrontEnd {
+    width: 380px; /* Ancho fijo */
+    aspect-ratio: 1/1.618; /* Proporción aurea --> 1:618 (ancho:alto) */
+    background-color: #f4f4f461; /* Color de fondo, por ejemplo */
+    border-radius: 1em;
+    padding: 20px;
+    box-sizing: border-box; /* Para asegurarse de que el padding no afecte el tamaño */
+}
+
+/*Tamaño react
+#tec-front-end .cartaFrontEnd:first-of-type img {
+    width: 90%;
+}
+    */
+
+/*Tamaño react*/
+#tec-front-end .cartaFrontEnd:first-child img {
+    width: 90%;
+}
+
+/*Tamaño angular*/
+#tec-front-end .cartaFrontEnd:nth-child(2) img {
+    width: 90%;
+}
+
+/*Tamaño Vue*/
+#tec-front-end .cartaFrontEnd:last-child img {
+    width: 80%;
+    padding-top: .5em;
+}
+
+
