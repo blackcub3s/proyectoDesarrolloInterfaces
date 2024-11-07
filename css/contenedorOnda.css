@@ -6,7 +6,7 @@
     margin-right: auto;
 }
 
-.contenido {
+#contenedor-onda .contenido {
     display: grid;
 
     /* Dos columnas de la misma anchura */
@@ -38,7 +38,7 @@
 /*NOTA: Uso selector de hijo directo
  en lugar del descendiente por si 
  añadimos más divs luego*/
-.contenido > div:first-child {
+ #contenedor-onda .contenido > div:first-child {
     background-color: rgba(195, 208, 14, 0.3);
 
     /*margin-top y bottom son para conseguir centrar el texto verticalmente*/
@@ -60,7 +60,7 @@
 
 /*NOTA: VER NOTA EN .contenido > div:first-child*/
 /*-- Imagenes del contenedor de la onda --*/
-.contenido > div:last-child {
+#contenedor-onda .contenido > div:last-child {
     padding: 1em;
 
     /*MUY IMPORTANTE PONER position: relative en este contenedor
@@ -71,7 +71,7 @@
 }
 
 /*posicionamos imagen del móvil de forma absoluta*/
-.contenido div:last-child img:first-child {
+#contenedor-onda .contenido div:last-child img:first-child {
     position: absolute; /*[C]*/
     right: 10em;
     z-index: 2; /*el teléfono va delante del ordenador*/
@@ -80,7 +80,7 @@
 }
 
 /*posicionamos imagen del ordenador*/
-.contenido div:last-child img:last-child {
+#contenedor-onda .contenido div:last-child img:last-child {
     position:absolute;
     left: 10em;
     top: -1em;
@@ -89,7 +89,7 @@
 }
 
 
-.onda-svg {
+#contenedor-onda .onda-svg {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -103,10 +103,10 @@ aumentando su tamaño ligeramente y progresivamente al pasar
 el ratón por encima*/
 
 
-.contenido div:last-child img {
+#contenedor-onda .contenido div:last-child img {
     transition: transform var(--tiempoTransicionEstandar) ease-in-out;
 }
-.contenido div:last-child img:hover {
+#contenedor-onda .contenido div:last-child img:hover {
     transform: scale(1.02);
 }
 
