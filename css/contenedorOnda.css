@@ -6,7 +6,7 @@
     margin-right: auto;
 }
 
-#contenedor-onda .contenido {
+#contenedor-onda .contenido { 
     display: grid;
 
     /* Dos columnas de la misma anchura */
