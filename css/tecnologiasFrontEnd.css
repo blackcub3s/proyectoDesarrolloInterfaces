@@ -1,13 +1,13 @@
 /*primer gradiente de parte frontend, de blanco a azul: solo fondo*/
 #tec-front-end > div:first-child {
     height: 40em; /* ALTURA DEL PRIMER GRADIENT DE AZUL A NEGRO */
-    background: linear-gradient(to bottom, #FFFFFF, #5474C4); /* Primer gradiente */
+    background: linear-gradient(to bottom, var(--blancoGradiente), var(--azulClaroGradiente)); /* Primer gradiente */
 }
 
 /*segundo gradiente de parte frontend, de azul a negro: solo fondo*/
 #tec-front-end > div:nth-child(2) {
     height: 40em; /* ALTURA DEL SEGON GRADIENT BLAU A NEGRE */
-    background: linear-gradient(to bottom, #5474C4, #16203E); /* Primer gradiente */
+    background: linear-gradient(to bottom, var(--azulClaroGradiente), var(--azulOscuroGradiente)); /* Primer gradiente */
 }
 
 /*Contenedor con el texto del frontend y sus tres cards.
@@ -20,6 +20,10 @@ que conforman los dos divs first i 2nd child*/
     right: 0;
     z-index: 1; /*USO z-index:1 porque si no, al hacer ZOOM el contenedor onda tapa el texto front-end, */
 }
+
+
+
+
 
 /*CONTENIDOR DE "Frontend: te llevamos las últimas tecnologías[...]"*/
 #tec-front-end section:first-child {
@@ -42,34 +46,45 @@ que conforman los dos divs first i 2nd child*/
 
 /*La clase con la que definimos el estilo de cada card del frontend*/
 .cartaFrontEnd {
-    width: 380px; /* Ancho fijo */
+    width: 380px; /* Hemos optado para definir las cards con ancho fijo por más control */
     aspect-ratio: 1/1.618; /* Proporción aurea --> 1:618 (ancho:alto) */
-    background-color: #f4f4f461; /* Color de fondo, por ejemplo */
+    background-color: #f4f4f43e; /* Color de fondo, por ejemplo */
     border-radius: 1em;
-    padding: 20px;
+    padding: 60px; /*damos espacio entre borde card y su contenido. Con esto tambien empequeñecemos anchura del text e imagenes*/
     box-sizing: border-box; /* Para asegurarse de que el padding no afecte el tamaño */
 }
 
-/*Tamaño react
-#tec-front-end .cartaFrontEnd:first-of-type img {
-    width: 90%;
-}
-    */
 
-/*Tamaño react*/
-#tec-front-end .cartaFrontEnd:first-child img {
-    width: 90%;
-}
+/*Tamaño imagen react*/
+#tec-front-end .cartaFrontEnd:first-child img {width: 100%;}
 
-/*Tamaño angular*/
-#tec-front-end .cartaFrontEnd:nth-child(2) img {
-    width: 90%;
-}
+/*Tamaño imagen angular*/
+#tec-front-end .cartaFrontEnd:nth-child(2) img {width: 100%;}
 
-/*Tamaño Vue*/
+/*Tamaño imagen Vue y un margin específico para compensar diferencias en tamaño*/
 #tec-front-end .cartaFrontEnd:last-child img {
-    width: 80%;
-    padding-top: .5em;
+    width: 85%;
+    margin-top: .5em; 
 }
+
+/*Añadimos un padding a todos por igual para conseguir que bajen las imágenes*/
+#tec-front-end .cartaFrontEnd img {
+    padding-top: .3em;
+}
+
+/*definimos los barrafos de las cards a color blanco y 
+con padding top que lo separa de la imagen superior*/
+#tec-front-end .cartaFrontEnd p {
+    font-size: 1.25em;
+    color: white;
+    padding-top: 3em;
+}
+
+/*hacemos un fine tuning de la posicion de los dos párrafos
+de react y vue, respectivamente, que no quedan suficientemente bien centrados */
+#tec-front-end .cartaFrontEnd:first-child p {margin-top:.5em;}
+#tec-front-end .cartaFrontEnd:last-child p {margin-top:1.2em;}
+
+
 
 
