@@ -1,1 +1,122 @@
-#contenedor-onda {background-color: lightgreen;} /*TEXTO DUMMIE: BORRAR Y ESCRIBIR LOS ESTILOS*/
+#contenedor-onda {
+    position: relative;
+    background: linear-gradient(to right, var(--colorInicioGradiente), var(--colorFinGradiente));
+    padding: 3em 0em 1em 0em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contenido {
+    display: grid;
+
+    /* Dos columnas de la misma anchura */
+    grid-template-columns: 1fr 1fr; 
+    
+    /*SE CONSIGUE QUE EL CONTENIDO ESTÉ CENTRADO 
+    SIEMPRE -INCLUSO CON EL ZOOM-*/
+    margin-right: auto;
+    margin-left: auto; 
+
+    /*SE CONSIGUE QUE EL CONTENEDOR DE FONDO 
+    CON LA ONDA GANE ESPACIO POR DEBAJO Y POR ENCIMA*/
+    margin-top: 4em;
+    margin-bottom: 19em;
+
+    /*background-color: grey;*/
+    color: white;
+    font-size: 1.3em;
+    text-align: center;
+    position: relative; /* Necesario para que el z-index funcione */
+    z-index: 10;    /* Número alto para estar por encima de todo */
+
+    padding: 1em;
+
+    max-width: var(--MaximaAnchuraContenedorOnda);
+    
+}
+
+/*NOTA: Uso selector de hijo directo
+ en lugar del descendiente por si 
+ añadimos más divs luego*/
+.contenido > div:first-child {
+    background-color: rgba(195, 208, 14, 0.3);
+
+    /*margin-top y bottom son para conseguir centrar el texto verticalmente*/
+    margin-top: auto;
+    margin-bottom: auto;
+
+    /*los bordes seran discontinuos, de color blanco y redondeados*/
+    border: 1px dashed white;
+    border-radius: .5em;
+    /*nos aseguramos de que el banner de 
+    la empresa NO va a a expandirse horizontalmente
+    ni verticalmente más allá de lo que ocupa su texto*/
+    margin: auto auto;
+
+}
+
+
+
+
+/*NOTA: VER NOTA EN .contenido > div:first-child*/
+/*-- Imagenes del contenedor de la onda --*/
+.contenido > div:last-child {
+    padding: 1em;
+
+    /*MUY IMPORTANTE PONER position: relative en este contenedor
+    padre para que funcione el position absolute de las 
+    imágenes hijas funcione (ver dos notas *[C]*)
+    Véase https://stackoverflow.com/questions/2027657/overlapping-elements-in-css*/
+    position: relative; 
+}
+
+/*posicionamos imagen del móvil de forma absoluta*/
+.contenido div:last-child img:first-child {
+    position: absolute; /*[C]*/
+    right: 10em;
+    z-index: 2; /*el teléfono va delante del ordenador*/
+    width: 30%; /*anchura de la imagen del teléfono*/
+    
+}
+
+/*posicionamos imagen del ordenador*/
+.contenido div:last-child img:last-child {
+    position:absolute;
+    left: 10em;
+    top: -1em;
+    z-index: 1; /*el ordenador va detrás del telefono*/
+    width: 50%; /*anchura de la imagen del ordenador*/
+}
+
+
+.onda-svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto; /* La altura será ajustada automáticamente */
+    z-index: 1; /* Asegura que el SVG quede debajo del contenido */
+}
+
+/*CONSEGUIMOS QUE LAS IMAGENES DEL contenedorOnda reaccionen 
+aumentando su tamaño ligeramente y progresivamente al pasar
+el ratón por encima*/
+
+
+.contenido div:last-child img {
+    transition: transform var(--tiempoTransicionEstandar) ease-in-out;
+}
+.contenido div:last-child img:hover {
+    transform: scale(1.02);
+}
+
+
+/*DEFINO LOS COLORES DEL TEXTO DE BLACK CODE DEL CONTENEDOR ONDA*/
+#colorBlackTitulo {
+    color: var(--colorGris);
+}
+
+#colorCodeTitulo {
+    color: var(--colorVerdeVue);
+}
+
