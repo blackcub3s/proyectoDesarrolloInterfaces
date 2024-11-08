@@ -56,7 +56,7 @@ que conforman los dos divs first i 2nd child*/
 
 /*Esta es la clase con la que definimos 
 el estilo de cada card del frontend*/
-.cartaFrontEnd {
+#tec-front-end .cartaFrontEnd {
     width: 380px; /* Hemos optado para definir las cards con ancho fijo por más control */
     aspect-ratio: 1/1.618; /* Proporción aurea --> 1:618 (ancho:alto) */
     background-color: var(--grisTransparenteCard); /* Color de fondo, por ejemplo u ngris con transparencia */
@@ -64,7 +64,12 @@ el estilo de cada card del frontend*/
     padding: 60px; /*damos espacio entre borde card y su contenido. Con esto tambien empequeñecemos anchura del text e imagenes*/
     box-sizing: border-box; /* Para asegurarse de que el padding no afecte el tamaño */
     box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.25);
+
+    transition: box-shadow var(--tiempoTransicionEstandar) ease-in-out; /*para el hover de cada carta*/
 }
+
+/*hover de cada carta o card del frontend: sombra más oscura*/
+#tec-front-end .cartaFrontEnd:hover {box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.5);}
 
 
 /*Tamaño imagen react*/
@@ -79,6 +84,11 @@ el estilo de cada card del frontend*/
     width: 85%;
     margin-top: .5em; 
 }
+
+/*PARA LOS HOVER DE LAS IMÁGENES DE LAS CARTAS DE FRONTEND*/
+#tec-front-end .cartaFrontEnd img {transition: transform var(--tiempoTransicionEstandar) ease-in-out; /*para el hover*/}
+#tec-front-end .cartaFrontEnd img:hover {transform: scale(var(--aumentoTamanyoEstandar));} /*hover de imagen vue, aumenta de tamaño al pasar por encima*/
+
 
 /*Añadimos un padding a todos por igual 
 para conseguir que bajen las imágenes*/

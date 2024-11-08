@@ -1,1 +1,9 @@
-#tec-back-end {background-color: rgb(255, 0, 0);} /*TEXTO DUMMIE: BORRAR Y ESCRIBIR LOS ESTILOS*/
+#tec-back-end {
+    background: linear-gradient(to bottom, var(--azulOscuroGradiente), var(--negroGradiente)); /* GRADIENTE YA ESTA HECHO BIEN, NO TOCAR */
+
+    /*--- INICIO: JORGE, ESTO BORRALO: ---*/
+    height: 30em; 
+    color: red;
+    border: 10px solid red;
+    /*--- FIN BORRAR---*/
+} 
