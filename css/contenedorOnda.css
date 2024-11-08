@@ -123,7 +123,7 @@ el ratón por encima*/
     transition: transform var(--tiempoTransicionEstandar) ease-in-out;
 }
 #contenedor-onda .contenido div:last-child img:hover {
-    transform: scale(1.02);
+    transform: scale(var(--aumentoTamanyoEstandar));
 }
 
 

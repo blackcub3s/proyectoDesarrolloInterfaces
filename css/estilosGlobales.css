@@ -6,26 +6,32 @@
      --colorBarraNavegacionHover: rgb(170, 170, 170);
 
 
-     --colorAzulBoton: #5474C4;          /*contendor onda*/
-     --colorVerdeVue: #41B883;           /*contenedor onda*/
-     --colorGris: #A3A3A3A3;               /*contenedor onda*/
+     --colorAzulBoton: #5474C4;             /*contendor onda*/
+     --colorAzulBotonHover: #3652a3;        /*contenedor onda*/  
+     --colorVerdeVue: #41B883;              /*contenedor onda*/
+     --colorGris: #A3A3A3A3;                /*contenedor onda*/
      --colorGrisTransparent: rgba(38, 38, 38, 0.449);  /*contenedor onda*/
-    --colorFinGradiente: #F652A2;        /*contenedor onda*/
-    --colorInicioGradiente: #4b238f;     /*contenedor onda*/
+    --colorFinGradiente: #F652A2;           /*contenedor onda*/
+    --colorInicioGradiente: #4b238f;        /*contenedor onda*/
 
+    --grisTransparenteCard: #f4f4f43e;  /*parte front end landing*/ 
     --blancoGradiente: #FFFFFF;         /*parte front end landing*/
     --azulClaroGradiente: #5474C4;      /*parte front end landing*/
-    --azulOscuroGradiente: #16203E;     /*parte front end landing*/
-    --grisTransparenteCard: #f4f4f43e;  /*parte front end landing*/ 
+    --azulOscuroGradiente: #16203E;     /*parte front end landing y back-end landing*/
+    --negroGradiente: #000000;          /*parte back-end landing*/
+
+    
 
 
+    
     /*otras variables susceptibles
     de cambio en función de decisiones futuras*/
     --MaximaAnchuraBarraNavegacion: 600px;
     --MaximaAnchuraContenedorOnda: 1000px;
     --MaximaAnchuraTextosEncabezados: 1000px;
     --MaximaAnchuraCards: 1400px;
-    --tiempoTransicionEstandar: 0.15s;
+    --tiempoTransicionEstandar: 0.1s;
+    --aumentoTamanyoEstandar: 1.02; /*aumentos para las imagenes al hacer el hover (aumento del 2 por ciento)*/
 }
 
 /*quitamos márgenes y padding de los elementos, 
@@ -67,5 +73,15 @@ html {font-size: 16px;}  /*APUNTE NO MODIFICAR: Se destroza todo*/
     padding: .65em 1.5em .65em 1.5em;
     border-radius: .5em;
     border-style: none; /*quitamos la border vestigial*/
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+
+    transition: background-color var(--tiempoTransicionEstandar) ease-in-out, 
+                transform var(--tiempoTransicionEstandar) ease-in-out, 
+                box-shadow var(--tiempoTransicionEstandar) ease-in-out; /*TRANSICIÓN PARA EL JOVER*/
+}
+
+
+.botonPrimario:hover {
+    background-color: var(--colorAzulBotonHover); /* Cambia a un tono más oscuro del color azul */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4); /* Sombra más intensa */
 }
