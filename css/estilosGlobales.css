@@ -8,8 +8,8 @@
 
      --colorAzulBoton: #5474C4;          /*contendor onda*/
      --colorVerdeVue: #41B883;           /*contenedor onda*/
-     --colorGris: #D9D9D9;               /*contenedor onda*/
-     --colorGrisTransparent: #5d5d5d4e;  /*contenedor onda*/
+     --colorGris: #A3A3A3A3;               /*contenedor onda*/
+     --colorGrisTransparent: rgba(38, 38, 38, 0.449);  /*contenedor onda*/
     --colorFinGradiente: #F652A2;        /*contenedor onda*/
     --colorInicioGradiente: #4b238f;     /*contenedor onda*/
 
@@ -64,6 +64,8 @@ html {font-size: 16px;}  /*APUNTE NO MODIFICAR: Se destroza todo*/
 .botonPrimario {
     background-color: var(--colorAzulBoton);
     color: white;
-    padding: .5em 1em .5em 1em;
+    padding: .65em 1.5em .65em 1.5em;
     border-radius: .5em;
+    border-style: none; /*quitamos la border vestigial*/
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
