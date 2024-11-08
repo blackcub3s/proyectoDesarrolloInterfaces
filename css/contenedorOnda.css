@@ -39,14 +39,14 @@
  en lugar del descendiente por si 
  añadimos más divs luego*/
  #contenedor-onda .contenido > div:first-child {
-    background-color: rgba(195, 208, 14, 0.3);
+    background-color: var(--colorGrisTransparent);
 
     /*margin-top y bottom son para conseguir centrar el texto verticalmente*/
     margin-top: auto;
     margin-bottom: auto;
 
     /*los bordes seran discontinuos, de color blanco y redondeados*/
-    border: 1px dashed white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     border-radius: .5em;
     /*nos aseguramos de que el banner de 
     la empresa NO va a a expandirse horizontalmente
