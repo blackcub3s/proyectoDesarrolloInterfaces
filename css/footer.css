@@ -1,1 +1,39 @@
-footer {background-color: yellow;} /*TEXTO DUMMIE: BORRAR Y ESCRIBIR LOS ESTILOS (PARA JORGE)*/
+footer {
+	background-color: black;
+	color: white;
+	padding: 1.2em 0;
+}
+.footer-content {
+	display: flex;
+	justify-content: space-evenly; /* centrado columnas*/
+	align-items: flex-start;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+.footer-column {
+	text-align: center;
+}
+footer h3 {
+	font-size: 1.5em;
+	margin-bottom: 20px;
+}
+footer ul {
+	list-style: none;
+}
+footer li {
+	margin-bottom: 12px;
+}
+footer a {
+	color: white;
+	text-decoration: none;
+}
+/* Estilo para las barras verticales */
+
+hr {
+	margin: 0 12%;
+}
+#copyright {
+	text-align: center;
+	font-size: 0.9em;
+	font-weight: 100;
+}
