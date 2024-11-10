@@ -1,8 +1,8 @@
 footer {
-	background-color: black;
+	background-color: var(--negroFooter);
 	color: white;
 	padding: 1.2em 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
 }
 /* Estilo del contenedor principal del footer que organiza las columnas */
 .footer-content { 
@@ -20,7 +20,7 @@ footer {
     padding: 0 20px;    
 }
 /* Estilo para los títulos dentro de las columnas */
-footer h3 {
+footer h1 {
 	font-size: 1.5em;
 	margin-bottom: 20px;
     font-weight:500; /* Establece el peso de la fuente semi-negrita */
@@ -58,4 +58,13 @@ hr {
 	text-align: center;
 	font-size: 18px;
 	opacity: 0.8;/* Establece la opacidad del texto más transparente */
+}
+
+/*Evitamos que el contenedor de la footer 
+pueda expandirse sin límite horizontalmente
+ al hacer el zoom pequeño. Lo acotamos a una anchura máxima
+ ligeramente inferior a la de la anchura máxima de las cards de las 
+ tecnologias frontend*/
+footer > div {
+	max-width: var(--MaximaAnchuraFooter);
 }

@@ -20,6 +20,8 @@
     --azulOscuroGradiente: #16203E;     /*parte front end landing y back-end landing*/
     --negroGradiente: #000000;          /*parte back-end landing*/
 
+    --negroFooter: black;               /*footer*/
+
     
 
 
@@ -30,6 +32,7 @@
     --MaximaAnchuraContenedorOnda: 1000px;
     --MaximaAnchuraTextosEncabezados: 1000px;
     --MaximaAnchuraCards: 1400px;
+    --MaximaAnchuraFooter: 1200px;
     --tiempoTransicionEstandar: 0.1s;
     --aumentoTamanyoEstandar: 1.02; /*aumentos para las imagenes al hacer el hover (aumento del 2 por ciento)*/
 }
