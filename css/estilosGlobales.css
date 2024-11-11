@@ -42,6 +42,11 @@
     --MaximaAnchuraFooter: 1200px;
     --tiempoTransicionEstandar: 0.1s;
     --aumentoTamanyoEstandar: 1.02; /*aumentos para las imagenes al hacer el hover (aumento del 2 por ciento)*/
+    
+    /*variables para centrar en centro las imagenes 
+    satelite de python en contenedor ia*/
+    --X: 21em; 
+    --Y: 25em;
 }
 
 /*quitamos márgenes y padding de los elementos, 

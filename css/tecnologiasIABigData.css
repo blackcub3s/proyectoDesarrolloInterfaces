@@ -40,3 +40,71 @@ que se superpondrán a fondos anteriores*/
     height: 0; /*altura en cero para que no quede recuadro blanco vestigial, al mover todo el bloque arriba*/
     z-index: 1;
 }
+
+
+
+
+/* Posicionamiento individual de cada logo */
+
+/* Logo central (Python) */
+#pythonLanding {
+    position: absolute; /*absoluto en relacion al contenedor relativo dentro de donde esta*/
+    transform: translate(calc(var(--X) - 1em), calc(var(--Y) - 4em));
+    width: 19em; /* Ajusta el tamaño según sea necesario */
+}
+
+/* TensorFlow */
+#tensorflowLanding {
+    position: absolute;
+    width: 15em; /* Ajusta el tamaño según sea necesario */
+    transform: translate(calc(var(--X) + 0em), calc(var(--Y) + 23em)); /*definimos translación ajustando el centro a coordenadas --X e --Y (que es el centro de python, que definimos como el 0,0)*/
+}
+
+/* Scikit-Learn */
+#sklearnLanding {
+    position: absolute;
+    width: 15em; /* Ajusta el tamaño según sea necesario */
+    transform: translate(calc(var(--X) + 1em), calc(var(--Y) - 23em));
+}
+
+/* Seaborn */
+#seabornLanding {
+    position: absolute;
+    width: 16em; /* Ajusta el tamaño según sea necesario */
+    transform: translate(calc(var(--X) + 0em), calc(var(--Y) + 0em));
+}
+
+/* PySpark */
+#pysparkLanding {
+    position: absolute;
+    width: 16em; /* Ajusta el tamaño según sea necesario */
+    transform: translate(calc(var(--X) + 30em), calc(var(--Y) + 0em));
+}
+
+/* Plotly */
+#plotlyLanding {
+    position: absolute;
+    width: 16em; /* Ajusta el tamaño según sea necesario */
+    transform: translate(calc(var(--X) + 0em), calc(var(--Y) + 0em));
+}
+
+/* Pandas */
+#pandasLanding {
+    position: absolute;
+    width: 16em; /* Ajusta el tamaño según sea necesario */
+    transform: translate(calc(var(--X) + 0em), calc(var(--Y) + 0em));
+}
+
+/* OpenCV */
+#opencvLanding {
+    position: absolute;
+    width: 16em; /* Ajusta el tamaño según sea necesario */
+    transform: translate(calc(var(--X) - 20em), calc(var(--Y) + 4.5em));
+}
+
+/* OpenAI */
+#openaiLanding {
+    position: absolute;
+    width: 12em; /* Ajusta el tamaño según sea necesario */
+    transform: translate(calc(var(--X) + 0em), calc(var(--Y) + 0em));
+}
