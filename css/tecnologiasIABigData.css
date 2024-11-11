@@ -1,1 +1,42 @@
-#IA-bigData {background-color: magenta;} /*TEXTO DUMMIE: BORRAR Y ESCRIBIR LOS ESTILOS*/
+/*contendrá solo fondo con gradiente de 
+transició de sección back-end a IA*/
+#IA-bigData > div:first-child {
+    background: linear-gradient(to bottom, var(--negroGradiente), var(--doradoGradiente)); /* Primer gradiente */
+    height: 813px; /*no usamos ems porque es mas simple copiar la altura de figma en este caso*/
+} 
+
+/*solo fondo con gradiente*/
+#IA-bigData > div:nth-child(2) {
+    background: linear-gradient(to bottom, var(--doradoGradiente), var(--blancoAmarillento)); /* Primer gradiente */
+    height: 421px;
+} 
+
+/*solo fondo con gradiente*/
+#IA-bigData > div:nth-child(3) {
+    background-color: var(--blancoAmarillento); 
+    height: 1145px;
+} 
+
+/*solo fondo con gradiente*/
+#IA-bigData > div:nth-child(4) {
+    background: linear-gradient(to bottom, var(--blancoAmarillento), var(--doradoGradiente)); /* Primer gradiente */
+    height: 421px;
+} 
+
+/*solo fondo con gradiente*/
+#IA-bigData > div:nth-child(5) {
+    background: linear-gradient(to bottom, var(--doradoGradiente), var(--negroGradiente)); /* Primer gradiente */
+    height: 497px;
+} 
+
+/*texto e imágenes de las sección iaBigData
+que se superpondrán a fondos anteriores*/
+#IA-bigData > div:nth-child(6) {
+    position: relative; /*posiciono relativo al final del div superior (el quinto hijo)*/
+    margin: 0 auto; /*centramos*/
+    color: black;
+    bottom: 144em; /*contando desde abajo subo para posicionar el texto justo en el punto deseado para que quede como en figma*/
+    max-width: var(--MaximaAnchuraTextosEncabezados);
+    height: 0; /*altura en cero para que no quede recuadro blanco vestigial, al mover todo el bloque arriba*/
+    z-index: 1;
+}

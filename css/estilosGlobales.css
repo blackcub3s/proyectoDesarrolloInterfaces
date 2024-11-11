@@ -18,7 +18,14 @@
     --blancoGradiente: #FFFFFF;         /*parte front end landing*/
     --azulClaroGradiente: #5474C4;      /*parte front end landing*/
     --azulOscuroGradiente: #16203E;     /*parte front end landing y back-end landing*/
-    --negroGradiente: #000000;          /*parte back-end landing*/
+    --negroGradiente: #000000;          /*parte back-end landing e iaBigData*/
+
+    --doradoGradiente: #B39840;         /*parte IA bigData*/
+    --blancoAmarillento: #ECE6D4;       /*parte IA bigData*/
+
+
+
+
 
     --negroFooter: black;               /*footer*/
 
