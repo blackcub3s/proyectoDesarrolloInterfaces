@@ -5,10 +5,7 @@
     padding-bottom: 150px;  /* Agregamos espacio al final para separar de otros elementos */
     color: white;    
 } 
-/* Título de la sección */
-.tituloSeccion{
-    margin-bottom: 1.2em;
-}
+
 .backend-head{    
     margin: 0 auto;/* Centramos el contenedor horizontalmente */
     max-width: var(--MaximaAnchuraTextosEncabezados);/* Limitamos el ancho para mejorar la legibilidad */
