@@ -1,48 +1,65 @@
+/* Sección principal */
 #tec-back-end {
     background: linear-gradient(to bottom, var(--azulOscuroGradiente), var(--negroGradiente)); /* GRADIENTE YA ESTA HECHO BIEN, NO TOCAR */
-    margin: 0 auto;  
-    color: white;   
+    margin: 0 auto;
+    padding-bottom: 150px;  /* Agregamos espacio al final para separar de otros elementos */
+    color: white;    
 } 
-/*contenedor texto cabecera backend*/
-#tec-back-end div{
-    text-align:left;
-    margin:0 22% 5% 22%;/*centrado del texto en funcion del espacio alrededor*/
-}
+/* Título de la sección */
 .tituloSeccion{
     margin-bottom: 1.2em;
 }
+.backend-head{    
+    margin: 0 auto;/* Centramos el contenedor horizontalmente */
+    max-width: var(--MaximaAnchuraTextosEncabezados);/* Limitamos el ancho para mejorar la legibilidad */
+     padding: 3em 0;/* Espaciado vertical arriba y abajo para separación visual */
 
+}
+/* Contenido backend */
 .backend-content{
+    padding-top: 3.5em;/* Espacio superior para separar del título */
+    max-width: var(--MaximaAnchuraCards);/* Define el ancho máximo del grid */
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-      
-    column-gap:0;
-    row-gap: 50px;
-    /*separacion vertical - horizontal por tarjetas*/
+    justify-items: center;  /* Centra cada card dentro de su área de grid */    
+    gap: 60px; /* Espacio entre las cards */
 }
-.back-endCard {
+/* Estilo cartas*/
+.backend-card {
     background-color: var(--grisTransparenteCard); /* Color de fondo, gris con transparencia definido en estilo general*/
-    border-radius: 35px; /* Bordes redondeados */
-    padding: 30px;
+    border-radius: 1em; /* Bordes redondeados, mismo en todo el documento */
+    padding: 60px;
     text-align:center;
     box-sizing: border-box; /* Aseguramos que el padding no afecte el tamaño */
-    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.25);/* sombra para dar relieve*/
-    width: 450px; 
-    height: 550px; 
+    width: 420px;/* Ancho fijo de la card */
+    height: 520px;   /* Altoo fijo de la card */  
 }
-.back-endCard img {
-    max-width: 80%; /* Imagen ocupa todo el ancho del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    display: block;
-    margin: 30px auto;/* centrado de imagen*/
-    
+/* Estilo general de imágenes en cards */
+.backend-card img{
+    width: 90%;
+    margin-top: 0.4em;
+    padding-top: 0.3em;
 }
-.back-endCard p {
-    font-size: 20px;
-    color: #fdfdfd;     
-    font-weight: 500;
-    text-align:center;
-    position: absolute;
-    
+/*Tamaño imagen django*/
+#tec-back-end .backend-card:nth-child(3) img{
+    width: 100%;
+    margin-top: 1.4em;    
+}
+/*Tamaño imagen laravel*/
+#tec-back-end .backend-card:last-child img{
+    width: 110%;        
+}
+/* Estilos para los párrafos dentro de .backend-content */
+.backend-content p{
+    font-size: 1.25em;
+    margin-top: 3.3em;
+}
+/*Ajuste posicion texto carta Django*/
+#tec-back-end .backend-card:nth-child(3) p{
+    margin-top: 8.5em;    
+}
+/*Ajuste posicion texto carta Laravel*/
+#tec-back-end .backend-card:last-child p{
+    margin-top: 6.3em;    
 }
