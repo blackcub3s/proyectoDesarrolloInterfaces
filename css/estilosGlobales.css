@@ -38,7 +38,8 @@
     --MaximaAnchuraBarraNavegacion: 600px;
     --MaximaAnchuraContenedorOnda: 1000px;
     --MaximaAnchuraTextosEncabezados: 1000px;
-    --MaximaAnchuraCards: 1400px;
+    --MaximaAnchuraCardsFrontEnd: 1400px;
+    --MaximaAnchuraCardsBackEnd: 1000px;
     --MaximaAnchuraFooter: 1200px;
     --tiempoTransicionEstandar: 0.1s;
     --aumentoTamanyoEstandar: 1.02; /*aumentos para las imagenes al hacer el hover (aumento del 2 por ciento)*/
