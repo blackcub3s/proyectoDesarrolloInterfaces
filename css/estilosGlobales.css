@@ -18,7 +18,14 @@
     --blancoGradiente: #FFFFFF;         /*parte front end landing*/
     --azulClaroGradiente: #5474C4;      /*parte front end landing*/
     --azulOscuroGradiente: #16203E;     /*parte front end landing y back-end landing*/
-    --negroGradiente: #000000;          /*parte back-end landing*/
+    --negroGradiente: #000000;          /*parte back-end landing e iaBigData*/
+
+    --doradoGradiente: #B39840;         /*parte IA bigData*/
+    --blancoAmarillento: #ECE6D4;       /*parte IA bigData*/
+
+
+
+
 
     --negroFooter: black;               /*footer*/
 
@@ -35,6 +42,11 @@
     --MaximaAnchuraFooter: 1200px;
     --tiempoTransicionEstandar: 0.1s;
     --aumentoTamanyoEstandar: 1.02; /*aumentos para las imagenes al hacer el hover (aumento del 2 por ciento)*/
+    
+    /*variables para centrar en centro las imagenes 
+    satelite de python en contenedor ia*/
+    --X: 23em; 
+    --Y: 27em;
 }
 
 /*quitamos márgenes y padding de los elementos, 

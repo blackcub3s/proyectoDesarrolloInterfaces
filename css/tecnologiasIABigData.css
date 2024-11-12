@@ -1,1 +1,169 @@
-#IA-bigData {background-color: magenta;} /*TEXTO DUMMIE: BORRAR Y ESCRIBIR LOS ESTILOS*/
+/*contendrá solo fondo con gradiente de 
+transició de sección back-end a IA*/
+#IA-bigData > div:first-child {
+    background: linear-gradient(to bottom, var(--negroGradiente), var(--doradoGradiente)); /* Primer gradiente */
+    height: 813px; /*no usamos ems porque es mas simple copiar la altura de figma en este caso*/
+} 
+
+/*solo fondo con gradiente*/
+#IA-bigData > div:nth-child(2) {
+    background: linear-gradient(to bottom, var(--doradoGradiente), var(--blancoAmarillento)); /* Primer gradiente */
+    height: 421px;
+} 
+
+/*solo fondo con gradiente*/
+#IA-bigData > div:nth-child(3) {
+    background-color: var(--blancoAmarillento); 
+    height: 1145px;
+} 
+
+/*solo fondo con gradiente*/
+#IA-bigData > div:nth-child(4) {
+    background: linear-gradient(to bottom, var(--blancoAmarillento), var(--doradoGradiente)); /* Primer gradiente */
+    height: 421px;
+} 
+
+/*solo fondo con gradiente*/
+#IA-bigData > div:nth-child(5) {
+    background: linear-gradient(to bottom, var(--doradoGradiente), var(--negroGradiente)); /* Primer gradiente */
+    height: 497px;
+} 
+
+/*texto e imágenes de las sección iaBigData
+que se superpondrán a fondos anteriores*/
+#IA-bigData > div:nth-child(6) {
+    position: relative; /*posiciono relativo al final del div superior (el quinto hijo). Indispoensable para que el pposicionamiento absoluto de los iconos de ia (imagenes hijas) tengan la referencia del relativo.*/
+    margin: 0 auto; /*centramos*/
+    color: black;
+    bottom: 144em; /*contando desde abajo subo para posicionar el texto justo en el punto deseado para que quede como en figma*/
+    max-width: var(--MaximaAnchuraTextosEncabezados);
+    height: 0; /*altura en cero para que no quede recuadro blanco vestigial, al mover todo el bloque arriba*/
+    z-index: 1;
+}
+
+
+
+/* --------------------------------------- */
+/* Posicionamiento individual de cada logo */
+/* --------------------------------------- */
+
+/*[1]: Definimos posición absolute en relación al contenedor relativo dentro 
+de donde está el icono (está dentro del #IA-bigData > div:nth-child(6))*/
+
+/*[2]: definimos translación mediante transform ajustando el centro a coordenadas --X e --Y de las
+ variables globales (que es el centro del círculo, que definimos como el 0,0 
+ desde el cual construimos el posicionamiento de los iconos). Desde esa posición hacemos ajustes
+ para posicionarlo alrededor del círculo (para todos los iconos "satélite" a python) o para ajustar 
+ variaciones de posicion involuntarias producidas al cambiar width. Usar variables globales nos 
+ permitirá mover todos los iconos de la sección IA alrededor del icono de python -usaremos la misma
+  linea modificando las*/
+
+/*[3]: Aqui no nos sirve box-shadow, debemos usar la propiedad filter para que envuelva
+ la imagen vectorial, no la caja que la contiene*/
+
+/* logo Python */
+#pythonLanding {
+    position: absolute; /*[1]:*/
+    transform: translate(var(--X), var(--Y));/*[2]: python centro del círculo*/
+    width: 20em; 
+    filter: drop-shadow(7px 6px 2px rgba(0, 0, 0, 0.25)); /*[3]*/
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
+}
+
+#pythonLanding:hover {filter: drop-shadow(7px 10px 2px rgba(0, 0, 0, 0.25));}
+
+
+/* logo TensorFlow (sombra hacia abajo) */
+#tensorflowLanding {
+    position: absolute;
+    width: 19em;
+    transform: translate(calc(var(--X) + .5em), calc(var(--Y) + 34em)); /*logo tensorflow se posiciona sumando .5em a --X y 34em a --Y*/
+    filter: drop-shadow(0px 10px 2px rgba(0, 0, 0, 0.25)); 
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
+}
+
+#tensorflowLanding:hover {filter: drop-shadow(0px 14px 2px rgba(0, 0, 0, 0.25));}
+
+
+/* Scikit-Learn (sombra hacia arriba) */
+#sklearnLanding {
+    position: absolute;
+    width: 15em;
+    transform: translate(calc(var(--X) + 2em), calc(var(--Y) - 23em));
+    filter: drop-shadow(0px -7px 2px rgba(0, 0, 0, 0.25)); 
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
+}
+
+#sklearnLanding:hover {filter: drop-shadow(0px -10px 2px rgba(0, 0, 0, 0.25));}
+
+
+/* Seaborn (sombra hacia arriba a la izquierda) */
+#seabornLanding {
+    position: absolute;
+    width: 20em;
+    transform: translate(calc(var(--X) - 25em), calc(var(--Y) - 11em));
+    filter: drop-shadow(-7px -7px 2px rgba(0, 0, 0, 0.25)); 
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
+}
+
+#seabornLanding:hover {filter: drop-shadow(-10px -10px 2px rgba(0, 0, 0, 0.25));}
+
+
+/* PySpark (sombra hacia la derecha) */
+#pysparkLanding {
+    position: absolute;
+    width: 17em;
+    transform: translate(calc(var(--X) + 38.5em), calc(var(--Y) + 5.5em));
+    filter: drop-shadow(10px 0px 2px rgba(0, 0, 0, 0.25)); 
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
+}
+
+#pysparkLanding:hover {filter: drop-shadow(14px 0px 2px rgba(0, 0, 0, 0.25));}
+
+
+/* Plotly (sombra hacia arriba a la derecha) */
+#plotlyLanding {
+    position: absolute;
+    width: 23em;
+    transform: translate(calc(var(--X) + 26em), calc(var(--Y) - 13em));
+    filter: drop-shadow(7px -7px 2px rgba(0, 0, 0, 0.25)); 
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
+}
+
+#plotlyLanding:hover {filter: drop-shadow(10px -10px 2px rgba(0, 0, 0, 0.25));}
+
+
+/* Pandas (sombra hacia abajo a la derecha) */
+#pandasLanding {
+    position: absolute;
+    width: 16em;
+    transform: translate(calc(var(--X) + 29em), calc(var(--Y) + 25.5em));
+    filter: drop-shadow(7px 7px 2px rgba(0, 0, 0, 0.25)); 
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
+}
+
+#pandasLanding:hover {filter: drop-shadow(10px 10px 2px rgba(0, 0, 0, 0.25));}
+
+
+/* OpenCV (sombra hacia la izquierda) */
+#opencvLanding {
+    position: absolute;
+    width: 8.5em;
+    transform: translate(calc(var(--X) - 30.5em), calc(var(--Y) + 5em));
+    filter: drop-shadow(-7px 0px 2px rgba(0, 0, 0, 0.25)); 
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
+}
+
+#opencvLanding:hover {filter: drop-shadow(-10px 0px 2px rgba(0, 0, 0, 0.25));}
+
+
+/* OpenAI (sombra hacia abajo a la izquierda) */
+#openaiLanding {
+    position: absolute;
+    width: 10.5em;
+    transform: translate(calc(var(--X) - 20.25em), calc(var(--Y) + 26.5em));
+    filter: drop-shadow(-7px 7px 2px rgba(0, 0, 0, 0.25)); 
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
+}
+
+#openaiLanding:hover {filter: drop-shadow(-10px 10px 2px rgba(0, 0, 0, 0.25));}
