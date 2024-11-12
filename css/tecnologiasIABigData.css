@@ -43,69 +43,127 @@ que se superpondrán a fondos anteriores*/
 
 
 
-
+/* --------------------------------------- */
 /* Posicionamiento individual de cada logo */
+/* --------------------------------------- */
 
-/* Logo central (Python) */
+/*[1]: Definimos posición absolute en relación al contenedor relativo dentro 
+de donde está el icono (está dentro del #IA-bigData > div:nth-child(6))*/
+
+/*[2]: definimos translación mediante transform ajustando el centro a coordenadas --X e --Y de las
+ variables globales (que es el centro del círculo, que definimos como el 0,0 
+ desde el cual construimos el posicionamiento de los iconos). Desde esa posición hacemos ajustes
+ para posicionarlo alrededor del círculo (para todos los iconos "satélite" a python) o para ajustar 
+ variaciones de posicion involuntarias producidas al cambiar width. Usar variables globales nos 
+ permitirá mover todos los iconos de la sección IA alrededor del icono de python -usaremos la misma
+  linea modificando las*/
+
+/*[3]: Aqui no nos sirve box-shadow, debemos usar la propiedad filter para que envuelva
+ la imagen vectorial, no la caja que la contiene*/
+
+/* logo Python */
 #pythonLanding {
-    position: absolute; /*posicion absoluto en relacion al contenedor relativo dentro de donde esta (esta dentro del #IA-bigData > div:nth-child(6))*/
-    transform: translate(calc(var(--X) - 1em), calc(var(--Y) - 4em));
+    position: absolute; /*[1]:*/
+    transform: translate(var(--X), var(--Y));/*[2]: python centro del círculo*/
     width: 20em; 
-    filter: drop-shadow(7px 6px 2px rgba(0, 0, 0, 0.25)); /*Aqui no nos sirve box-shadow, debemos usar la propiedad filter*/
+    filter: drop-shadow(7px 6px 2px rgba(0, 0, 0, 0.25)); /*[3]*/
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
 }
 
-/* TensorFlow */
+#pythonLanding:hover {filter: drop-shadow(7px 10px 2px rgba(0, 0, 0, 0.25));}
+
+
+/* logo TensorFlow (sombra hacia abajo) */
 #tensorflowLanding {
     position: absolute;
-    width: 15em; /* Ajusta el tamaño según sea necesario */
-    transform: translate(calc(var(--X) + 0em), calc(var(--Y) + 23em)); /*definimos translación ajustando el centro a coordenadas --X e --Y (que es el centro de python, que definimos como el 0,0)*/
+    width: 19em;
+    transform: translate(calc(var(--X) + .5em), calc(var(--Y) + 34em)); /*logo tensorflow se posiciona sumando .5em a --X y 34em a --Y*/
+    filter: drop-shadow(0px 10px 2px rgba(0, 0, 0, 0.25)); 
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
 }
 
-/* Scikit-Learn */
+#tensorflowLanding:hover {filter: drop-shadow(0px 14px 2px rgba(0, 0, 0, 0.25));}
+
+
+/* Scikit-Learn (sombra hacia arriba) */
 #sklearnLanding {
     position: absolute;
-    width: 15em; /* Ajusta el tamaño según sea necesario */
-    transform: translate(calc(var(--X) + 1em), calc(var(--Y) - 23em));
+    width: 15em;
+    transform: translate(calc(var(--X) + 2em), calc(var(--Y) - 23em));
+    filter: drop-shadow(0px -7px 2px rgba(0, 0, 0, 0.25)); 
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
 }
 
-/* Seaborn */
+#sklearnLanding:hover {filter: drop-shadow(0px -10px 2px rgba(0, 0, 0, 0.25));}
+
+
+/* Seaborn (sombra hacia arriba a la izquierda) */
 #seabornLanding {
     position: absolute;
-    width: 16em; /* Ajusta el tamaño según sea necesario */
-    transform: translate(calc(var(--X) + 0em), calc(var(--Y) + 0em));
+    width: 20em;
+    transform: translate(calc(var(--X) - 25em), calc(var(--Y) - 11em));
+    filter: drop-shadow(-7px -7px 2px rgba(0, 0, 0, 0.25)); 
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
 }
 
-/* PySpark */
+#seabornLanding:hover {filter: drop-shadow(-10px -10px 2px rgba(0, 0, 0, 0.25));}
+
+
+/* PySpark (sombra hacia la derecha) */
 #pysparkLanding {
     position: absolute;
-    width: 16em; /* Ajusta el tamaño según sea necesario */
-    transform: translate(calc(var(--X) + 30em), calc(var(--Y) + 0em));
+    width: 17em;
+    transform: translate(calc(var(--X) + 38.5em), calc(var(--Y) + 5.5em));
+    filter: drop-shadow(10px 0px 2px rgba(0, 0, 0, 0.25)); 
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
 }
 
-/* Plotly */
+#pysparkLanding:hover {filter: drop-shadow(14px 0px 2px rgba(0, 0, 0, 0.25));}
+
+
+/* Plotly (sombra hacia arriba a la derecha) */
 #plotlyLanding {
     position: absolute;
-    width: 16em; /* Ajusta el tamaño según sea necesario */
-    transform: translate(calc(var(--X) + 0em), calc(var(--Y) + 0em));
+    width: 23em;
+    transform: translate(calc(var(--X) + 26em), calc(var(--Y) - 13em));
+    filter: drop-shadow(7px -7px 2px rgba(0, 0, 0, 0.25)); 
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
 }
 
-/* Pandas */
+#plotlyLanding:hover {filter: drop-shadow(10px -10px 2px rgba(0, 0, 0, 0.25));}
+
+
+/* Pandas (sombra hacia abajo a la derecha) */
 #pandasLanding {
     position: absolute;
-    width: 16em; /* Ajusta el tamaño según sea necesario */
-    transform: translate(calc(var(--X) + 0em), calc(var(--Y) + 0em));
+    width: 16em;
+    transform: translate(calc(var(--X) + 29em), calc(var(--Y) + 25.5em));
+    filter: drop-shadow(7px 7px 2px rgba(0, 0, 0, 0.25)); 
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
 }
 
-/* OpenCV */
+#pandasLanding:hover {filter: drop-shadow(10px 10px 2px rgba(0, 0, 0, 0.25));}
+
+
+/* OpenCV (sombra hacia la izquierda) */
 #opencvLanding {
     position: absolute;
-    width: 16em; /* Ajusta el tamaño según sea necesario */
-    transform: translate(calc(var(--X) - 20em), calc(var(--Y) + 4.5em));
+    width: 8.5em;
+    transform: translate(calc(var(--X) - 30.5em), calc(var(--Y) + 5em));
+    filter: drop-shadow(-7px 0px 2px rgba(0, 0, 0, 0.25)); 
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
 }
 
-/* OpenAI */
+#opencvLanding:hover {filter: drop-shadow(-10px 0px 2px rgba(0, 0, 0, 0.25));}
+
+
+/* OpenAI (sombra hacia abajo a la izquierda) */
 #openaiLanding {
     position: absolute;
-    width: 12em; /* Ajusta el tamaño según sea necesario */
-    transform: translate(calc(var(--X) + 0em), calc(var(--Y) + 0em));
+    width: 10.5em;
+    transform: translate(calc(var(--X) - 20.25em), calc(var(--Y) + 26.5em));
+    filter: drop-shadow(-7px 7px 2px rgba(0, 0, 0, 0.25)); 
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
 }
+
+#openaiLanding:hover {filter: drop-shadow(-10px 10px 2px rgba(0, 0, 0, 0.25));}
