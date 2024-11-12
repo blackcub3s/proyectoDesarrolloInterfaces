@@ -18,7 +18,7 @@
 /* Contenido backend */
 .backend-content{
     padding-top: 3.5em;/* Espacio superior para separar del título */
-    max-width: var(--MaximaAnchuraCards);/* Define el ancho máximo del grid */
+    max-width: var(--MaximaAnchuraCardsBackEnd);/* Define el ancho máximo del grid */
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
