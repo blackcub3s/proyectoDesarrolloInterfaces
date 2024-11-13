@@ -39,12 +39,20 @@ footer li {
 footer a {
 	color: white;
 	text-decoration: none;
+	transition: text-decoration var(--tiempoTransicionEstandar) ease,
+				text-shadow var(--tiempoTransicionEstandar) ease; 
+}
+/*añadido efecto hover*/
+footer a:hover{	
+				text-decoration: underline;
+				text-underline-offset: 4px; /*desplazamiento del subrayado*/
+				text-shadow: 0px 0px 9px rgba(238, 238, 238, 0.6);
 }
 /* Estilo para las barras verticales */
 .footer-vertical-bar {
     width: 3px; /* Grosor de la barra */
     height: 170px; /* Altura de la barra */
-    background-color: white; /* Color de la barra */
+    background-color: rgb(238, 238, 238); /* Color de la barra */
     margin-bottom: 1%;/* Aplica un margen inferior del 1% para separarla del siguiente contenido */
 }
 /* Estilo para la línea horizontal que separa el contenido del copyright */
