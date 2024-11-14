@@ -1,0 +1,903 @@
+/*------------------------------------------------*/
+/*------------------------------------------------*/
+/*---------------ESTILOS GLOBALES-----------------*/
+/*------------------------------------------------*/
+/*------------------------------------------------*/
+
+
+:root {
+
+    /* ---- paleta de colores ---- */
+
+     --colorBarraNavegacion: rgb(0, 0, 0);
+     --colorBarraNavegacionHover: rgb(194, 194, 194);
+
+
+     --colorAzulBoton: #5474C4;             /*contendor onda*/
+     --colorAzulBotonHover: #3652a3;        /*contenedor onda*/  
+     --colorVerdeVue: #41B883;              /*contenedor onda*/
+     --colorGris: #A3A3A3A3;                /*contenedor onda*/
+     --colorGrisTransparent: rgba(38, 38, 38, 0.449);  /*contenedor onda*/
+    --colorFinGradiente: #F652A2;           /*contenedor onda*/
+    --colorInicioGradiente: #4b238f;        /*contenedor onda*/
+
+    --grisTransparenteCard: #f4f4f43e;  /*parte front end landing*/ 
+    --blancoGradiente: #FFFFFF;         /*parte front end landing*/
+    --azulClaroGradiente: #5474C4;      /*parte front end landing*/
+    --azulOscuroGradiente: #16203E;     /*parte front end landing y back-end landing*/
+    --negroGradiente: #000000;          /*parte back-end landing e iaBigData*/
+
+    --doradoGradiente: #B39840;         /*parte IA bigData*/
+    --blancoAmarillento: #ECE6D4;       /*parte IA bigData*/
+
+
+
+
+
+    --negroFooter: black;               /*footer*/
+
+    
+
+
+    
+    /*otras variables susceptibles
+    de cambio en función de decisiones futuras*/
+    --MaximaAnchuraBarraNavegacion: 600px;
+    --MaximaAnchuraContenedorOnda: 1000px;
+    --MaximaAnchuraTextosEncabezados: 1000px;
+    --MaximaAnchuraCardsFrontEnd: 1400px;
+    --MaximaAnchuraCardsBackEnd: 1000px;
+    --MaximaAnchuraFooter: 1200px;
+    --tiempoTransicionEstandar: 0.1s;
+    --aumentoTamanyoEstandar: 1.02; /*aumentos para las imagenes al hacer el hover (aumento del 2 por ciento)*/
+    
+    /*variables para centrar en centro las imagenes 
+    satelite de python en contenedor ia*/
+    --X: 23em; 
+    --Y: 27em;
+}
+
+/*quitamos márgenes y padding de los elementos, 
+para ganar más control en el diseño de la web.*/
+*, html, body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*buscamos la fuente que recomienda figma, roboto. La hemos */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    /*Querríamos la semi-bold! Para ello podríamos usar la respuesta de Jesús Carrera 
+    donde se recomienda usar font-weight: 600 ( https://stackoverflow.com/questions/8735872/how-do-i-set-semi-bold-font-via-css-font-weight-of-600-doesnt-make-it-look-l ).
+    
+    Sin embargo font-weight: 600 usa una negrita excesiva más gruesa que la roboto semi-bold de figma, 
+    mientras que fontweight: 500 es lo mismo que dejar el font-weight por defecto. Por lo tanto no podemos definir 
+    la letra para la navbar exactamente igual que en figma.
+    */
+}
+
+/* tamaños de letra */
+/* el tamaño por defecto es, justamente 16px. Si lo quitamos, de hecho, no cambia
+nada. Sin embargo, especificarlo explícitamente nos permite que si queremos 
+variar el tamaño de las fuentes de toda la web, podamos hacer cambios en toda 
+ella -para lo definido en rem o em-. */
+
+html {font-size: 16px;}  /*APUNTE NO MODIFICAR: Se destroza todo*/
+
+/*TAMAÑO DE LOS TITULOS QUE ENCABEZAN CADA SECCIÓN
+(FRONTEND, BACKEND, IA, ETC)*/
+.tituloSeccion {font-size: 2.5rem;}     /*son 40 px en figma. Con el font-size del root a 16 con 2.5rem tenemos los 40px (40 = 16*2.5)*/
+.subTituloSeccion {font-size: 1.45rem; margin-top: 1rem;}  /*TEORICAMENTE: son 26 px en figma. Si el font-size del root es 16 con 1.5rem tenemos los 24  (40 = 16*1.5). Pero lo hemos ajustado, porque la teoria no es igual que la practica*/
+.botonPrimario {
+    background-color: var(--colorAzulBoton);
+    color: white;
+    padding: .65em 1.5em .65em 1.5em;
+    border-radius: .5em;
+    border-style: none; /*quitamos la border vestigial*/
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+
+    transition: background-color var(--tiempoTransicionEstandar) ease-in-out, 
+                transform var(--tiempoTransicionEstandar) ease-in-out, 
+                box-shadow var(--tiempoTransicionEstandar) ease-in-out; /*TRANSICIÓN PARA EL JOVER*/
+}
+
+
+.botonPrimario:hover {
+    background-color: var(--colorAzulBotonHover); /* Cambia a un tono más oscuro del color azul */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4); /* Sombra más intensa */
+}
+
+/*------------------------------------------------*/
+/*------------------------------------------------*/
+/*---------------BARRA NAVEGACIÓN-----------------*/
+/*------------------------------------------------*/
+/*------------------------------------------------*/
+nav {
+    background-color: var(--colorBarraNavegacion);
+    color: white;
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
+}
+
+/*Ponemos estilo a los 4 elementos de la primera
+ lista no ordenada (la navbar visible sin clicar)*/
+nav > ul {
+    display: grid;          /*ponemos una grid de 4 columnas, uno para cada elemento de la li del menú de navegación*/
+    grid-template-columns: repeat(4,1fr);  /*definimos las 4 columnas con 4 fracciones de grid*/
+    text-align: center;     /*centramos el texto de cada elemento de navegación dentro de su columna*/ 
+    list-style-type: none;  /*quitamos los bullet points de la lista que conforma la barra de navegación -no debe haberlos-*/
+    font-size: 1em;
+
+    max-width: var(--MaximaAnchuraBarraNavegacion); /*tamaño máximo horizontal*/
+    margin: 0 auto; /*al definir tamaño máximo hay que centrarlo si no queda pegado a la izquierda. Usamos propiedad shorthand de margin.*/    
+}
+
+
+/* ---- INICIO ÁREA COMENTARIO 1 ---- */
+
+/* Queremos conseguir que en condiciones normales (sin hacer hover encima de los elementos de la navbar) 
+haya en todo momento una border "invisible" debajo de cada li de la barra de navegación. Para ello haremos esta border
+del mismo color que la barra de navegación. 
+
+Ello tiene una implicación importante. Su existencia permitirá que
+al hacer hover sobre un li, al cambiar el color de la misma [B]
+la border-bottom no nos moverá los elementos de la web que quedan por debajo cada vez que 
+pasemos el ratón por encima [A] y que está definida. Se puede comprobar el problema que habría si borrásemos la linea comentada
+con [A]*/
+
+nav ul li span {
+    border-bottom: 2px solid var(--colorBarraNavegacion); /*[A}*/
+
+    /*hacemos que cambios de propiedades sean graduales en entrada y salida (para el hover)*/
+    transition: background-color var(--tiempoTransicionEstandar) ease-in-out, 
+                border-bottom var(--tiempoTransicionEstandar) ease-in-out;
+
+    /*Conseguimos que cada border inferior de cada li, al hacer hover, se acote solamente al texto que ocupa: */
+    margin: 0 auto;
+    
+}
+
+/*queremos que cada elemento del menú de navegación sea dinámico al pasar por encima*/
+nav ul li span:hover {
+    color: var(--colorBarraNavegacionHover);
+    border-bottom: 2px solid var(--colorBarraNavegacionHover); /*[B]*/
+}   
+
+
+/* ---- FIN ÁREA COMENTARIO 1 ---- */
+
+nav ul li img {
+    margin: 0 0 .05em 0; /*Subimos un pelín la flecha del desplegable hacia arriba*/
+    width: 9%;
+    
+}
+
+/*SITUAMOS EL li de "Servicios" un poco más cerca de quienes somos*/
+nav ul li:first-child {
+    position: relative;
+    left: 0.8em;
+}
+
+/*SITUAMOS EL li "Contacto" un poco mas cerca de "Incorpórate"*/
+nav ul li:last-child {
+    position: relative;
+    right: 1.4em;
+}
+
+/*NOTA: PUEDE QUE SEA MEJOR DEFINIRLO COMO UN ESTILO 
+GLOBAL, SOLO CON a Y SIN USAR SELECTORES DESCENDIENTES*/
+nav ul li a {
+    text-decoration: none; /*Quitamos los subrayados vestigiales de los links, que sino se ven en el hover!*/
+    color: inherit;        /*heretamos el color de sus padres, definidos en li y el nav: el blanco y el gris en el hover.*/
+}
+
+
+/* ------------------------------------------------*/
+/* ------------------------------------------------*/
+/* - INCIO CREACIÓN MENÚ DESPLEGABLE DE LA NAVBAR -*/
+/* ------------------------------------------------*/
+/* ------------------------------------------------*/
+
+
+/*SUBMENÚ DESPLEGABLE*/
+nav ul li ul {
+    display: none;  /*Oculto si no pasamos sobre él*/
+    margin-top: 1em;    
+    list-style-type: none;
+}
+
+
+/* MUESTRA SUBMENÚ DESPLEGABLE OCULTO AL PASAR EL RATÓN
+POR ENCIMA DE "Servicios" */
+nav ul li:hover ul {display: block;}
+
+
+/*¡Cuidado! Por motivos que escapan a nuestra comprensión
+cada elemento del menú desplegable queda desplazado horizontalmente
+con un espaciado irregular. Así pues, lo corregimos para cada uno,
+manualmente (ver las as: [A]) Si encontráis alguna forma de 
+solucionarlo, sin este parche, por favor, avisadnos.
+
+Asimismo hemos definido animaciones con la librería Animate.style (que
+cargamos de la CDN como un link en el html) usando el keyframe para
+"fadeInDown" que pasamos en la propiedad "animation" [B].
+
+Estas animaciones serán de distinta duración para cada uno
+de los tres elementos. El primer elemento del desplegable (front-end)
+va a tener .8s de duración, el segundo el doble y el tercero
+el triple, quedando un diseño visual atractivo.*/
+
+/*desplegable "Front-end"*/
+nav ul li ul li:first-child {
+    margin-right: 2.1em;        /*[A]*/
+    animation: fadeInDown;      /*[B]*/
+    animation-duration: .8s;    /*[C]*/
+}
+
+/*desplegable "Back-end"*/
+nav ul li ul li:nth-child(2) {
+    margin-right: .65em;        /*[A]*/
+    animation: fadeInDown;      /*[B]*/
+    animation-duration: 1.6s;   /*[C]*/
+}
+
+/*desplegable "IA y big data"*/
+nav ul li ul li:last-child {
+    margin-left: 3.6em;         /*[A]*/
+    animation: fadeInDown;      /*[B]*/
+    animation-duration: 2.4s;   /*[C]*/
+}
+
+/*Espaciado entre los elementos del desplegable*/
+nav ul li ul li {margin-top: .5em;}
+
+
+nav ul li ul li:hover {color: var(--colorBarraNavegacionHover);}   
+
+
+
+/* ----------------------------------------------*/
+/* -  FIN MENÚ DESPLEGABLE DE LA NAVBAR         -*/
+/* ----------------------------------------------*/
+
+
+
+
+/*------------------------------------------------*/
+/*------------------------------------------------*/
+/*--------------CONTENEDOR  ONDA------------------*/
+/*------------------------------------------------*/
+/*------------------------------------------------*/
+
+
+#contenedor-onda {
+    position: relative;
+    background: linear-gradient(to right, var(--colorInicioGradiente), var(--colorFinGradiente));
+    padding: 3em 0em 1em 0em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contenedor-onda .contenido { 
+    display: grid;
+
+    /* Dos columnas de la misma anchura */
+    grid-template-columns: 1fr 1fr; 
+    
+    /*SE CONSIGUE QUE EL CONTENIDO ESTÉ CENTRADO 
+    SIEMPRE -INCLUSO CON EL ZOOM-*/
+    margin-right: auto;
+    margin-left: auto; 
+
+    /*SE CONSIGUE QUE EL CONTENEDOR DE FONDO 
+    CON LA ONDA GANE ESPACIO POR DEBAJO Y POR ENCIMA*/
+    margin-top: 4em;
+    margin-bottom: 19em;
+
+    color: white;
+    font-size: 1.3em; /*no cambiar o se rompe todo*/
+    text-align: center;
+    position: relative; /* Necesario para que el z-index funcione */
+    z-index: 10;    /* Número alto para estar por encima de todo */
+
+    padding: 1em;
+
+    max-width: var(--MaximaAnchuraContenedorOnda);
+    
+}
+
+/*NOTA: Uso selector de hijo directo
+ en lugar del descendiente por si 
+ añadimos más divs luego*/
+ /*CARD DEL CONTENEDOR ONDA!*/
+ #contenedor-onda .contenido > div:first-child {
+    background-color: var(--colorGrisTransparent);
+
+    /*margin-top y bottom son para conseguir centrar el texto verticalmente*/
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 1em 2em 1em 2em;
+
+    /*los bordes seran discontinuos, de color blanco y redondeados*/
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: .5em;
+    /*nos aseguramos de que el banner de 
+    la empresa NO va a a expandirse horizontalmente
+    ni verticalmente más allá de lo que ocupa su texto*/
+    margin: auto auto;
+}
+
+/*TAMAÑO DE TEXTO DE "{black:code}*/
+#contenedor-onda .contenido > div:first-child h1 {font-size: 1.8em;}
+
+/*TAMAÑO DE TEXTO DE "consulting"*/
+#subText {
+    display: block; /*pongo el "consulting" debajo el {blackCode}*/
+    font-size: 0.5em; /* or another smaller size */
+    font-style: italic;
+    color: var(--colorGris);
+    margin-top: -.6em;
+}
+
+/*"TEXTO: Soluciones eficientes a cualquier...*/
+#contenedor-onda .contenido > div:first-child h2 {
+    font-size: 1.1em;
+    margin-bottom: .4em; /*dejamos espacio para que no se peque el botón*/
+
+}
+
+
+
+/*NOTA: VER NOTA EN .contenido > div:first-child*/
+/*-- Imagenes del contenedor de la onda --*/
+#contenedor-onda .contenido > div:last-child {
+    padding: 1em;
+
+    /*MUY IMPORTANTE PONER position: relative en este contenedor
+    padre para que funcione el position absolute de las 
+    imágenes hijas funcione (ver dos notas *[C]*)
+    Véase https://stackoverflow.com/questions/2027657/overlapping-elements-in-css*/
+    position: relative; 
+}
+
+/*posicionamos imagen del móvil de forma absoluta*/
+#contenedor-onda .contenido div:last-child img:first-child {
+    position: absolute; /*[C]*/
+    right: 10em;
+    z-index: 2; /*el teléfono va delante del ordenador*/
+    width: 30%; /*anchura de la imagen del teléfono*/
+    
+}
+
+/*posicionamos imagen del ordenador*/
+#contenedor-onda .contenido div:last-child img:last-child {
+    position:absolute;
+    left: 10em;
+    top: -1em;
+    z-index: 1; /*el ordenador va detrás del telefono*/
+    width: 50%; /*anchura de la imagen del ordenador*/
+}
+
+
+#contenedor-onda .onda-svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto; /* La altura será ajustada automáticamente */
+    z-index: 1; /* Asegura que el SVG quede debajo del contenido */
+}
+
+/*CONSEGUIMOS QUE LAS IMAGENES DEL contenedorOnda reaccionen 
+aumentando su tamaño ligeramente y progresivamente al pasar
+el ratón por encima*/
+#contenedor-onda .contenido div:last-child img {
+    transition: transform var(--tiempoTransicionEstandar) ease-in-out;
+}
+#contenedor-onda .contenido div:last-child img:hover {
+    transform: scale(var(--aumentoTamanyoEstandar));
+}
+
+
+/*DEFINO LOS COLORES DEL TEXTO DE BLACK CODE DEL CONTENEDOR ONDA*/
+#colorBlackTitulo {
+    color: var(--colorGris);
+}
+
+#colorCodeTitulo {
+    color: var(--colorVerdeVue);
+}
+
+
+
+/*------------------------------------------------*/
+/*------------------------------------------------*/
+/*------------TECNOLOGÍAS DE FRONT-END------------*/
+/*------------------------------------------------*/
+/*------------------------------------------------*/
+
+
+
+/*contenedor en blanco que tapará una línea vestigial 
+de la parte inferior del contenedor onda que no se ha podido eliminar.
+Esta línea aparece al hacer zoom y destroza la pulcritud de la web.*/
+#tec-front-end > div:first-child {
+    background-color: white;
+    height: .1em;
+    position: relative; /*ponemos position relative y un top negativo para tapar la linea vestigial*/
+    top: -.07em;
+}
+
+/*PRIMER gradiente de parte frontend, 
+ de blanco a azul: solo fondo*/
+#tec-front-end > div:nth-child(2) {
+    height: 40em; /* ALTURA DEL PRIMER GRADIENT DE AZUL A NEGRO */
+    background: linear-gradient(to bottom, var(--blancoGradiente), var(--azulClaroGradiente)); /* Primer gradiente */
+}
+
+/*SEGUNDO gradiente de parte frontend,
+  de azul a negro: solo fondo*/
+#tec-front-end > div:nth-child(3) {
+    height: 40em; /* ALTURA DEL SEGON GRADIENT BLAU A NEGRE */
+    background: linear-gradient(to bottom, var(--azulClaroGradiente), var(--azulOscuroGradiente)); /* Primer gradiente */
+}
+
+/*Contenedor con el texto del frontend y sus tres cards.
+se superpondrá a los fondos de gradiente blanco a azul y azul a negro
+que conforman los dos divs first i 2nd child*/
+#tec-front-end > div:last-child {
+    position: absolute; /* POSICIÓN ABSOLUTA EN RELACION A #tec-front-end. SI USÁSEMOS RELATIVE APARECE UN TROZO BLANCO DEBAJO */
+    top: 50em;          /*CON ESTO SUPERPONEMOS A LA ZONA DONDE QUEREMOS (30em + 20em de la altura de los otros dos divs sin texto solo con gradiente)*/
+    left: 0;
+    right: 0;
+    z-index: 1; /*USO z-index:1 porque si no, al hacer ZOOM el contenedor onda tapa el texto front-end, */
+}
+
+
+/*CONTENIDOR DE "Frontend: te llevamos las últimas tecnologías[...]"*/
+#tec-front-end section:first-child {
+    max-width: var(--MaximaAnchuraTextosEncabezados); /*Limitamos ancho de los titulos */
+    margin: 0 auto;
+   
+}
+
+/*Contenedor de las cards de la sección tecnologias front-end
+  (CON GRID!)*/
+#tec-front-end section:last-child {
+    padding-top: 3.5em;
+    max-width: var(--MaximaAnchuraCardsFrontEnd);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;     /*MANTENGO EL TEXTO CENTRADO DENTRO DE CADA CARD*/
+    justify-items: center;  /* CENTRO LAS 3 CARDS HORIZONTALMENTE*/
+    
+}
+
+/*Esta es la clase con la que definimos 
+el estilo de cada card del frontend*/
+#tec-front-end .cartaFrontEnd {
+    width: 380px; /* Hemos optado para definir las cards con ancho fijo por más control */
+    aspect-ratio: 1/1.618; /* Proporción aurea --> 1:618 (ancho:alto) */
+    background-color: var(--grisTransparenteCard); /* Color de fondo, por ejemplo u ngris con transparencia */
+    border-radius: 1em;
+    padding: 60px; /*damos espacio entre borde card y su contenido. Con esto tambien empequeñecemos anchura del text e imagenes*/
+    box-sizing: border-box; /* Para asegurarse de que el padding no afecte el tamaño */
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.25);
+
+    transition: box-shadow var(--tiempoTransicionEstandar) ease-in-out; /*para el hover de cada carta*/
+}
+
+/*hover de cada carta o card del frontend: sombra más oscura*/
+#tec-front-end .cartaFrontEnd:hover {box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.5);}
+
+
+/*Tamaño imagen react*/
+#tec-front-end .cartaFrontEnd:first-child img {width: 100%;}
+
+/*Tamaño imagen angular*/
+#tec-front-end .cartaFrontEnd:nth-child(2) img {width: 100%;}
+
+/*Tamaño imagen Vue y un margin específico para
+ compensar diferencias en tamaño*/
+#tec-front-end .cartaFrontEnd:last-child img {
+    width: 85%;
+    margin-top: .5em; 
+}
+
+/*PARA LOS HOVER DE LAS IMÁGENES DE LAS CARTAS DE FRONTEND*/
+#tec-front-end .cartaFrontEnd img {transition: transform var(--tiempoTransicionEstandar) ease-in-out; /*para el hover*/}
+#tec-front-end .cartaFrontEnd img:hover {transform: scale(var(--aumentoTamanyoEstandar));} /*hover de imagen vue, aumenta de tamaño al pasar por encima*/
+
+
+/*Añadimos un padding a todos por igual 
+para conseguir que bajen las imágenes*/
+#tec-front-end .cartaFrontEnd img {
+    padding-top: .3em;
+}
+
+/*definimos los barrafos de las cards a color blanco y 
+con padding top que lo separa de la imagen superior*/
+#tec-front-end .cartaFrontEnd p {
+    font-size: 1.25em;
+    color: white; /*POR DEFECTO ES BLANCO. ENFATIZAMOS QUE LO ES.*/
+    padding-top: 3em;
+}
+
+/*hacemos un fine tuning de la posicion de los dos párrafos
+de react y vue, respectivamente, que no quedan suficientemente
+ bien centrados */
+#tec-front-end .cartaFrontEnd:first-child p {margin-top:.5em;}
+#tec-front-end .cartaFrontEnd:last-child p {margin-top:1.2em;}
+
+
+
+
+/*------------------------------------------------*/
+/*------------------------------------------------*/
+/*------------TECNOLOGÍAS DE BACK-END-------------*/
+/*------------------------------------------------*/
+/*------------------------------------------------*/
+
+
+
+
+/* Sección principal */
+#tec-back-end {
+    background: linear-gradient(to bottom, var(--azulOscuroGradiente), var(--negroGradiente)); /* GRADIENTE YA ESTA HECHO BIEN, NO TOCAR */
+    margin: 0 auto;
+    padding-bottom: 150px;  /* Agregamos espacio al final para separar de otros elementos */
+    color: white;    
+} 
+
+.backend-head{    
+    margin: 0 auto;/* Centramos el contenedor horizontalmente */
+    max-width: var(--MaximaAnchuraTextosEncabezados);/* Limitamos el ancho para mejorar la legibilidad */
+     padding: 3em 0;/* Espaciado vertical arriba y abajo para separación visual */
+
+}
+/* Contenido backend */
+.backend-content{
+    padding-top: 3.5em;/* Espacio superior para separar del título */
+    max-width: var(--MaximaAnchuraCardsBackEnd);/* Define el ancho máximo del grid */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;  /* Centra cada card dentro de su área de grid */    
+    gap: 60px; /* Espacio entre las cards */
+}
+/* Estilo cartas*/
+.backend-card {
+    background-color: var(--grisTransparenteCard); /* Color de fondo, gris con transparencia definido en estilo general*/
+    border-radius: 1em; /* Bordes redondeados, mismo en todo el documento */
+    padding: 60px;
+    text-align:center;
+    box-sizing: border-box; /* Aseguramos que el padding no afecte el tamaño */
+    width: 420px;/* Ancho fijo de la card */
+    height: 520px;   /* Altoo fijo de la card */
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);/*sombreado interior */
+    
+    
+    transition: box-shadow var(--tiempoTransicionEstandar) ease-in-out;
+}
+/*hover de cada carta o card del backend: sombra más oscura*/
+.backend-card:hover {
+    box-shadow: inset 0px 0px 15px rgba(192, 192, 192, 0.4);
+}
+/*Hover imagenes cartas backend*/
+.backend-card img {
+    transition: transform var(--tiempoTransicionEstandar) ease-in-out; /*para el hover*/
+}
+
+.backend-card img:hover {
+    transform: scale(var(--aumentoTamanyoEstandar));/*aumenta de tamaño al pasar por encima*/
+} 
+
+/* Estilo general de imágenes en cards */
+.backend-card img{
+    width: 90%;
+    margin-top: 0.4em;
+    padding-top: 0.3em;
+}
+/*Tamaño imagen django*/
+#tec-back-end .backend-card:nth-child(3) img{
+    width: 100%;
+    margin-top: 1.4em;    
+}
+/*Tamaño imagen laravel*/
+#tec-back-end .backend-card:last-child img{
+    width: 110%;        
+}
+/* Estilos para los párrafos dentro de .backend-content */
+.backend-content p{
+    font-size: 1.25em;
+    margin-top: 3.3em;
+}
+/*Ajuste posicion texto carta Django*/
+#tec-back-end .backend-card:nth-child(3) p{
+    margin-top: 8.5em;    
+}
+/*Ajuste posicion texto carta Laravel*/
+#tec-back-end .backend-card:last-child p{
+    margin-top: 6.3em;    
+}
+
+
+
+
+
+
+
+/*------------------------------------------------*/
+/*------------------------------------------------*/
+/*---------TECNOLOGÍAS DE IA Y BIG DATA-----------*/
+/*------------------------------------------------*/
+/*------------------------------------------------*/
+
+
+
+
+
+
+/*contendrá solo fondo con gradiente de 
+transició de sección back-end a IA*/
+#IA-bigData > div:first-child {
+    background: linear-gradient(to bottom, var(--negroGradiente), var(--doradoGradiente)); /* Primer gradiente */
+    height: 813px; /*no usamos ems porque es mas simple copiar la altura de figma en este caso*/
+} 
+
+/*solo fondo con gradiente*/
+#IA-bigData > div:nth-child(2) {
+    background: linear-gradient(to bottom, var(--doradoGradiente), var(--blancoAmarillento)); /* Primer gradiente */
+    height: 421px;
+} 
+
+/*solo fondo con gradiente*/
+#IA-bigData > div:nth-child(3) {
+    background-color: var(--blancoAmarillento); 
+    height: 1145px;
+} 
+
+/*solo fondo con gradiente*/
+#IA-bigData > div:nth-child(4) {
+    background: linear-gradient(to bottom, var(--blancoAmarillento), var(--doradoGradiente)); /* Primer gradiente */
+    height: 421px;
+} 
+
+/*solo fondo con gradiente*/
+#IA-bigData > div:nth-child(5) {
+    background: linear-gradient(to bottom, var(--doradoGradiente), var(--negroGradiente)); /* Primer gradiente */
+    height: 497px;
+} 
+
+/*texto e imágenes de las sección iaBigData
+que se superpondrán a fondos anteriores*/
+#IA-bigData > div:nth-child(6) {
+    position: relative; /*posiciono relativo al final del div superior (el quinto hijo). Indispoensable para que el pposicionamiento absoluto de los iconos de ia (imagenes hijas) tengan la referencia del relativo.*/
+    margin: 0 auto; /*centramos*/
+    color: black;
+    bottom: 144em; /*contando desde abajo subo para posicionar el texto justo en el punto deseado para que quede como en figma*/
+    max-width: var(--MaximaAnchuraTextosEncabezados);
+    height: 0; /*altura en cero para que no quede recuadro blanco vestigial, al mover todo el bloque arriba*/
+    z-index: 1;
+}
+
+
+
+/* --------------------------------------- */
+/* Posicionamiento individual de cada logo */
+/* --------------------------------------- */
+
+/*[1]: Definimos posición absolute en relación al contenedor relativo dentro 
+de donde está el icono (está dentro del #IA-bigData > div:nth-child(6))*/
+
+/*[2]: definimos translación mediante transform ajustando el centro a coordenadas --X e --Y de las
+ variables globales (que es el centro del círculo, que definimos como el 0,0 
+ desde el cual construimos el posicionamiento de los iconos). Desde esa posición hacemos ajustes
+ para posicionarlo alrededor del círculo (para todos los iconos "satélite" a python) o para ajustar 
+ variaciones de posicion involuntarias producidas al cambiar width. Usar variables globales nos 
+ permitirá mover todos los iconos de la sección IA alrededor del icono de python -usaremos la misma
+  linea modificando las*/
+
+/*[3]: Aqui no nos sirve box-shadow, debemos usar la propiedad filter para que envuelva
+ la imagen vectorial, no la caja que la contiene*/
+
+/* logo Python */
+#pythonLanding {
+    position: absolute; /*[1]:*/
+    transform: translate(var(--X), var(--Y));/*[2]: python centro del círculo*/
+    width: 20em; 
+    filter: drop-shadow(7px 6px 2px rgba(0, 0, 0, 0.25)); /*[3]*/
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
+}
+
+#pythonLanding:hover {filter: drop-shadow(7px 10px 2px rgba(0, 0, 0, 0.25));}
+
+
+/* logo TensorFlow (sombra hacia abajo) */
+#tensorflowLanding {
+    position: absolute;
+    width: 19em;
+    transform: translate(calc(var(--X) + .5em), calc(var(--Y) + 34em)); /*logo tensorflow se posiciona sumando .5em a --X y 34em a --Y*/
+    filter: drop-shadow(0px 10px 2px rgba(0, 0, 0, 0.25)); 
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
+}
+
+#tensorflowLanding:hover {filter: drop-shadow(0px 14px 2px rgba(0, 0, 0, 0.25));}
+
+
+/* Scikit-Learn (sombra hacia arriba) */
+#sklearnLanding {
+    position: absolute;
+    width: 15em;
+    transform: translate(calc(var(--X) + 2em), calc(var(--Y) - 23em));
+    filter: drop-shadow(0px -7px 2px rgba(0, 0, 0, 0.25)); 
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
+}
+
+#sklearnLanding:hover {filter: drop-shadow(0px -10px 2px rgba(0, 0, 0, 0.25));}
+
+
+/* Seaborn (sombra hacia arriba a la izquierda) */
+#seabornLanding {
+    position: absolute;
+    width: 20em;
+    transform: translate(calc(var(--X) - 25em), calc(var(--Y) - 11em));
+    filter: drop-shadow(-7px -7px 2px rgba(0, 0, 0, 0.25)); 
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
+}
+
+#seabornLanding:hover {filter: drop-shadow(-10px -10px 2px rgba(0, 0, 0, 0.25));}
+
+
+/* PySpark (sombra hacia la derecha) */
+#pysparkLanding {
+    position: absolute;
+    width: 17em;
+    transform: translate(calc(var(--X) + 38.5em), calc(var(--Y) + 5.5em));
+    filter: drop-shadow(10px 0px 2px rgba(0, 0, 0, 0.25)); 
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
+}
+
+#pysparkLanding:hover {filter: drop-shadow(14px 0px 2px rgba(0, 0, 0, 0.25));}
+
+
+/* Plotly (sombra hacia arriba a la derecha) */
+#plotlyLanding {
+    position: absolute;
+    width: 23em;
+    transform: translate(calc(var(--X) + 26em), calc(var(--Y) - 13em));
+    filter: drop-shadow(7px -7px 2px rgba(0, 0, 0, 0.25)); 
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
+}
+
+#plotlyLanding:hover {filter: drop-shadow(10px -10px 2px rgba(0, 0, 0, 0.25));}
+
+
+/* Pandas (sombra hacia abajo a la derecha) */
+#pandasLanding {
+    position: absolute;
+    width: 16em;
+    transform: translate(calc(var(--X) + 29em), calc(var(--Y) + 25.5em));
+    filter: drop-shadow(7px 7px 2px rgba(0, 0, 0, 0.25)); 
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
+}
+
+#pandasLanding:hover {filter: drop-shadow(10px 10px 2px rgba(0, 0, 0, 0.25));}
+
+
+/* OpenCV (sombra hacia la izquierda) */
+#opencvLanding {
+    position: absolute;
+    width: 8.5em;
+    transform: translate(calc(var(--X) - 30.5em), calc(var(--Y) + 5em));
+    filter: drop-shadow(-7px 0px 2px rgba(0, 0, 0, 0.25)); 
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
+}
+
+#opencvLanding:hover {filter: drop-shadow(-10px 0px 2px rgba(0, 0, 0, 0.25));}
+
+
+/* OpenAI (sombra hacia abajo a la izquierda) */
+#openaiLanding {
+    position: absolute;
+    width: 10.5em;
+    transform: translate(calc(var(--X) - 20.25em), calc(var(--Y) + 26.5em));
+    filter: drop-shadow(-7px 7px 2px rgba(0, 0, 0, 0.25)); 
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
+}
+
+#openaiLanding:hover {filter: drop-shadow(-10px 10px 2px rgba(0, 0, 0, 0.25));}
+
+
+
+/*------------------------------------------------*/
+/*------------------------------------------------*/
+/*--------------------FOOTER----------------------*/
+/*------------------------------------------------*/
+/*------------------------------------------------*/
+
+
+
+
+footer {
+	background-color: var(--negroFooter);
+	color: white;
+	padding: 1.2em 0;
+    
+}
+/* Estilo del contenedor principal del footer que organiza las columnas */
+.footer-content { 
+	display: flex;
+	justify-content: space-evenly; /* centrado columnas*/
+	align-items: stretch;/* Estira las columnas para que tengan la misma altura */
+	margin: 0 auto; /* Centra el contenido horizontalmente dentro del contenedor */
+	padding: 0 20px;
+}
+/* Estilo para las columnas dentro del footer */
+.footer-column {
+	text-align: center;
+    display: flex;
+    flex-direction: column;/* Organiza los elementos hijos en columnas */
+    padding: 0 20px;    
+}
+/* Estilo para los títulos dentro de las columnas */
+footer h1 {
+	font-size: 1.5em;
+	margin-bottom: 20px;
+    font-weight:500; /* Establece el peso de la fuente semi-negrita */
+}
+/* Estilo para las listas dentro del footer */
+footer ul {
+	list-style: none; /* Elimina los puntos de lista de los elementos <ul> */
+}
+/* Estilo para los elementos de lista dentro del footer */
+footer li {
+	margin-bottom: 12px;
+    font-size: 20px; 
+    font-weight: 300;   
+}
+/* Estilo para los enlaces dentro del footer */
+footer a {
+	color: white;
+	text-decoration: none;
+	transition: text-decoration var(--tiempoTransicionEstandar) ease,
+				text-shadow var(--tiempoTransicionEstandar) ease; 
+}
+/*añadido efecto hover*/
+footer a:hover {	
+	text-decoration: underline;
+	text-underline-offset: 4px; /*desplazamiento del subrayado*/
+	text-shadow: 0px 0px 9px rgba(238, 238, 238, 0.6);
+	color: var(--colorBarraNavegacionHover);
+}
+/* Estilo para las barras verticales */
+.footer-vertical-bar {
+    width: 3px; /* Grosor de la barra */
+    height: 170px; /* Altura de la barra */
+    background-color: rgb(238, 238, 238); /* Color de la barra */
+    margin-bottom: 1%;/* Aplica un margen inferior del 1% para separarla del siguiente contenido */
+}
+/* Estilo para la línea horizontal que separa el contenido del copyright */
+hr {
+	margin: 0 12%;/* Margenes laterales para centrar la línea */
+    margin-bottom: 0.8%;/*desplazamos el texto copyright hacia abajo*/
+}
+/* Estilo para el texto de copyright */
+#copyright {
+    margin-top: 5px;
+	text-align: center;
+	font-size: 18px;
+	opacity: 0.8;/* Establece la opacidad del texto más transparente */
+}
+
+/*Evitamos que el contenedor de la footer 
+pueda expandirse sin límite horizontalmente
+ al hacer el zoom pequeño. Lo acotamos a una anchura máxima
+ ligeramente inferior a la de la anchura máxima de las cards de las 
+ tecnologias frontend*/
+footer > div {
+	max-width: var(--MaximaAnchuraFooter);
+}
