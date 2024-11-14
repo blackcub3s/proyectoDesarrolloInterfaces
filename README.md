@@ -19,7 +19,7 @@ Ambos somos estudiantes del **IES Abastos** y hemos pensado que sería buena ide
 
 - [index.html](index.html): Contendrá una barra de navegación, varios section (uno dedicado a cada temática explicada en la web: frontend, backend, bigData, etc) y una footer.
 
-- [mockupFigma](contiene la maquetación de la web, hecha con Figma, exportado cada lienzo en .png).
+- [mockupFigma](/mockupFigma/): contiene la maquetación de la web, hecha con Figma, exportando cada lienzo en .png.
 
 ## Memoria del proyecto
 
