@@ -30,8 +30,25 @@
     text-align:center;
     box-sizing: border-box; /* Aseguramos que el padding no afecte el tamaño */
     width: 420px;/* Ancho fijo de la card */
-    height: 520px;   /* Altoo fijo de la card */  
+    height: 520px;   /* Altoo fijo de la card */
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);/*sombreado interior */
+    
+    
+    transition: box-shadow var(--tiempoTransicionEstandar) ease-in-out;
 }
+/*hover de cada carta o card del backend: sombra más oscura*/
+.backend-card:hover {
+    box-shadow: inset 0px 0px 15px rgba(192, 192, 192, 0.4);
+}
+/*Hover imagenes cartas backend*/
+.backend-card img {
+    transition: transform var(--tiempoTransicionEstandar) ease-in-out; /*para el hover*/
+}
+
+.backend-card img:hover {
+    transform: scale(var(--aumentoTamanyoEstandar));/*aumenta de tamaño al pasar por encima*/
+} 
+
 /* Estilo general de imágenes en cards */
 .backend-card img{
     width: 90%;
