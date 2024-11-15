@@ -9,6 +9,12 @@ Este proyecto ha sido desarrollado por:
 
 Ambos somos estudiantes del **IES Abastos** y hemos pensado que sería buena idea desarrollar una página para lo que podría ser un negocio de consultoría IT o de desarrollo de software orientado full-stack y ciencia de datos.
 
+## Descargar proyecto en local:
+
+```
+git clone https://github.com/blackcub3s/proyectoDesarrolloInterfaces.git
+```
+
 ## Estructura carpetas y archivos de proyecto
 
 - [editsGimp](/_edits_gimp_/): Va a contener las distintas ediciones que hagamos de iconos creados o recopilados. A menudo consistirán en borrar el canal alpha para permitir transparencias. Ser hará una carpeta por cada edición fotográfica, con el archivo correspondiente del software de edición usado (gimp, principalmente).
