@@ -29,4 +29,4 @@ git clone https://github.com/blackcub3s/proyectoDesarrolloInterfaces.git
 
 ## Memoria del proyecto
 
-Leer la memoria del proyecto es importante para entender su creación. Se adjuntará próximamente.
+Podéis leer la memoria de este proyecto [aquí](/memoriaDIWSantiagoSJorgeM.pdf).
