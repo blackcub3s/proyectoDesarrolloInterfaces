@@ -1,0 +1,18 @@
+:root {
+    /*Estos colores hay que añadirlos dentro del root en
+    estilos.css una vez terminada la página interna (PI) de front end.*/
+
+    /*DOS COLORES EXTRA PARA EL DOBLE GRADIENTE LINEAL
+    DE LA SUBPÁGINA INTERNA FRONTEND*/
+    --PI_colorMedioGradienteAZULOSCUROFrontEnd: #002672;
+    --PI_colorMedioGradienteAZULCLAROFrontEnd: #697DFF;
+ 
+    /*COLORES PARA LAS CARDS DE LA PÁGINA INTERNA 
+    DEL FRONTEND*/
+    --PI_colorInicioGradienteCARDSVUE: #E7DFFF; /*PI significa Página Interna (una página que no es la landing page)*/
+    --PI_colorFinGradienteCardsPaginaInternaFrontEnd: #16005D;
+    --g: #C0BABA4C; /*color original figma C0BABA al que hemos aplicado opacidad del 30%*/
+    --r: #DB8C8C4C; /*color original figma DB8C8C al que se le ha aplicado opacidad del 30%*/
+
+    --MaximaAnchuraCardsPIfrontend: 1025px;
+}

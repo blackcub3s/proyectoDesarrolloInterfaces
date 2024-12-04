@@ -7,27 +7,11 @@
 
 
 
-
-
-
-:root {
-    /*Estos colores hay que añadirlos dentro del root en
-    estilos.css una vez terminada la página interna (PI) de front end.*/
-
-    /*DOS COLORES EXTRA PARA EL DOBLE GRADIENTE LINEAL
-    DE LA SUBPÁGINA INTERNA FRONTEND*/
-    --PI_colorMedioGradienteAZULOSCUROFrontEnd: #002672;
-    --PI_colorMedioGradienteAZULCLAROFrontEnd: #697DFF;
- 
-    /*COLORES PARA LAS CARDS DE LA PÁGINA INTERNA 
-    DEL FRONTEND*/
-    --PI_colorInicioGradienteCARDSVUE: #E7DFFF; /*PI significa Página Interna (una página que no es la landing page)*/
-    --PI_colorFinGradienteCardsPaginaInternaFrontEnd: #16005D;
-}
-
-
-.PItituloFront {font-size: 1.6rem; margin-top: 1rem;}     
-.PIsubTituloFront {font-size: 1rem; margin-top: 1rem;} 
+.PItituloFront {font-size: 2.1rem; margin-top: 1rem;}     
+.PIsubTituloFront {
+    margin-top: 2rem;
+    font-size: 1.7rem; 
+} 
 
 /*######################################
   # SECCIÓN 1 PÁGINA INTERNA FRONTEND: # 
@@ -58,5 +42,76 @@
 
 /*###########################################
   # SECCIÓN 2 PÁGINA INTERNA (PI) FRONTEND: # 
-  #       presentación front end            #
+  #       caracteristicas de los            #
+  #        frameworks mostradas con cards   #                              #
   ###########################################*/
+
+  #PIcaracteristicasFrameworksFront {
+    width: 100%;
+    max-width: var(--MaximaAnchuraCardsPIfrontend);
+    margin: 0 auto; /* Para centrar */
+}
+
+#PIcaracteristicasFrameworksFront > div > h1 {
+    padding-top: 2.5em;
+    padding-left: 1em;
+}
+
+#PIcaracteristicasFrameworksFront > div > p {
+    padding-left: 5.3em;
+    padding-right: 5em;
+}
+
+
+
+
+/*Contenedor de las cards de la sección de características de la página interna de frontend
+  (CON GRID!)*/
+  #PIcaracteristicasFrameworksFront div:last-child {
+    padding-top: 3.5em;
+    max-width: var(--MaximaAnchuraCardsPIfrontend);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;     /*MANTENGO EL TEXTO CENTRADO DENTRO DE CADA CARD*/
+    justify-items: center;  /* CENTRO LAS 3 CARDS HORIZONTALMENTE*/
+}
+
+
+/*Esta es la clase con la que definimos 
+el estilo de cada card de frontend PI*/
+#PIcaracteristicasFrameworksFront .cartaFrontEndPI {
+    width: 300px; /* Hemos optado para definir las cards con ancho fijo por más control */
+    aspect-ratio: 1/1.618; /* Proporción aurea --> 1:618 (ancho:alto) */
+    border-radius: 1em;
+    padding: .2em 2.4em 1em 2.4em; /*damos espacio entre borde card y su contenido. Con esto tambien empequeñecemos anchura del text e imagenes*/
+    box-sizing: border-box; /* Para asegurarse de que el padding no afecte el tamaño */
+    box-shadow: 0px 5px 4px rgba(143, 141, 141, 0.3); 
+    background: linear-gradient(to bottom, var(--g), var(--r)); /* GRADIENTE YA ESTA HECHO BIEN, NO TOCAR */
+    transition: box-shadow var(--tiempoTransicionEstandar) ease-in-out; /*para el hover de cada carta*/
+}
+
+/*ESTILO DEL H1*/
+
+    /*QUEDA DEFIIDO EN CLASE .cartaFrontEndPI*/
+
+
+/*ESTILO DE LA IMAGEN DE LA PRIMERA 
+CARD DE CARACTERÍSTICAS*/
+#PIcaracteristicasFrameworksFront .cartaFrontEndPI:first-child > img {width: 80%; padding-top: .5em;}
+#PIcaracteristicasFrameworksFront .cartaFrontEndPI:nth-child(2) > img {
+    width: 60%;
+}
+
+
+/*ESTILO DEL H2 DE TODAS Y CADA UNA DE LAS
+ CARDS DE CARACTERÍSTICAS DE PÁGINA INTERNA FRONT-END*/
+#PIcaracteristicasFrameworksFront .cartaFrontEndPI > h2 {
+    font-size: 1.32em;
+    text-align: left;
+}
+
+#PIcaracteristicasFrameworksFront .roig {color: red;}
+
+
+

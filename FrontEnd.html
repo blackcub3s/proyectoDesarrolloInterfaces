@@ -14,6 +14,7 @@
     <!--cargamos los estilos que hemos definido nosotros-->
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/internaFrontEnd.css">
+    <link rel="styleSheet" href="css/estilsGeneralsInternaFront.css">
 </head>
 <body>
 
@@ -38,7 +39,9 @@
     </header>
 
     
-    <!-- SECCIÓN 1 (S1): PIpresentacionFrontEnd: texto de presentación con gradiente lineal simple -->
+    <!-- SECCIÓN 1 (S1): PIpresentacionFrontEnd:
+      texto de presentación con gradiente lineal
+       simple -->
     <section id="PIpresentacionFrontEnd">
         <!--doble gradiente lineal (mejora en la lógica de programación vs la landing: UN SOLO DIV)-->
         <div>
@@ -47,22 +50,37 @@
         <div></div> <!--linea roja de separación-->
     </section> 
 
-    <!--SECCIÓN 2 (S2): características de los frameworks de front -->
-    <section id = "PIcaraceristicasFrameworksFront">
-        <!--titulo y subtítulo de la sección-->
+    <!--SECCIÓN 2 (S2): características de los 
+    frameworks de front -->
+    <section id="PIcaracteristicasFrameworksFront">
+        <!--div:first-child: 
+              titulo y subtítulo de la sección-->
         <div>
             <h1 class="PItituloFront">¿En qué desarrollamos y por qué?</h1>
-            <h2 class="PIsubTituloFront">Desarrollamos el cliente en vue, angular y react. Son los tres 
-                frameworks  de front-end más codiciados y aceptados en el 
-                mercado, y te pueden proporcionar las siguentes ventajas:</h2>
+            <p class="PIsubTituloFront"><i>Desarrollamos el cliente en vue, angular y react. Son los tres 
+                frameworks  de front-end más codiciados y aceptados en el
+                mercado, y te pueden proporcionar las siguentes ventajas:</i></p>
         </div>
 
-        <!--cards de características compartidas 
-        entre los frameworks-->
+        <!--div:last-child:   
+            cards de características compartidas 
+            entre los frameworks-->
         <div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div class="cartaFrontEndPI">
+                <h1 class = "PIsubTituloFront">Aplicaciones escalables por componentes</h1>
+                <img src="img/internaFrontEnd/escalaCroppedDefinitiu.png" alt="imagenNoCargo">
+                <h2>Consigue hacer crecer tu aplicación web de
+                    forma <span class="roig">modular</span> y segura. Idóneos para aplicaciones grandes o que tienen previsión de crecer rápidamente.</h2>
+            </div>
+            <div class="cartaFrontEndPI">
+                <h1 class = "PIsubTituloFront">Interfaces dinámicas y reactivas</h1>
+                <img src="img/internaFrontEnd/llampDefinitiu.png" alt="imagenNoCargo">
+                <h2>Actualizan automática- mente el cliente de las aplicaciones web en 
+                    respuesta a cambios de datos <span class="roig">sin recargar toda la
+                     página</span>, mejorando la velocidad de carga y la experiencia 
+                     de usuario. </h2>
+            </div>
+            <div class="cartaFrontEndPI"></div>
         </div>
     </section>
 
