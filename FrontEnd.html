@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>black code consulting</title>
+
+    <!--Cargamos la fuente roboto de google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!--Cargamos el CSS de animate.style para hacer animaciones, p. ej menu desplegable de la navbar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!--cargamos los estilos que hemos definido nosotros-->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/internaFrontEnd.css">
+</head>
+<body>
+
+    <!-- SECCIÓN 0 (S0) -- HEADER: barra de navegación-->
+    <header>
+        <nav>
+            <!-- Aplicamos estilos para la barra de navegación -crucial añadir elemento span para poder tratar la imagen aparte -->
+            <ul>
+                <li>
+                    <span>Servicios</span> <img src="img/flechaDesplegablePaint.png" alt="v">
+                    <ul>
+                        <li><a href="#">Front-end</a></li>
+                        <li><a href="#">Back-end</a></li>
+                        <li><a href="#">IA & BigData</a></li>
+                    </ul>
+                </li>
+                <li><span><a href="#">Quiénes somos</a></span></li>
+                <li><span><a href="#">Incorpórate</a></span></li>
+                <li><span><a href="#">Contacto</a></span></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <!-- SECCIÓN 1 (S1): PIpresentacionFrontEnd: texto de presentación con gradiente lineal simple -->
+    <section id="PIpresentacionFrontEnd">
+        <p>to do presentacion</p>
+    </section> 
+
+
+
+    <!-- SECCIÓN 2 (S2): PIcardsDesarrolloFrontEnd -->
+    <section id="PIdiferenciasFrameworksFront">
+
+        <!-- los tres hijos de este div se mostrarán 
+         superpuestos (Solo uno se mostrará a la vez)-->
+        <div>
+            <!-- SOBREPUESTO 1: parte vue (un div para swiper y otro div para las cards)-->
+            <article>vue</article> 
+
+            <!-- SOBREPUESTO 2: parte react (un div para swiper y otro div para las cards) -->
+            <article>react</article>
+
+            <!-- SOBREPUESTO 3: parte angular (div para swiper y div para las cards) -->
+            <article>angular</article>
+        </div>
+
+        <!--Este div mostrara la misma tabla de 
+        diferencias entre los tres frameworks siempre-->
+        <div>
+            <div></div> <!--contenidorGradient blanco a roigClar -->
+            <div></div> <!--contenidorGradient roigClar a roig fosc grisos-->
+            <div></div> <!--contenidorGradient roigFosc grisos a negre-->
+            <div></div> <!-- poner aqui la tabla-->
+        </div>
+    </section>
+    
+    
+
+    <!-- SECCIÓN 5 (S5): footer -->   
+    <footer>
+        <div class="footer-content">  <!-- Contenedor footer-->
+            <div class="footer-column">
+                <h1>Servicios</h1>
+                <ul> 
+                    <li><a href="#">Front-end Development</a></li>
+                    <li><a href="#">Back-end Development</a></li>
+                    <li><a href="#">IA & Big Data</a></li>
+                </ul>                
+            </div>
+            <!-- Barra vertical entre columnas -->
+            <div class="footer-vertical-bar"></div>
+
+            <div class="footer-column">
+                <h1>Empresa</h1>
+                <ul>
+                    <li><a href="#">Quiénes somos</a></li>
+                    <li><a href="#">Incorpórate</a></li>
+                    
+                </ul>
+            </div>
+            <!-- Barra vertical entre columnas -->
+            <div class="footer-vertical-bar"></div>
+
+            <div class="footer-column">
+                <h1>Contacto</h1>
+                <ul>
+                    <li><a href="#">info@blackcodeconsulting.com</a></li>
+                    <li><a href="#"><img src="img/linkedin_logoDefinitiu.jpg" width="45" height="45" alt="LinkedIn"></a></li>
+                </ul>
+            </div>
+        </div>    
+        <hr>
+        <p id="copyright"><i>&copy; 2024 | Todos los derechos reservados</i></p>    
+    </footer>
+</body>
+</html>

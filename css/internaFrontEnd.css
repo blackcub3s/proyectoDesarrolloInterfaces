@@ -1,0 +1,6 @@
+:root {
+    /*Estos colores hay que añadirlos dentro de 
+    estilos.css una vez terminada la página interna (PI) de front end.*/
+    --PI_colorInicioGradienteCARDSVUE: #E7DFFF; /*PI significa Página Interna (una página que no es la landing page)*/
+    --PI_colorFinGradienteCardsPaginaInternaFrontEnd: #16005D;
+}
