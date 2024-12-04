@@ -1,6 +1,62 @@
+
+/*################################################*/
+/*------------------------------------------------*/
+/*---------PÁGINA INTERNA: FRONTEND.html----------*/
+/*------------------------------------------------*/
+/*################################################*/
+
+
+
+
+
+
 :root {
-    /*Estos colores hay que añadirlos dentro de 
+    /*Estos colores hay que añadirlos dentro del root en
     estilos.css una vez terminada la página interna (PI) de front end.*/
+
+    /*DOS COLORES EXTRA PARA EL DOBLE GRADIENTE LINEAL
+    DE LA SUBPÁGINA INTERNA FRONTEND*/
+    --PI_colorMedioGradienteAZULOSCUROFrontEnd: #002672;
+    --PI_colorMedioGradienteAZULCLAROFrontEnd: #697DFF;
+ 
+    /*COLORES PARA LAS CARDS DE LA PÁGINA INTERNA 
+    DEL FRONTEND*/
     --PI_colorInicioGradienteCARDSVUE: #E7DFFF; /*PI significa Página Interna (una página que no es la landing page)*/
     --PI_colorFinGradienteCardsPaginaInternaFrontEnd: #16005D;
 }
+
+
+.PItituloFront {font-size: 1.6rem; margin-top: 1rem;}     
+.PIsubTituloFront {font-size: 1rem; margin-top: 1rem;} 
+
+/*######################################
+  # SECCIÓN 1 PÁGINA INTERNA FRONTEND: # 
+  #       presentación front end       #
+  ######################################*/
+  
+/*Altura del contenedor con doble gradiente
+ negro a azul claro*/
+#PIpresentacionFrontEnd > div:first-child {
+    background: linear-gradient(to bottom, var(--colorBarraNavegacion) 0%, var(--PI_colorMedioGradienteAZULOSCUROFrontEnd) 50%, var(--PI_colorMedioGradienteAZULCLAROFrontEnd) 100%);
+    height: 27.5em;
+    color: white;
+    text-align: center;
+}
+
+/*título de la presentación*/
+#PIpresentacionFrontEnd > div:first-child h1 {
+    position: relative;
+    top: 40%;
+    font-size: 2.7em;
+}
+
+/*línea roja*/
+#PIpresentacionFrontEnd > div:nth-child(2) {
+    height: .9em;
+    background: red;
+}
+
+/*###########################################
+  # SECCIÓN 2 PÁGINA INTERNA (PI) FRONTEND: # 
+  #       presentación front end            #
+  ###########################################*/
