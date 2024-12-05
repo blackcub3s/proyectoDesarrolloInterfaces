@@ -41,54 +41,52 @@
 /*###########################################
   # SECCIÓN 2 PÁGINA INTERNA (PI) FRONTEND: # 
   #       caracteristicas de los            #
-  #        frameworks mostradas con cards   #                              #
+  #        frameworks (título, 
+  #        subtítulo y 3 cards)             #
   ###########################################*/
 
-  #PIcaracteristicasFrameworksFront {
+
+
+/*DEFINIMOS UN ANCHO MÁXIMO PARA ESTA PARTE*/
+#PIcaracteristicasFrameworksFront {
     width: 100%;
     max-width: var(--MaximaAnchuraCardsPIfrontend);
     margin: 0 auto; /* Para centrar */
 }
 
+/*POSICIONO TÍTULO "¿En Qué desarrollamos y por qué?"*/
 #PIcaracteristicasFrameworksFront > div > h1 {
     padding-top: 2.5em;
     padding-left: 1em;
 }
 
+/*POSICIONO SUBTÍTULO "desarrollamos el cliente en vue, 
+angular y react. [...] las siguentes ventajas:"*/
 #PIcaracteristicasFrameworksFront > div > p {
     padding-left: 5.3em;
     padding-right: 5em;
+    padding-top: 1.5em;
 }
 
 
 
 
-/*Contenedor de las cards de la sección de 
-características de la página interna de frontend (CON GRID!)*/
+
+/*DEFINO UN GRID DE TRES COLUMNAS y los estilos 
+para el CONTENEDOR DE LAS CARDS DE CARACTERÍSTICAS DE LOS 
+FRAMEWORKS (página interna de frontend)*/
 #PIcaracteristicasFrameworksFront div:last-child {
     padding-top: 3.5em;
     max-width: var(--MaximaAnchuraCardsPIfrontend);
-    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    text-align: center;     /*MANTENGO EL TEXTO CENTRADO DENTRO DE CADA CARD*/
-    justify-items: center;  /* CENTRO LAS 3 CARDS HORIZONTALMENTE*/
+    grid-template-columns: repeat(3, 1fr); /*defino las 3 columnas con grid*/
+    text-align: center;         /*MANTENGO EL TEXTO CENTRADO DENTRO DE CADA CARD*/
+    justify-items: center;       /* CENTRO LAS 3 CARDS HORIZONTALMENTE*/
 }
 
-/*ESACIO POR ENCIMA DEL TITULO DE CADA CARD EN LAS TRES CARDS
-DE CARACTERÍSTICAS*/
-#PIcaracteristicasFrameworksFront div:last-child div h1 {
-    margin-top: .5em;
-}
-
-#PIcaracteristicasFrameworksFront div:last-child div h2 {
-    font-size: 1.3em;
-}
-
-/*Esta es la clase con la que definimos 
-el estilo de CADA CARD de frontend PI*/
+/*definimos  el estilo de CADA CARD de características 
+de la página interna FrontEnd mediante la clase .cartaFrontEndPI*/
 #PIcaracteristicasFrameworksFront .cartaFrontEndPI {
-
     width: 300px; /* Hemos optado para definir las cards con ancho fijo por más control */
     aspect-ratio: 1/1.618; /* Proporción aurea --> 1:618 (ancho:alto) */
     border-radius: 1em;
@@ -99,65 +97,20 @@ el estilo de CADA CARD de frontend PI*/
     transition: box-shadow var(--tiempoTransicionEstandar) ease-in-out; /*para el hover de cada carta*/
 }
 
+/*DEFINO ESTILOS PARA LOS 
+TEXTOS DE LAS CARDS (USAMOS H1 Y H2):*/
+#PIcaracteristicasFrameworksFront div:last-child article h1 {margin-top: .5em;}
+#PIcaracteristicasFrameworksFront div:last-child article h2 {font-size: 1.3em; text-align: left;}
 
-/*ESTILO DEL SUBTÍTULO: "desarrollamos el cliente en vue..."*/
-#PIcaracteristicasFrameworksFront div:first-child p {
-    margin-top: 1.5em;
-}
-
-/*estilo aplicado a la IMAGEN (ESCALERA)
-de la PRIMERA CARD de características*/
-#PIcaracteristicasFrameworksFront .cartaFrontEndPI:first-child > img {width: 80%; padding-top: .8em; padding-bottom: 1.5em;}
-/*estilo aplicado a la IMAGEN (EL RAYO)
-de la SEGUNDA CARD de características*/
-#PIcaracteristicasFrameworksFront .cartaFrontEndPI:nth-child(2) > img {width: 40%; padding-top: .8em;}
-/*estilo aplicado a la IMAGEN (COMUNIDAD)
-de la TERCERA CARD de características*/
-#PIcaracteristicasFrameworksFront .cartaFrontEndPI:last-child > img {
-    width: 80%;
-    margin: 0 auto; /*centro imagen comunidad*/
-
-    /*CUIDADO PROBLEMAS: hemos tenido que definir un 
-    inline style en la tercera card
-    (linea 86), que es un apaño para que funcione un comportamiento
-    muy extraño.
-    
-    Por motivos que escapan a nuestra comprensión en esta tercera 
-    card no aparece el h1, img y h2 uno encima del otro como las 
-    otras dos cards de características de frameworks front-end. 
-    
-    En lugar de ello al definir solo el width de la img 
-    aparecen h1, img y h2 uno al lado del otro y saliéndose
-    de la card.
-
-    Es un comportamento extraño que escapa nuestra comprensión,
-    y más teniendo en cuenta que las otras dos cards (la del rayo
-    y la del icono de escaleras) salen bien.
-
-    Para evitarlo definimos tres propiedades CSS como
-    inline style, en cuyo caso sí hace caso. Tiene que 
-    existir algun choque de CSS que no hemos encontrado. Este 
-    ese el inlin style definido en la línea 86 de 
-    FrontEnd.html.
-    
-    display: flex;
-    flex-direction: column; 
-    padding-top: .2em;
-    
-    */ 
-}
+/*DEFINO ESTILOS PARA LAS IMÁGENES DE LAS CARDS (elemento img):
+  -- IMAGEN (ESCALERA) ----- PRIMERA CARD de características*/
+#PIcaracteristicasFrameworksFront div:last-child article:first-child > img {width: 80%; padding-top: .6em; padding-bottom: 1.5em;}
+/*-- IMAGEN (RAYO) --------- SEGUNDA CARD de características*/
+#PIcaracteristicasFrameworksFront div:last-child article:nth-child(2) > img {width: 40%; padding-top: .6em;}
+/*-- IMAGEN (COMUNIDAD) ---- TERCERA CARD de características*/
+#PIcaracteristicasFrameworksFront div:last-child article:last-child > img {width: 75%; padding-top: 2em; padding-bottom: 2.4em;}
 
 
-
-
-
-
-/*ESTILO DEL H2 DE TODAS Y CADA UNA DE LAS
- CARDS DE CARACTERÍSTICAS DE PÁGINA INTERNA FRONT-END*/
-#PIcaracteristicasFrameworksFront .cartaFrontEndPI > h2 {
-    font-size: 1.32em;
-    text-align: left;
-}
 
 #PIcaracteristicasFrameworksFront .roig {color: red;}
 
