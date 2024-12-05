@@ -28,6 +28,8 @@
     position: relative;
     top: 40%;
     font-size: 2.7em;
+    animation: fadeIn;  /*ponemos un fundido de entrada al título de la página*/
+    animation-duration: 2s;
 }
 
 /*línea roja*/
@@ -140,27 +142,26 @@ CARDS DEL FRONT-END DE LA LANDING PAGE)*/
 
 /*-----------------------------------------------------*/
 /*B: Animamos la entrada de las 
-     cards con animate style (propiedad fadeInUp):-*/
+     cards con animate style (propiedad fadeInUp)
 /*-----------------------------------------------------*/
 
-/*POTSER BORRA SI POTS AFEGIR WOWJS */
+/*NO SE HA PODIDO CARGAR CON WOW JS ASÍ QUE LAS ANIMACIONES NO TIENEN UN TRIGGER POR SCROLL. SE HA TRATADO
+DE CONSEGUIR QUE MÁS O MENOS HAGAN TRIGGER CUANDO EL USUARIO VAYA A BAJAR (DEJANDO CASI 2 SEGUNDO PARA ELLO)*/
 
-/*[B]: primera card
+/*[B]: animo primera card*/
 #PIcaracteristicasFrameworksFront .cartaFrontEndPI:first-child {
-    animation: fadeInUp; 
-    animation-duration: .8s;
-}
-
-/*[B]: segona card
-#PIcaracteristicasFrameworksFront .cartaFrontEndPI:nth-child(2) {
     animation: fadeInUp; 
     animation-duration: 1.6s;
 }
-*/
 
-/*[B]: tercera card
-#PIcaracteristicasFrameworksFront .cartaFrontEndPI:last-child {
+/*[B]: animo segunda card*/
+#PIcaracteristicasFrameworksFront .cartaFrontEndPI:nth-child(2) {
     animation: fadeInUp; 
     animation-duration: 2.4s;
 }
-*/
+
+/*[B]: animo tercera card*/
+#PIcaracteristicasFrameworksFront .cartaFrontEndPI:last-child {
+    animation: fadeInUp; 
+    animation-duration: 3.2s;
+}
