@@ -63,8 +63,8 @@
 
 
 
-/*Contenedor de las cards de la sección de características de la página interna de frontend
-  (CON GRID!)*/
+/*Contenedor de las cards de la sección de 
+características de la página interna de frontend (CON GRID!)*/
 #PIcaracteristicasFrameworksFront div:last-child {
     padding-top: 3.5em;
     max-width: var(--MaximaAnchuraCardsPIfrontend);
@@ -80,35 +80,76 @@ DE CARACTERÍSTICAS*/
 #PIcaracteristicasFrameworksFront div:last-child div h1 {
     margin-top: .5em;
 }
+
+#PIcaracteristicasFrameworksFront div:last-child div h2 {
+    font-size: 1.3em;
+}
+
 /*Esta es la clase con la que definimos 
-el estilo de cada card de frontend PI*/
+el estilo de CADA CARD de frontend PI*/
 #PIcaracteristicasFrameworksFront .cartaFrontEndPI {
+
     width: 300px; /* Hemos optado para definir las cards con ancho fijo por más control */
     aspect-ratio: 1/1.618; /* Proporción aurea --> 1:618 (ancho:alto) */
     border-radius: 1em;
-    padding: .2em 2.4em 1em 2.4em; /*damos espacio entre borde card y su contenido. Con esto tambien empequeñecemos anchura del text e imagenes*/
+    padding: .2em 1.9em 1em 1.9em; /*damos espacio entre borde card y su contenido. Con esto tambien empequeñecemos anchura del text e imagenes*/
     box-sizing: border-box; /* Para asegurarse de que el padding no afecte el tamaño */
     box-shadow: 0px 5px 4px rgba(143, 141, 141, 0.3); 
     background: linear-gradient(to bottom, var(--g), var(--r)); /* GRADIENTE YA ESTA HECHO BIEN, NO TOCAR */
     transition: box-shadow var(--tiempoTransicionEstandar) ease-in-out; /*para el hover de cada carta*/
 }
 
-/*ESTILOS DE FrontEnd*/
 
-
-/*ESTILO DEL H1*/
-
-
+/*ESTILO DEL SUBTÍTULO: "desarrollamos el cliente en vue..."*/
 #PIcaracteristicasFrameworksFront div:first-child p {
     margin-top: 1.5em;
 }
 
-/*ESTILO DE LA IMAGEN DE LA PRIMERA 
-CARD DE CARACTERÍSTICAS*/
+/*estilo aplicado a la IMAGEN (ESCALERA)
+de la PRIMERA CARD de características*/
 #PIcaracteristicasFrameworksFront .cartaFrontEndPI:first-child > img {width: 80%; padding-top: .8em; padding-bottom: 1.5em;}
-#PIcaracteristicasFrameworksFront .cartaFrontEndPI:nth-child(2) > img {
-    width: 60%;
+/*estilo aplicado a la IMAGEN (EL RAYO)
+de la SEGUNDA CARD de características*/
+#PIcaracteristicasFrameworksFront .cartaFrontEndPI:nth-child(2) > img {width: 40%; padding-top: .8em;}
+/*estilo aplicado a la IMAGEN (COMUNIDAD)
+de la TERCERA CARD de características*/
+#PIcaracteristicasFrameworksFront .cartaFrontEndPI:last-child > img {
+    width: 80%;
+    margin: 0 auto; /*centro imagen comunidad*/
+
+    /*CUIDADO PROBLEMAS: hemos tenido que definir un 
+    inline style en la tercera card
+    (linea 86), que es un apaño para que funcione un comportamiento
+    muy extraño.
+    
+    Por motivos que escapan a nuestra comprensión en esta tercera 
+    card no aparece el h1, img y h2 uno encima del otro como las 
+    otras dos cards de características de frameworks front-end. 
+    
+    En lugar de ello al definir solo el width de la img 
+    aparecen h1, img y h2 uno al lado del otro y saliéndose
+    de la card.
+
+    Es un comportamento extraño que escapa nuestra comprensión,
+    y más teniendo en cuenta que las otras dos cards (la del rayo
+    y la del icono de escaleras) salen bien.
+
+    Para evitarlo definimos tres propiedades CSS como
+    inline style, en cuyo caso sí hace caso. Tiene que 
+    existir algun choque de CSS que no hemos encontrado. Este 
+    ese el inlin style definido en la línea 86 de 
+    FrontEnd.html.
+    
+    display: flex;
+    flex-direction: column; 
+    padding-top: .2em;
+    
+    */ 
 }
+
+
+
+
 
 
 /*ESTILO DEL H2 DE TODAS Y CADA UNA DE LAS
