@@ -11,8 +11,10 @@
     DEL FRONTEND*/
     --PI_colorInicioGradienteCARDSVUE: #E7DFFF; /*PI significa Página Interna (una página que no es la landing page)*/
     --PI_colorFinGradienteCardsPaginaInternaFrontEnd: #16005D;
+    
     --g: #C0BABA4C; /*color original figma C0BABA al que hemos aplicado opacidad del 30%*/
     --r: #DB8C8C4C; /*color original figma DB8C8C al que se le ha aplicado opacidad del 30%*/
-
+    --gHover: #938e8e4c;
+    --rHover: #d251514c;
     --MaximaAnchuraCardsPIfrontend: 1025px;
 }
