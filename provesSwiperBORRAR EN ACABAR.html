@@ -15,7 +15,7 @@
 
         /* Optional styling to define the height of the Swiper */
         #PIdiferenciasFrameworksFront .swiper {
-            width: 80%; /*anchura del contenedor swiper (ojo con los botones)*/
+            width: 70%; /*anchura del contenedor swiper (ojo con los botones)*/
             height: 100vh; /*Altura contenedor swiper*/
         }
         #PIdiferenciasFrameworksFront .swiper-slide {
@@ -26,21 +26,30 @@
             background: #fff; /* Background color for slides */
         }
 
-        /*Definim l'stiling de cada imatge que mostra un component de codi
+        /*Definimos stiling de cada imagen que muestrara un component de codi
         de vue, react o angular.*/
         #PIdiferenciasFrameworksFront .swiper-slide article:last-child img {
-            width: 250px;
+            width: 400px;
             border-radius: .4em;
             margin-right: 1em;
         }
 
+        /*Ponemos un padding para separar la imagen del logo de la tecnología
+        front end con la imagen del componente de esta tecnología*/
         #PIdiferenciasFrameworksFront .swiper-slide article:last-child {
             padding-left: 5em;
         }
 
-        /*Definim l'stiling de cada logo de l'slider (vue, react o angular).*/
+        /*Definimos la anchura de cada logo del slider (vue, react o angular).*/
         #PIdiferenciasFrameworksFront .swiper-slide article:first-child img {
-            width: 200px;
+            width: 250px;
+        }
+
+        /*Definimos la posicion del título h1 que hay encima de 
+        de cada logo del slider (vue, react o angular).*/
+        #PIdiferenciasFrameworksFront .swiper-slide article:first-child h1 {
+            text-align: center;
+            padding-bottom: 1em;
         }
 
 
@@ -55,11 +64,12 @@
         <!-- Swiper -->
         <div class="swiper">
             <div class="swiper-wrapper">
-                <section class="swiper-slide">
 
+                <!-- slider VUE-->
+                <section class="swiper-slide">
                     <!-- Esquerra: logo tecnologia (vue) -->
                     <article>
-                        <h1>Vue</h1>
+                        <h1>Vue.js</h1>
                         <img src="img/Vue.png" alt="logo vue no cargó" width="20%">
                     </article>
 
@@ -67,10 +77,35 @@
                     <article>
                         <img src="img/internaFrontEnd/fragmentCodiVueGPT.PNG" alt="img componente vue no cargó">
                     </article>
-                    
                 </section>
-                <div class="swiper-slide">Vue</div>
-                <div class="swiper-slide">Angular</div>
+
+                <!-- slider ANGULAR-->
+                <section class="swiper-slide">
+                    <!-- Esquerra: logo tecnologia (ANGULAR) -->
+                    <article>
+                        <h1>Angular.js</h1>
+                        <img src="img/angularDefinitiu.png" alt="logo ANGULAR no cargó" width="20%">
+                    </article>
+
+                    <!-- Dreta: fragment codi tecnologia (component ANGULAR) -->
+                    <article>
+                        <img src="img/internaFrontEnd/fragmentCodiVueGPT.PNG" alt="img componente ANGULAR no cargó">
+                    </article>
+                </section>
+
+                <!-- slider REACT-->
+                <section class="swiper-slide">
+                    <!-- Esquerra: logo tecnologia (ANGULAR) -->
+                    <article>
+                        <h1>React.js</h1>
+                        <img src="img/reactDefinitiu.png" alt="logo REACT no cargó" width="20%">
+                    </article>
+
+                    <!-- Dreta: fragment codi tecnologia (component ANGULAR) -->
+                    <article>
+                        <img src="img/internaFrontEnd/fragmentCodiVueGPT.PNG" alt="img componente REACT no cargó">
+                    </article>
+                </section>
             </div>
 
             <!-- Add Pagination -->
