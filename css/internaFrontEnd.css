@@ -203,13 +203,14 @@ DE CONSEGUIR QUE MÁS O MENOS HAGAN TRIGGER CUANDO EL USUARIO VAYA A BAJAR (DEJA
 /*ponemos un extra de altura al contenedor de diferencias para que
 el contenedor de swiper no se solape con el contenedor superior */
 #PIdiferenciasFrameworksFront {
-    padding-top: 3em;
+    padding-top: 1em;
 }
 
 /*definimos anchura y altura del contenedor de swiper*/
 #PIdiferenciasFrameworksFront .swiper {
     width: 70%; /*anchura del contenedor swiper (ojo con los botones)*/
-    height: 100vh; /*Altura contenedor swiper*/
+    height: 80vh; /*Altura contenedor swiper*/
+    max-width: var(--MaximaAnchuraCardsPIfrontend);
 }
 #PIdiferenciasFrameworksFront .swiper-slide {
     display: flex;
