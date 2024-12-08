@@ -170,18 +170,82 @@ DE CONSEGUIR QUE MÁS O MENOS HAGAN TRIGGER CUANDO EL USUARIO VAYA A BAJAR (DEJA
 
 
 
-/*###########################################
-  # SECCIÓN 3 PÁGINA INTERNA (PI) FRONTEND: # 
-  #       diferencias entre los 
-          3 frameworks de frontend
-           (título, galeria swiper 3 frameworks
-           y fondos con cuatr cards variables)    #
+/*#################################################
+    SECCIÓN 3 PÁGINA INTERNA (PI) FRONTEND:   
+          diferencias entre los  3 frameworks 
+          de frontend:
+                A: título.
+                B: galeria swiper 3 frameworks
+                C: Fondos con cuatr cards variables)
   #################################################*/
 
+
+
+/**************************/
+/* A: Titulo (¿En qué 
+   desarrollamos y por qué?)
+/**************************/
 #PIdiferenciasFrameworksFront > h1 {
     text-align: center;
     padding-top: 2.6em;
     animation: fadeIn;  /*ponemos un fundido de entrada al título*/
     animation-duration: 3d;
 }
-  
+
+
+
+
+/*******************/
+/*B) Galería swiper*/
+/*******************/
+
+
+/*ponemos un extra de altura al contenedor de diferencias para que
+el contenedor de swiper no se solape con el contenedor superior */
+#PIdiferenciasFrameworksFront {
+    padding-top: 3em;
+}
+
+/*definimos anchura y altura del contenedor de swiper*/
+#PIdiferenciasFrameworksFront .swiper {
+    width: 70%; /*anchura del contenedor swiper (ojo con los botones)*/
+    height: 100vh; /*Altura contenedor swiper*/
+}
+#PIdiferenciasFrameworksFront .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center; /*centro verticalemnte*/
+    font-size: 18px;
+    background: #fff; /* Background color for slides */
+}
+
+/*Definimos stiling de cada imagen que muestrara un component de codi
+de vue, react o angular.*/
+#PIdiferenciasFrameworksFront .swiper-slide article:last-child img {
+    width: 400px;
+    border-radius: .4em;
+    margin-right: 1em;
+}
+
+/*Ponemos un padding para separar la imagen del logo de la tecnología
+front end con la imagen del componente de esta tecnología*/
+#PIdiferenciasFrameworksFront .swiper-slide article:last-child {
+    padding-left: 5em;
+}
+
+/*Definimos la anchura de cada logo del slider (vue, react o angular).*/
+#PIdiferenciasFrameworksFront .swiper-slide article:first-child img {
+    width: 250px;
+}
+
+/*Definimos la posicion del título h1 que hay encima de 
+de cada logo del slider (vue, react o angular).*/
+#PIdiferenciasFrameworksFront .swiper-slide article:first-child h1 {
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+
+/***********************************/
+/** C) Fondos variables (4 cards) **/
+/***********************************/

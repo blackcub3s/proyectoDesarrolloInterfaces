@@ -11,10 +11,37 @@
     <!--Cargamos el CSS de animate.style para hacer animaciones, p. ej menu desplegable de la navbar -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
+    <!-- Incluimos el CSS de swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
     <!--cargamos los estilos que hemos definido nosotros-->
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/internaFrontEnd.css">
     <link rel="styleSheet" href="css/estilsGeneralsInternaFront.css">
+
+    <!-- cargamos la CDN de swiper para poder generar los swipes de la galería de diferencias entre
+     tecnologías frontend-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!--Inicializamos el objeto de swiper y habilitamos paginación (saldrán los puntitos por cada página
+    de imagen) y la navegación (saldrán las flechitas de derecha e izquierda)-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function inicializaSwiper() {
+            // Inizializamos el objeto de swiper
+            const swiper = new Swiper('.swiper', {
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                // AÑADIR AQUÍ OTRAS OPCIONES SI CABE
+            });            
+        });
+    </script>
+
 </head>
 <body>
 
@@ -98,28 +125,62 @@
 
     <!-- SECCIÓN 3 (S3): diferencias de los frameworks -->
     <section id="PIdiferenciasFrameworksFront">
-        
-        <h1 class="PItituloFront">¿Qué diferencias fundamentales hay entre los tres frameworks?</h1>
-        <!-- los tres hijos de este div se mostrarán 
-         superpuestos (Solo uno se mostrará a la vez)-->
-        <section>
-            <!-- SOBREPUESTO 1: parte vue (un section para swiper y otro article para las cards)-->
-            <article>vue</article> 
 
-            <!-- SOBREPUESTO 2: parte react (un section para swiper y otro article para las cards) -->
-            <article>react</article>
+        <!-- Swiper -->
+        <div class="swiper">
+            <div class="swiper-wrapper">
 
-            <!-- SOBREPUESTO 3: parte angular (section para swiper y article para las cards) -->
-            <article>angular</article>
-        </section>
+                <!-- slider VUE-->
+                <section class="swiper-slide">
+                    <!-- Esquerra: logo tecnologia (vue) -->
+                    <article>
+                        <h1>Vue.js</h1>
+                        <img src="img/Vue.png" alt="logo vue no cargó" width="20%">
+                    </article>
 
-        <!--Este div mostrara la misma tabla de 
-        diferencias entre los tres frameworks siempre-->
-        <section>
-            <!--contenidorGradiente blanco a roigClAR a roig fosc grisos a negre-->
-            <div></div> 
-            <article></article> <!-- poner aqui la tabla-->
-        </section>
+                    <!-- Dreta: fragment codi tecnologia (component vue) -->
+                    <article>
+                        <img src="img/internaFrontEnd/fragmentCodiVueGPT.PNG" alt="img componente vue no cargó">
+                    </article>
+                </section>
+
+                <!-- slider ANGULAR-->
+                <section class="swiper-slide">
+                    <!-- Esquerra: logo tecnologia (ANGULAR) -->
+                    <article>
+                        <h1>Angular.js</h1>
+                        <img src="img/angularDefinitiu.png" alt="logo ANGULAR no cargó" width="20%">
+                    </article>
+
+                    <!-- Dreta: fragment codi tecnologia (component ANGULAR) -->
+                    <article>
+                        <img src="img/internaFrontEnd/fragmentCodiVueGPT.PNG" alt="img componente ANGULAR no cargó">
+                    </article>
+                </section>
+
+                <!-- slider REACT-->
+                <section class="swiper-slide">
+                    <!-- Esquerra: logo tecnologia (ANGULAR) -->
+                    <article>
+                        <h1>React.js</h1>
+                        <img src="img/reactDefinitiu.png" alt="logo REACT no cargó" width="20%">
+                    </article>
+
+                    <!-- Dreta: fragment codi tecnologia (component ANGULAR) -->
+                    <article>
+                        <img src="img/internaFrontEnd/fragmentCodiVueGPT.PNG" alt="img componente REACT no cargó">
+                    </article>
+                </section>
+            </div>
+
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- Add Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
     </section>
     
 
@@ -159,5 +220,9 @@
         <hr>
         <p id="copyright"><i>&copy; 2024 | Todos los derechos reservados</i></p>    
     </footer>
+
+
+
+
 </body>
 </html>
