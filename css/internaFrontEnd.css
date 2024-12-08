@@ -150,18 +150,38 @@ DE CONSEGUIR QUE MÁS O MENOS HAGAN TRIGGER CUANDO EL USUARIO VAYA A BAJAR (DEJA
 
 /*[B]: animo primera card*/
 #PIcaracteristicasFrameworksFront .cartaFrontEndPI:first-child {
-    animation: fadeInUp; 
+    animation: fadeInLeft; 
     animation-duration: 1.6s;
 }
 
 /*[B]: animo segunda card*/
 #PIcaracteristicasFrameworksFront .cartaFrontEndPI:nth-child(2) {
     animation: fadeInUp; 
-    animation-duration: 2.4s;
+    animation-duration: 1.6s;
 }
 
 /*[B]: animo tercera card*/
 #PIcaracteristicasFrameworksFront .cartaFrontEndPI:last-child {
-    animation: fadeInUp; 
-    animation-duration: 3.2s;
+    animation: fadeInRight; 
+    animation-duration: 1.6s;
 }
+
+
+
+
+
+/*###########################################
+  # SECCIÓN 3 PÁGINA INTERNA (PI) FRONTEND: # 
+  #       diferencias entre los 
+          3 frameworks de frontend
+           (título, galeria swiper 3 frameworks
+           y fondos con cuatr cards variables)    #
+  #################################################*/
+
+#PIdiferenciasFrameworksFront > h1 {
+    text-align: center;
+    padding-top: 2.6em;
+    animation: fadeIn;  /*ponemos un fundido de entrada al título*/
+    animation-duration: 3d;
+}
+  
