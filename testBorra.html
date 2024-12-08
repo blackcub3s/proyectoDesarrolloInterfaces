@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    // Inicializar Swiper
+    const swiper = new Swiper('.swiper', {
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+
+    // Define una variable para demostrar la funcionalidad
+    let miVariable = "Valor inicial";
+
+    // Agrega eventos a los botones de Swiper
+    const nextButton = document.querySelector('.swiper-button-next');
+    const prevButton = document.querySelector('.swiper-button-prev');
+
+    nextButton.addEventListener('click', () => {
+        console.log("Clic en botón Next");
+        console.log("Valor actual de miVariable:", miVariable);
+        // Ejemplo: Cambiar un estilo de otro elemento
+        document.querySelector('body').style.backgroundColor = "lightblue";
+        miVariable = "Cambió después de Next";
+    });
+
+    prevButton.addEventListener('click', () => {
+        console.log("Clic en botón Prev");
+        console.log("Valor actual de miVariable:", miVariable);
+        // Ejemplo: Cambiar otro estilo de un elemento
+        document.querySelector('body').style.backgroundColor = "lightgreen";
+        miVariable = "Cambió después de Prev";
+    });
+});
+
+    </script>
+</body>
+</html>

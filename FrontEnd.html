@@ -27,18 +27,50 @@
     de imagen) y la navegación (saldrán las flechitas de derecha e izquierda)-->
     <script>
         document.addEventListener("DOMContentLoaded", function inicializaSwiper() {
-            // Inizializamos el objeto de swiper
+            // INICIALIZO EL OBJETO SIPWER
             const swiper = new Swiper('.swiper', {
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
                 },
                 pagination: {
-                    el: '.swiper-pagination',
+                    el: '.swiper-pagination', //habilito paginación
                     clickable: true,
                 },
                 // AÑADIR AQUÍ OTRAS OPCIONES SI CABE
-            });            
+            });
+            
+            //TOMO LOS TRES FONDOS DE CONTENEDOR TORCIDO DEL DOM. OCULTARÉ O MOSTRARÉ CADA
+            //UNO EN FUNCIÓN DE LOS CLICK HECHOS EN LOS PAGINADORES DE SWIPER. LOS SIGUIENTES
+            //ELEMENTOS DEL DOM NO HARÁN SWIPE PERO SE AFECTARÁN AL SWIPEAR, AL CLICAR LAS FLECHITOAS.
+            const vue = document.querySelector("#PI4cards > article:first-child");
+            const angular = document.querySelector("#PI4cards > article:nth-child(2)");
+            const react = document.querySelector("#PI4cards > article:nth-child(3)");
+        
+            arrFondos = [vue, angular, react];
+            i = 0; //variable para saber dónde estamos
+
+
+            //navego a la DERECHA usando los eventos que están 
+            //built-in en swiper al clicar botón SIGUIENTE
+            swiper.on('slideNextTransitionStart', () => { 
+                arrFondos[i].style.display = "none";    //oculto actual
+                arrFondos[i+1].style.display = "block"; //muestro el siguiente
+                ++i;                                    //incremento indice posicional
+            });
+
+            //navego a la IZQUIERDA usando los eventos que están 
+            //built-in en swiper al clicar botón ANTERIOR
+            swiper.on('slidePrevTransitionStart', () => {   //navego a la izquierda
+                arrFondos[i].style.display = "none";        //oculto actual
+                arrFondos[i-1].style.display = "block";     //muestro el anterior
+                --i;                                        //decremento indice posicional
+            });
+
+
+
+
+
         });
     </script>
 
@@ -123,7 +155,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN 3 (S3): diferencias de los frameworks -->
+    <!-- SECCIÓN 3 (S3): diferencias de los frameworks (swiper) -->
     <section id="PIdiferenciasFrameworksFront">
 
         <h1 class="PItituloFront">¿Qué diferencias fundamentales hay entre
@@ -185,7 +217,26 @@
         </div>
 
     </section>
-    
+
+
+    <!-- SECCIÓN 4 (S4): diferencias de los frameworks
+      (cards y contenedor fondo color framework, torcido) -->
+    <section id = "PI4cards">
+        <article id = "vue4cards">
+            
+            <!--TO DO
+            
+            
+            <article></article> torcido (sin contenido)-->
+           <!-- <article></article> recto (con contenido, las cards)-->
+            <!--<article></article> torcido (sin contenido)-->
+
+
+            
+        </article>
+        <article id = "angular4cards">angularete</article>
+        <article id = "react4cards">reactete</article>
+    </section> 
 
     <!-- SECCIÓN 5 (S5): footer -->   
     <footer>

@@ -174,15 +174,14 @@ DE CONSEGUIR QUE MÁS O MENOS HAGAN TRIGGER CUANDO EL USUARIO VAYA A BAJAR (DEJA
     SECCIÓN 3 PÁGINA INTERNA (PI) FRONTEND:   
           diferencias entre los  3 frameworks 
           de frontend:
-                A: título.
-                B: galeria swiper 3 frameworks
-                C: Fondos con cuatr cards variables)
+                3A: título.
+                3B: galeria swiper 3 frameworks
   #################################################*/
 
 
 
 /**************************/
-/* A: Titulo (¿En qué 
+/* 3A: Titulo (¿En qué 
    desarrollamos y por qué?)
 /**************************/
 #PIdiferenciasFrameworksFront > h1 {
@@ -196,7 +195,7 @@ DE CONSEGUIR QUE MÁS O MENOS HAGAN TRIGGER CUANDO EL USUARIO VAYA A BAJAR (DEJA
 
 
 /*******************/
-/*B) Galería swiper*/
+/*3B) Galería swiper*/
 /*******************/
 
 
@@ -209,7 +208,7 @@ el contenedor de swiper no se solape con el contenedor superior */
 /*definimos anchura y altura del contenedor de swiper*/
 #PIdiferenciasFrameworksFront .swiper {
     width: 70%; /*anchura del contenedor swiper (ojo con los botones)*/
-    height: 80vh; /*Altura contenedor swiper*/
+    height: 40em; /*Altura contenedor swiper*/
     max-width: var(--MaximaAnchuraCardsPIfrontend);
 }
 #PIdiferenciasFrameworksFront .swiper-slide {
@@ -247,6 +246,44 @@ de cada logo del slider (vue, react o angular).*/
 }
 
 
+/*#################################################
+    SECCIÓN 4 (S4) PI4cards FRONT END (Página Interna -PI-): 
+        A) Fondos Variables
+        B) Diseño de las 4 cards
+
+  #################################################*/
+
+
+
 /***********************************/
-/** C) Fondos variables (4 cards) **/
+/** 4A) Fondos variables          **/
 /***********************************/
+#PI4cards {
+    transform: rotate(-10deg);/* Rotación antihoraria */
+
+    /*hacemos más ancho el contenedor torcido 
+    para esconder los espacios en blanco que se generan
+    por la derecha con la rotación de 10 grados*/
+    width: 200%;  
+    position: relative;
+    right: 4em; /*movemos a la izquierda 
+    el contenedor para esconder también espacios
+     blancos por la izquierda*/
+}
+
+#PI4cards #vue4cards {background-color: var(--colorVerdeVue);  height: 15em;}
+#PI4cards #angular4cards {background-color: pink;  height: 15em; display: none;}
+#PI4cards #react4cards {background-color: blue;  height: 15em; display: none;}
+
+/***********************************/
+/** 4A)Diseño de las 4 cards **/
+/***********************************/
+
+/*Antes que todo nos aseguramos que el contenedor de las cards
+y el contenedor de swiper están apilados uno encima del otro (z-index
+mayor se muestra por encima. Debemos definir mismo contexto de apilamiento
+asi que usamos position relative.*/
+#PI4cards, #PIdiferenciasFrameworksFront {position: relative; overflow: hidden;}
+#PIdiferenciasFrameworksFront {z-index: 1;}
+#PI4cards {z-index: 3;}
+
