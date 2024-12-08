@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiper Interaction</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"> <!-- Include Swiper CSS -->
+    <style>
+
+        /*ES POT BORRAR AL PASSAR A LA VERSIÓ DEFINTIIVA*/
+        html, body, * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Optional styling to define the height of the Swiper */
+        #PIdiferenciasFrameworksFront .swiper {
+            width: 80%; /*anchura del contenedor swiper (ojo con los botones)*/
+            height: 100vh; /*Altura contenedor swiper*/
+        }
+        #PIdiferenciasFrameworksFront .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center; /*centro verticalemnte*/
+            font-size: 18px;
+            background: #fff; /* Background color for slides */
+        }
+
+        /*Definim l'stiling de cada imatge que mostra un component de codi
+        de vue, react o angular.*/
+        #PIdiferenciasFrameworksFront .swiper-slide article:last-child img {
+            width: 250px;
+            border-radius: .4em;
+            margin-right: 1em;
+        }
+
+        #PIdiferenciasFrameworksFront .swiper-slide article:last-child {
+            padding-left: 5em;
+        }
+
+        /*Definim l'stiling de cada logo de l'slider (vue, react o angular).*/
+        #PIdiferenciasFrameworksFront .swiper-slide article:first-child img {
+            width: 200px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+
+    <section id="PIdiferenciasFrameworksFront">
+
+        <!-- Swiper -->
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <section class="swiper-slide">
+
+                    <!-- Esquerra: logo tecnologia (vue) -->
+                    <article>
+                        <h1>Vue</h1>
+                        <img src="img/Vue.png" alt="logo vue no cargó" width="20%">
+                    </article>
+
+                    <!-- Dreta: fragment codi tecnologia (component vue) -->
+                    <article>
+                        <img src="img/internaFrontEnd/fragmentCodiVueGPT.PNG" alt="img componente vue no cargó">
+                    </article>
+                    
+                </section>
+                <div class="swiper-slide">Vue</div>
+                <div class="swiper-slide">Angular</div>
+            </div>
+
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- Add Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Swiper
+        const swiper = new Swiper('.swiper', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            // You can add other options as needed
+        });
+    </script>
+
+</body>
+</html>
