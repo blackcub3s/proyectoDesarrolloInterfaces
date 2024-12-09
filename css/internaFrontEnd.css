@@ -337,7 +337,14 @@ definir mismo contexto de apilamiento asi que usamos position relative.*/
     transition: box-shadow var(--tiempoTransicionEstandar) ease-in-out; /*para el hover de cada carta*/
 }
 
+#PI4cards .cardDiferenciasFront h1 {
+    font-size: 1.3em;
+}
 
+#PI4cards .cardDiferenciasFront p {
+    font-size: 1.2em;
+    margin-top: .3em;
+}
 
 
 
