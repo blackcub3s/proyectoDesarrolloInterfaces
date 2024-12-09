@@ -255,35 +255,60 @@ de cada logo del slider (vue, react o angular).*/
 
 
 
-/***********************************/
-/** 4A) Fondos variables          **/
-/***********************************/
-#PI4cards {
-    transform: rotate(-10deg);/* Rotación antihoraria */
+/************************************/
+/** 4A) Fondos variables y 4 cards **/
+/************************************/
 
-    /*hacemos más ancho el contenedor torcido 
-    para esconder los espacios en blanco que se generan
-    por la derecha con la rotación de 10 grados*/
-    width: 200%;  
-    position: relative;
-    right: 4em; /*movemos a la izquierda 
-    el contenedor para esconder también espacios
-     blancos por la izquierda*/
+/*Antes que todo nos aseguramos que el contenedor de las cards y el contenedor de swiper 
+están apilados uno encima del otro (z-index mayor se muestra por encima). Debemos 
+definir mismo contexto de apilamiento asi que usamos position relative.*/
+#PI4cards, #PIdiferenciasFrameworksFront {position: relative;}
+#PIdiferenciasFrameworksFront {z-index: 1;} 
+#PI4cards {
+    z-index: 3; /*ponemos por delante las cards y le fondo de las mismas*/
+    width: 200%;  /*hacemos más ancho el contenedor torcido para esconder los espacios enblanco que se generan por la derecha con la rotación de 10 grados*/
+    right: 10em; /*movemos a la izquierda el contenedor para esconder también espacios blancos por la izquierda*/
+    top: 0em;
 }
 
-#PI4cards #vue4cards {background-color: var(--colorVerdeVue);  height: 15em;}
-#PI4cards #angular4cards {background-color: pink;  height: 15em; display: none;}
-#PI4cards #react4cards {background-color: blue;  height: 15em; display: none;}
+
+
+/*contenedor 4cards vue*/
+#PI4cards > article:first-child {
+    background-color: var(--colorVerdeVue); 
+
+    /* Rotación antihoraria */
+    transform: rotate(-10deg);
+    height: 15em;
+}
+
+/*contenedor 4cards angular*/
+#PI4cards > article:nth-child(2) {
+    background: linear-gradient(to bottom, var(--PI_colorAngularGradienteInicio), var(--PI_colorAngularGradienteFinal));
+    display: none;
+
+    /* Rotación antihoraria */
+    transform: rotate(-10deg);
+    height: 15em;
+} 
+
+/*contenedor 4cards react*/
+#PI4cards > article:last-child {
+    background-color: var(--PI_colorReact); 
+    display: none;
+
+    /* Rotación antihoraria */
+    transform: rotate(-10deg);
+    height: 15em;
+} 
+
+
+
 
 /***********************************/
 /** 4A)Diseño de las 4 cards **/
 /***********************************/
 
-/*Antes que todo nos aseguramos que el contenedor de las cards
-y el contenedor de swiper están apilados uno encima del otro (z-index
-mayor se muestra por encima. Debemos definir mismo contexto de apilamiento
-asi que usamos position relative.*/
-#PI4cards, #PIdiferenciasFrameworksFront {position: relative; overflow: hidden;}
-#PIdiferenciasFrameworksFront {z-index: 1;}
-#PI4cards {z-index: 3;}
+
+
 

@@ -7,10 +7,14 @@
     --PI_colorMedioGradienteAZULOSCUROFrontEnd: #002672;
     --PI_colorMedioGradienteAZULCLAROFrontEnd: #697DFF;
  
-    /*COLORES PARA LAS CARDS DE LA PÁGINA INTERNA 
-    DEL FRONTEND*/
+    /*COLORES PARA LAS CARDS PRIMERAS CARDS DE LA PÁGINA INTERNA DEL FRONTEND*/
     --PI_colorInicioGradienteCARDSVUE: #E7DFFF; /*PI significa Página Interna (una página que no es la landing page)*/
     --PI_colorFinGradienteCardsPaginaInternaFrontEnd: #16005D;
+
+    /*COLORES PARA LAS 4 CARDS DE LA SECCIÓN DE DIFERENCIAS DE LA PÁGINA INTERNA DEL FRONTEND*/
+    --PI_colorAngularGradienteFinal: #ee2494;
+    --PI_colorAngularGradienteInicio: #b424e4;
+    --PI_colorReact: #087ea4;
     
     --g: #C0BABA4C; /*color original figma C0BABA al que hemos aplicado opacidad del 30%*/
     --r: #DB8C8C4C; /*color original figma DB8C8C al que se le ha aplicado opacidad del 30%*/
