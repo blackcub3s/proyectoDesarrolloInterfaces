@@ -68,7 +68,7 @@
             //built-in en swiper al clicar botón SIGUIENTE
             swiper.on('slideNextTransitionStart', () => { 
                 arrFondos[i].style.display = "none";    //oculto actual
-                arrFondos[i+1].style.display = "block"; //muestro el siguiente
+                arrFondos[i+1].style.display = "grid"; //muestro el siguiente
                 ++i;                                    //incremento indice posicional
                 
                 coloreaContenedor(i, contTorcido);     //PONGO EL COLOR QUE TOQUE AL CONTENEDOR TORCIDO
@@ -78,7 +78,7 @@
             //built-in en swiper al clicar botón ANTERIOR
             swiper.on('slidePrevTransitionStart', () => {   //navego a la izquierda
                 arrFondos[i].style.display = "none";        //oculto actual
-                arrFondos[i-1].style.display = "block";     //muestro el anterior
+                arrFondos[i-1].style.display = "grid";     //muestro el anterior
                 --i;                                        //decremento indice posicional
                 
                 coloreaContenedor(i, contTorcido);      //PONGO EL COLOR QUE TOQUE AL CONTENEDOR TORCIDO
@@ -256,10 +256,14 @@
         </article>
 
         <!-- angular 4 cards-->
-        <article >angularete</article>
+        <article >
+
+        </article>
 
         <!-- react 4 cards-->
-        <article>reactete</article>
+        <article>
+            
+        </article>
     </section> 
 
     <!-- SECCIÓN 5 (S5): footer -->   
