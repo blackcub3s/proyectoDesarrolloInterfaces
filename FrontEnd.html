@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,9 +46,22 @@
             const vue = document.querySelector("#PI4cards > article:first-child");
             const angular = document.querySelector("#PI4cards > article:nth-child(2)");
             const react = document.querySelector("#PI4cards > article:nth-child(3)");
-        
+            
+            //contenedor torcido al que se le cambiará el color
+            const contTorcido = document.getElementById("contenedorTorcidoTop");
             arrFondos = [vue, angular, react];
-            i = 0; //variable para saber dónde estamos
+            var i = 0; //variable para saber dónde estamos
+            
+            function coloreaContenedor(i, contenedor) {
+                if (i === 0)
+                    contenedor.style.background =  getComputedStyle(document.documentElement).getPropertyValue('--colorVerdeVue'); 
+                else if (i === 1) {
+                    var colorAngularINI = getComputedStyle(document.documentElement).getPropertyValue('--PI_colorAngularGradienteInicio');
+                    var colorAngularFIN = getComputedStyle(document.documentElement).getPropertyValue('--PI_colorAngularGradienteFinal');
+                    contenedor.style.background = `linear-gradient(to bottom, ${colorAngularINI}, ${colorAngularFIN})`;
+                } else if (i === 2)
+                    contenedor.style.background =  getComputedStyle(document.documentElement).getPropertyValue('--PI_colorReact');
+            }
 
 
             //navego a la DERECHA usando los eventos que están 
@@ -57,6 +70,8 @@
                 arrFondos[i].style.display = "none";    //oculto actual
                 arrFondos[i+1].style.display = "block"; //muestro el siguiente
                 ++i;                                    //incremento indice posicional
+                
+                coloreaContenedor(i, contTorcido);     //PONGO EL COLOR QUE TOQUE AL CONTENEDOR TORCIDO
             });
 
             //navego a la IZQUIERDA usando los eventos que están 
@@ -65,12 +80,9 @@
                 arrFondos[i].style.display = "none";        //oculto actual
                 arrFondos[i-1].style.display = "block";     //muestro el anterior
                 --i;                                        //decremento indice posicional
+                
+                coloreaContenedor(i, contTorcido);      //PONGO EL COLOR QUE TOQUE AL CONTENEDOR TORCIDO
             });
-
-
-
-
-
         });
     </script>
 
@@ -170,7 +182,7 @@
                     <!-- Esquerra: logo tecnologia (vue) -->
                     <article>
                         <h1>Vue.js</h1>
-                        <img src="img/Vue.png" alt="logo vue no cargó" width="20%">
+                        <img src="img/Vue.png" alt="logo vue no cargó">
                     </article>
 
                     <!-- Dreta: fragment codi tecnologia (component vue) -->
@@ -184,7 +196,7 @@
                     <!-- Esquerra: logo tecnologia (ANGULAR) -->
                     <article>
                         <h1>Angular.js</h1>
-                        <img src="img/angularDefinitiu.png" alt="logo ANGULAR no cargó" width="20%">
+                        <img src="img/angularDefinitiu.png" alt="logo ANGULAR no cargó">
                     </article>
 
                     <!-- Dreta: fragment codi tecnologia (component ANGULAR) -->
@@ -221,14 +233,30 @@
 
     <!-- SECCIÓN 4 (S4): diferencias de los frameworks
       (cards y contenedor fondo color framework, torcido) -->
+    <div id = "contenedorTorcidoTop"></div>
     <section id = "PI4cards">
         <!-- vue 4 cards-->
         <article>
-            vuete
+            <article class="cardDiferenciasFront">
+                <h1>Suave curva de aprendizaje</h1>
+                <p>Vue permite <span class = "groc">aprender lo necesario en poco tiempo</span> para manejar el framework. Si eres una PYME y tienes recursos limitados es un framework idóneo.</p>
+            </article>
+            <article class="cardDiferenciasFront">
+                <h1>Integración gradual</h1>
+                <p>A diferencia de angular o react, vue se puede <span class = "groc">integrar en partes específicas</span> de una aplicación existente sin modificar la totalidad del proyecto.</p>
+            </article>
+            <article class="cardDiferenciasFront">
+                <h1>Sistema de enlace de datos reactivo</h1>
+                <p>asdasdasdas asda sdas d</p>
+            </article>
+            <article class="cardDiferenciasFront">
+                <h1>Ecosistema de datos liviano pero extensible</h1>
+                <p>asdasdasdasdasdasdasd</p>
+            </article>
         </article>
 
         <!-- angular 4 cards-->
-        <article>angularete</article>
+        <article >angularete</article>
 
         <!-- react 4 cards-->
         <article>reactete</article>
