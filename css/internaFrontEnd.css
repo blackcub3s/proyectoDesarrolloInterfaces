@@ -326,11 +326,11 @@ de cada logo del slider (vue, react o angular).*/
 
 
 #PI4cards .cardDiferenciasFront {
-    width: 300px; /* Hemos optado para definir las cards con ancho fijo por más control */
+    width: 350px; /* Hemos optado para definir las cards con ancho fijo por más control */
     aspect-ratio: 300/287; /* Proporción de figma (ancho/alto)*/
     background-color: var(--grisTransparenteCard); /* Color de fondo, por ejemplo u ngris con transparencia */
-    border-radius: 1em;
-    padding: 30px; /*damos espacio entre borde card y su contenido. Con esto tambien empequeñecemos anchura del text e imagenes*/
+    border-radius: 1.4em;
+    padding: 40px; /*damos espacio entre borde card y su contenido. Con esto tambien empequeñecemos anchura del text e imagenes*/
     box-sizing: border-box; /* Para asegurarse de que el padding no afecte el tamaño */
     box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.25);
 
@@ -355,5 +355,5 @@ de cada logo del slider (vue, react o angular).*/
 /*Ponemos un espacio debajo de las 4cards 
 para poder conseguir  */
 #PI4cards > article > article {
-    margin-bottom: 4.5em;
+    margin-bottom: 5.8em;
 }
