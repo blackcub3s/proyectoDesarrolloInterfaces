@@ -285,13 +285,11 @@ body {overflow-x: hidden;}
 #PI4cards {
     z-index: 3; /*ponemos por delante las cards y le fondo de las mismas*/
     
-    position: relative;
-    bottom: 70em;
-    
+    position: relative; /*posicionamiento relativo, muy importante*/
+    bottom: 70em;       /*posicionamos desde abajo para ponerlo encima del contenedorTorcidoTop*/
+
     max-width: var(--PIancho4cardsFront);
-    
-    margin: 0 auto;
-    
+    margin: 0 auto; /*centrado horizontalmente*/
 }
 
 
@@ -333,23 +331,29 @@ body {overflow-x: hidden;}
     aspect-ratio: 300/287; /* Proporción de figma (ancho/alto)*/
     background-color: var(--grisTransparenteCard); /* Color de fondo, por ejemplo u ngris con transparencia */
     border-radius: 1.4em;
-    padding: 40px; /*damos espacio entre borde card y su contenido. Con esto tambien empequeñecemos anchura del text e imagenes*/
+    padding: 45px; /*damos espacio entre borde card y su contenido. Con esto tambien empequeñecemos anchura del text e imagenes*/
     box-sizing: border-box; /* Para asegurarse de que el padding no afecte el tamaño */
-    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.15);
 
     transition: box-shadow var(--tiempoTransicionEstandar) ease-in-out; /*para el hover de cada carta*/
     background: linear-gradient(to bottom, var( --PI_inicioCard_VUE), var(--PI_finCard_VUE));
+
+    text-align: center;
 }
 
 #PI4cards .cardDiferenciasFront h1 {
-    font-size: 1.3em;
+    font-size: 1.6em;
 }
 
 #PI4cards .cardDiferenciasFront p {
-    font-size: 1.2em;
-    margin-top: .3em;
+    font-size: 1.3em;
+    margin-top: 1.4em;
+    color: white;
 }
 
+/*una forma de definir salto de linea en CSS
+  sin usar el <br> de HTML, mejor práctica*/
+.saltoLinea {white-space: pre-line;}
 
 
 

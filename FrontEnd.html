@@ -35,7 +35,7 @@
                 },
                 pagination: {
                     el: '.swiper-pagination', //habilito paginación
-                    clickable: true,
+                    clickable: false,
                 },
                 // AÑADIR AQUÍ OTRAS OPCIONES SI CABE
             });
@@ -235,6 +235,7 @@
       (cards y contenedor fondo color framework, torcido) -->
     <div id = "contenedorTorcidoTop"></div>
     <section id = "PI4cards">
+
         <!-- vue 4 cards-->
         <article>
             <article class="cardDiferenciasFront">
@@ -242,7 +243,8 @@
                 <p>Vue permite <span class = "groc">aprender lo necesario en poco tiempo</span> para manejar el framework. Si eres una PYME y tienes recursos limitados es un framework idóneo.</p>
             </article>
             <article class="cardDiferenciasFront">
-                <h1>Integración gradual</h1>
+                <h1 class = "saltoLinea">Integración 
+                    gradual</h1>
                 <p>A diferencia de angular o react, vue se puede <span class = "groc">integrar en partes específicas</span> de una aplicación existente sin modificar la totalidad del proyecto.</p>
             </article>
             <article class="cardDiferenciasFront">
@@ -256,13 +258,43 @@
         </article>
 
         <!-- angular 4 cards-->
-        <article >
-
+        <article>
+            <article class="cardDiferenciasFront">
+                <h1>Arquitectura robusta y escalable</h1>
+                <p>Angular utiliza una arquitectura basada en módulos y servicios, <span class="groc">ideal para estructurar proyectos grandes</span> desde el principio.</p>
+            </article>
+            <article class="cardDiferenciasFront">
+                <h1>Inyección de dependencias</h1>
+                <p>Angular ofrece un sistema de inyección de dependencias <span class="groc">nativo y poderoso</span>, lo que facilita la reutilización de código y la gestión de dependencias.</p>
+            </article>
+            <article class="cardDiferenciasFront">
+                <h1>Herramientas y soporte</h1>
+                <p>Proporciona herramientas avanzadas como Angular CLI y soporte oficial de Google, <span class="groc">asegurando estabilidad</span> y mejoras continuas.</p>
+            </article>
+            <article class="cardDiferenciasFront">
+                <h1>Directivas personalizables</h1>
+                <p>Angular permite crear directivas propias, <span class="groc">dando flexibilidad</span> para extender la funcionalidad del HTML según las necesidades del proyecto.</p>
+            </article>
         </article>
 
         <!-- react 4 cards-->
         <article>
-            
+            <article class="cardDiferenciasFront">
+                <h1>Virtual DOM eficiente</h1>
+                <p>React utiliza un Virtual DOM que <span class="groc">optimiza el rendimiento</span> al minimizar las actualizaciones en el DOM real.</p>
+            </article>
+            <article class="cardDiferenciasFront">
+                <h1>Flexibilidad en el ecosistema</h1>
+                <p>React proporciona un núcleo ligero que se puede <span class="groc">complementar con librerías específicas</span>, adaptándose perfectamente a las necesidades del proyecto.</p>
+            </article>
+            <article class="cardDiferenciasFront">
+                <h1>Componentes funcionales con hooks</h1>
+                <p>Gracias a los hooks, React permite <span class="groc">gestionar estados y efectos</span> de forma sencilla y eficiente en componentes funcionales.</p>
+            </article>
+            <article class="cardDiferenciasFront">
+                <h1>Comunidad activa y recursos abundantes</h1>
+                <p>React cuenta con una <span class="groc">comunidad muy activa</span>, ofreciendo una amplia gama de recursos, tutoriales y soporte en línea.</p>
+            </article>
         </article>
     </section> 
 
