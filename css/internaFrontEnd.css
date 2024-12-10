@@ -266,15 +266,13 @@ de cada logo del slider (vue, react o angular).*/
 
     position: relative;
     right: 20em; /*movemos a la izquierda el contenedor para esconder también espacios blancos por la izquierda*/
-    top: -40em;
-    height: 50em;
-    padding-top: 15em;
-    margin-top: 60em;
+    top: -10em;
+    height: 80em;
     
     width: 140%;  /*hacemos más ancho el contenedor torcido para esconder los espacios enblanco que se generan por la derecha con la rotación de 10 grados*/
 
     transform: rotate(-10deg); /*DEFINO LA TRANSFORMACIÓN PARA TORCER EL CONTENEDOR (transform)*/
-    transform-origin: top left; /* PARA QUE NO SE MUEVA defino origen de transformación fijo. MUY IMPORTANTE*/
+    
     
     background-color: var(--colorVerdeVue);
 }
@@ -285,9 +283,10 @@ de cada logo del slider (vue, react o angular).*/
     z-index: 3; /*ponemos por delante las cards y le fondo de las mismas*/
     
     position: relative;
-    bottom: 105em;
+    bottom: 70em;
     
     max-width: var(--PIancho4cardsFront);
+    
     margin: 0 auto;
     
 }
