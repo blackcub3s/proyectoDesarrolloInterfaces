@@ -372,3 +372,90 @@ para poder conseguir  */
     background: linear-gradient(to bottom, white 0%, var(--marronClaroTabla) 33%, var(--marronOscuroTabla) 66%, var(--negroFooter) 100%);
 }
 
+
+
+
+/*#################################################
+    SECCIÓN 5 (S5) tabla comparativa
+        frameworks (no variable con swiper, siempre visible)
+  #################################################*/
+
+#PItablaDiferencias {
+    position: absolute;
+    margin: 0 auto;
+
+    top: 219em; /*subimos la tabla arriba para solaparla con el fondo con gradiente*/
+    left: 50%; /*IMPORTANTE: ponemos punto superior izquierdo de la tabla al centro*/
+    transform: translateX(-50%); /*IMPORTANTE: movemos la mitad del ancho de la tabla hacia la izquierda para centrar finalmente la tabla*/
+   
+    z-index: 3; /*por ENCIMA del contenedor torcido y de sus cards*/
+    
+    /*max-width: 600px;*/
+}
+
+
+#PItablaDiferencias table {
+    border-collapse: collapse; /*Hacemos que los borders de la tabla colapsen en uno solo para que se vean lineas finas */
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 8px 7px 2px rgba(0, 0, 0, 0.25);
+}
+
+
+
+#PItablaDiferencias th {border-bottom: 1px solid black;}
+#PItablaDiferencias th, #PItablaDiferencias td {padding: .83em 1em;}
+#PItablaDiferencias th {font-size: var(--tamanyoTabla);}
+
+/*PONEMOS LA SEPARACION VERTICAL ENTRE LA PRIMERA COLUMNA DE LA TABLA Y 
+LA SEGUNDA COLUMNA DONDE PONEMOS LAS CARACTERISTICAS DE VUE*/
+#PItablaDiferencias th:first-child {border-right: 1px solid black;}
+#PItablaDiferencias td:first-child {border-right: 1px solid black;}
+
+/*PONEMOS LA SEPARACION VERTICAL ENTRE LA LA SEGUNDA COLUMNA DONDE PONEMOS
+LAS CARACTERISTICAS DE VUE Y LA COLUMNA DE REACT*/
+#PItablaDiferencias th:nth-child(2){border-right: 1px solid black;}
+#PItablaDiferencias td:nth-child(2) {border-right: 1px solid black;}
+
+/*PONEMOS LA SEPARACION VERTICAL ENTRE LA COLUNA DE REACT Y LA DE ANGULAR*/
+#PItablaDiferencias th:nth-child(3){border-right: 1px solid black;}
+#PItablaDiferencias td:nth-child(3) {border-right: 1px solid black;}
+
+#PItablaDiferencias td {
+    font-size: var(--tamanyoTabla);
+    text-align: center;
+}
+
+#PItablaDiferencias td:first-child {
+    text-align: left;
+}
+
+/*LAS FILAS IMPARES APARECEN EN UN COLOR LIGERAMENTE DISTINTO A LAS IMPARES*/
+#PItablaDiferencias tbody tr:nth-child(even) {background-color: #f9f9f9;}
+#PItablaDiferencias tbody tr:nth-child(odd) {background-color: #fff;}
+
+/*PONGO ESTILO DISTINTO PARA EL HEADER DE LA PRIMERA COLUMNA DE LA TAULA: TÍTULO CARACTERÍSTICA AL CENTRO Y NEGRITA*/
+#PItablaDiferencias table thead tr th:first-child {
+    color: black;
+    text-align: center;
+}
+
+/*PONEMOS COLOR VERDE VUE AL HEADER DE VUE*/
+#PItablaDiferencias table thead tr th:nth-child(2) {
+    background-color: #41B883;
+    color: white; /*verd vue*/
+    text-align: center;
+}
+/*PONEMOS COLOR AZUL REACT AL HEADER DE REACT*/
+#PItablaDiferencias table thead tr th:nth-child(3) {
+    color: white;
+    background-color: #007BA7; /*blau react*/
+    text-align: center;
+}        
+
+ /*PONEMOS COLOR LILA ANGULAR HEADER DE ANGULAR*/
+ #PItablaDiferencias table thead tr th:nth-child(4) {
+    color: white;
+    background: linear-gradient(90deg, #CC00FF, #FF007F);
+    text-align: center;
+}
