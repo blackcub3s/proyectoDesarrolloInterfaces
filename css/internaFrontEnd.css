@@ -355,13 +355,16 @@ body {overflow-x: hidden;}
   sin usar el <br> de HTML, mejor práctica*/
 .saltoLinea {white-space: pre-line;}
 
-
-
 /*spans para las 4 cards*/
 .groc {color: var(--PI_colorSpans4cards);}
 
 /*Ponemos un espacio debajo de las 4cards 
 para poder conseguir  */
-#PI4cards > article > article {
-    margin-bottom: 5.8em;
-}
+#PI4cards > article > article {margin-bottom: 5.8em;}
+
+/*para el hover*/
+#PI4cards article .cardDiferenciasFront {transition: box-shadow var(--tiempoTransicionEstandar) ease-in-out;}
+#PI4cards article .cardDiferenciasFront:hover {box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.4);}
+
+
+
