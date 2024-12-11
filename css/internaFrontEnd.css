@@ -456,6 +456,6 @@ LAS CARACTERISTICAS DE VUE Y LA COLUMNA DE REACT*/
  /*PONEMOS COLOR LILA ANGULAR HEADER DE ANGULAR*/
  #PItablaDiferencias table thead tr th:nth-child(4) {
     color: white;
-    background: linear-gradient(90deg, #CC00FF, #FF007F);
+    background: linear-gradient(90deg, var(--PI_colorAngularGradienteInicio), var(--PI_colorAngularGradienteFinal));
     text-align: center;
 }
