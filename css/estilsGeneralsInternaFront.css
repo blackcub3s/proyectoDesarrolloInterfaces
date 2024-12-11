@@ -27,6 +27,10 @@
     --gHover: #938e8e4c;
     --rHover: #d251514c;
 
+    /*GRADIENTES FONDO TABLA DIFERENCIAS FRONT-END*/
+    --marronClaroTabla: #D4BEBE;
+    --marronOscuroTabla: #968787;
+
     /*ANCHO MÁXIMO DE LAS CARDS DE LA PÁGINA INTERNA DE FRONTEND*/
     --MaximaAnchuraCardsPIfrontend: 1025px;
     --PIancho4cardsFront: 860px;

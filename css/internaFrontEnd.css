@@ -366,5 +366,9 @@ para poder conseguir  */
 #PI4cards article .cardDiferenciasFront {transition: box-shadow var(--tiempoTransicionEstandar) ease-in-out;}
 #PI4cards article .cardDiferenciasFront:hover {box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.4);}
 
-
+#fondoTablaDiferencias {
+    position: relative;
+    height: 2424px;  /*808px de alto de cada contenedor de figma por 3 = 2424px*/
+    background: linear-gradient(to bottom, white 0%, var(--marronClaroTabla) 33%, var(--marronOscuroTabla) 66%, var(--negroFooter) 100%);
+}
 
