@@ -27,7 +27,7 @@
     de imagen) y la navegación (saldrán las flechitas de derecha e izquierda)-->
     <script>
         document.addEventListener("DOMContentLoaded", function inicializaSwiper() {
-            // INICIALIZO EL OBJETO SIPWER
+            // INICIALIZO OBJETO SWIPER
             const swiper = new Swiper('.swiper', {
                 navigation: {
                     nextEl: '.swiper-button-next',
@@ -35,14 +35,15 @@
                 },
                 pagination: {
                     el: '.swiper-pagination', //habilito paginación
-                    clickable: false,
+                    clickable: false, //NO QUEREMOS HACERLO CLICABLE PORQUE LA LÓGICA DE PROGRAMACIÓN HARÍA SALIR MAL LOS COLORES DE LOS CONTENEDORES TORCIDOS
                 },
-                // AÑADIR AQUÍ OTRAS OPCIONES SI CABE
+                // SI SE QUISIERAN MÁS OPCIONES SE PODRÓAN AÑADIR AQUÓ
             });
             
             //TOMO LOS TRES FONDOS DE CONTENEDOR TORCIDO DEL DOM. OCULTARÉ O MOSTRARÉ CADA
             //UNO EN FUNCIÓN DE LOS CLICK HECHOS EN LOS PAGINADORES DE SWIPER. LOS SIGUIENTES
-            //ELEMENTOS DEL DOM NO HARÁN SWIPE PERO SE AFECTARÁN AL SWIPEAR, AL CLICAR LAS FLECHITOAS.
+            //ELEMENTOS DEL DOM NO HARÁN SWIPE PERO SE AFECTARÁN AL SWIPEAR, AL CLICAR LAS FLECHITAS, PONIÉNDOSE
+            //AL COLOR CORRESPONDIENTE ASOCIADO CON EL LOGO DE CADA TECNOLOGÍA FRONT-END.
             const vue = document.querySelector("#PI4cards > article:first-child");
             const angular = document.querySelector("#PI4cards > article:nth-child(2)");
             const react = document.querySelector("#PI4cards > article:nth-child(3)");
@@ -52,6 +53,8 @@
             arrFondos = [vue, angular, react];
             var i = 0; //variable para saber dónde estamos
             
+            //SE NECESITA IMPLEMENTAR UNA LÓGICA QUE HAGA LOS CAMBIOS DE COLOR DEL CONTENEDOR TORCIDO EN FUNCIÓN
+            //DEL VALOR DE ÍNDICE i EN EL QUE NOS ENCONTRAMOS (LA i CAMBIARÁ CON CADA CLICK DE LAS FLECHITAS DE SWIPER)
             function coloreaContenedor(i, contenedor) {
                 if (i === 0)
                     contenedor.style.background =  getComputedStyle(document.documentElement).getPropertyValue('--colorVerdeVue'); 
@@ -64,8 +67,8 @@
             }
 
 
-            //navego a la DERECHA usando los eventos que están 
-            //built-in en swiper al clicar botón SIGUIENTE
+            //Navego a la DERECHA usando los eventos que swiper lleva 
+            //ya "built-in" en la libreria (botón SIGUIENTE  >  )
             swiper.on('slideNextTransitionStart', () => { 
                 arrFondos[i].style.display = "none";    //oculto actual
                 arrFondos[i+1].style.display = "grid"; //muestro el siguiente
@@ -74,8 +77,8 @@
                 coloreaContenedor(i, contTorcido);     //PONGO EL COLOR QUE TOQUE AL CONTENEDOR TORCIDO
             });
 
-            //navego a la IZQUIERDA usando los eventos que están 
-            //built-in en swiper al clicar botón ANTERIOR
+            //Navego a la IZQUIERDA usando los eventos que swiper lleva 
+            //ya "built-in" en la libreria (botón ANTERIOR  <  )
             swiper.on('slidePrevTransitionStart', () => {   //navego a la izquierda
                 arrFondos[i].style.display = "none";        //oculto actual
                 arrFondos[i-1].style.display = "grid";     //muestro el anterior
