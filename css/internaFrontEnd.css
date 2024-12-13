@@ -140,35 +140,6 @@ CARDS DEL FRONT-END DE LA LANDING PAGE)*/
 }
 
 
-/*-----------------------------------------------------*/
-/*B: Animamos la entrada de las 
-     cards con animate style (propiedad fadeInUp)
-/*-----------------------------------------------------*/
-
-/*NO SE HA PODIDO CARGAR CON WOW JS ASÍ QUE LAS ANIMACIONES NO TIENEN UN TRIGGER POR SCROLL. SE HA TRATADO
-DE CONSEGUIR QUE MÁS O MENOS HAGAN TRIGGER CUANDO EL USUARIO VAYA A BAJAR (DEJANDO CASI 2 SEGUNDO PARA ELLO)*/
-
-/*[B]: animo primera card*/
-#PIcaracteristicasFrameworksFront .cartaFrontEndPI:first-child {
-    animation: fadeInLeft; 
-    animation-duration: 1.6s;
-}
-
-/*[B]: animo segunda card*/
-#PIcaracteristicasFrameworksFront .cartaFrontEndPI:nth-child(2) {
-    animation: fadeInUp; 
-    animation-duration: 1.6s;
-}
-
-/*[B]: animo tercera card*/
-#PIcaracteristicasFrameworksFront .cartaFrontEndPI:last-child {
-    animation: fadeInRight; 
-    animation-duration: 1.6s;
-}
-
-
-
-
 
 /*#################################################
     SECCIÓN 3 PÁGINA INTERNA (PI) FRONTEND:   
