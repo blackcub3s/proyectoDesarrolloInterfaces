@@ -1,121 +1,120 @@
 /* Contenedor Header */
-.contenedor-header {
-    height: 450px; /* Altura */
-    background: linear-gradient(to bottom, black, rgb(29, 41, 77)); /* Gradiente vertical */
-    border-bottom-left-radius: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white; 
-    font-size: 2.3rem; 
-    text-align: center;
+.header-backend {
+	height: 450px; /* Altura */
+	background: linear-gradient(
+		to bottom,
+		black,
+		rgb(29, 41, 77)
+	); /* Gradiente vertical */
+	border-bottom-left-radius: 90px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 3.3rem;
+	text-align: center;
 }
-/* Back-End Info */
-
 /* Contenedor de imágenes */
 .img-container {
-    display: flex; /* Alineación en fila */
-    justify-content: space-evenly; /* Centrado horizontal */
-    align-items: center; /* Centrado vertical */
-    gap: 20px; /* Espaciado entre imágenes */
-    margin: 40px 0; /* Separación con otros elementos */
+	display: flex; /* Alineación en fila */
+	justify-content: space-evenly; /* Centrado horizontal */
+	align-items: center; /* Centrado vertical */
+	gap: 20px; /* Espaciado entre imágenes */
+	margin: 40px 0; /* Separación con otros elementos */
 }
 .img-container img {
-    width: 350px; /* Ajuste proporcional */    
-    border-radius: 5px; 
+	width: 350px; /* Ajuste proporcional */
+	border-radius: 5px;
 }
-
-
-/* Artículo - back-end-info */
+/* Back-End Info */
 .back-end-info {
-    background-color: #d9d9d9; /* Fondo gris claro */
-    text-align: left; /* Texto alineado a la izquierda */
-    padding: 60px 20px; /* Espaciado interno: 60px en la parte superior e inferior, 20px a los lados */
-    display: flex; /* Usamos flexbox para alinear los elementos */
-    justify-content: space-between; /* Espaciado entre el texto y la imagen */
-    align-items: center; /* Centrado vertical de los elementos */
+	background-color: #d9d9d9;
+	margin: 30px auto;
+	padding: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
-
-/* Contenedor de la imagen */
+/* Estilo del artículo */
+.back-end-info article {
+	max-width: var(--MaximaAnchuraTextosEncabezados);
+	margin: 40px 7% 40px 15%;
+	line-height: 1.3; /*Espaciado interlineal para facilitar la lectura*/
+}
+/* Espaciados dentro del artículo */
+.back-end-info h2,
+.back-end-success h2 {
+	margin: 20px 0;
+	font-size: 1.8rem;
+}
+.back-end-info p,
+.back-end-success p {
+	font-size: 1.2rem;
+}
+.back-end-info ul {
+	margin: 10px 0;
+	padding-left: 20px;
+	font-size: 1.2rem;
+}
+.back-end-info ul li {
+	margin: 10px 0;
+}
+/* Estilo de la imagen */
 .back-end-info img {
-    height: 350px; /* Altura de la imagen */
-    border-radius: 15px; /* Bordes redondeados */
+	margin-right: 10%;
+	object-fit: cover;
+	align-self: center;
+	border-radius: 15px;
+	box-shadow: 5px 5px 5px rgba(0, 59, 109, 0.5);
+	width: 650px;
 }
-
-/* Contenedor del texto */
-.back-text-container {
-    max-width: var(--MaximaAnchuraCardsBackEnd);   
-    padding-left: 5rem; 
-}
-/* Espaciado entre h2 y p dentro del texto */
-.back-text-container h2 {
-    margin: 15px 0;
-}
-.back-text-container p {
-    margin: 10px 0;
-}
-
-/* Listado dentro del UL */
-.back-text-container ul {
-    padding-left: 20px;
-    margin: 10px ;
-}
-
-.back-text-container ul li {
-    margin-bottom: 10px;
-}
-
-
-
-
-
-/* HR */
-.back-end-info hr, .back-end-success hr {
-    border: 1px solid rgb(125, 125, 125); /* Color gris para el borde */
-    width: 80%; /* Ancho del <hr> */
-    margin: 50px auto; /* Centrado con margen */
-}
-
 /* Back-End Success */
 .back-end-success {
-    background-color: white; /* Fondo blanco */
-    margin: 20px 0 20px 60px;
-    text-align: left; /* Alineación del texto */
+	background-color: white; /* Fondo blanco */
+	text-align: left; /* Alineación del texto */
 }
-
+.back-end-success article {
+	margin: 40px 7% 40px 15%;
+}
 /* Contenedor de tarjetas */
 .success-content {
-    display: grid; /* Diseño en rejilla */
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
-    gap: 60px; /* Espaciado entre columnas */
-    max-width: 1600px;
-    
+	display: grid; /* Diseño en rejilla */
+	grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+	gap: 60px; /* Espaciado entre columnas */
+	max-width: var(--MaximaAnchuraCardsFrontEnd);
+	margin: auto;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	box-sizing: border-box;
 }
-
 /* Tarjetas */
 .successs-card {
-    background-color: #d9d9d9; /* Fondo gris claro */
-    border-radius: 10px; /* Bordes redondeados */
-    margin: 50px;
-    padding: 20px; /* Espaciado interno */
-    text-align: left; /* Texto ajustado */
-    transition: transform var(--tiempoTransicionEstandar) ease-in-out;
+	background-color: #d9d9d9; /* Fondo gris claro */
+	border-radius: 10px; /* Bordes redondeados */
+	padding: 20px; /* Espaciado interno */
+	text-align: left; /* Texto ajustado */
+	transition: transform 0.5s ease-in-out;
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+	width: 400px; /* Ancho fijo para las tarjetas */
+	height: 350px;
+	position: relative;
+	right: 105px; /* desplazamiento para asegurar el centrado respecto al footer y la página en general*/
 }
 
 .successs-card:hover {
-    transform: scale(1.25); /* Aumentar tamaño en un 10% */
-    border: solid 2px black;
+	transform: scale(1.18); /* Aumentar tamaño en un 10% */
+	border: solid 1px rgb(59, 59, 59);
 }
 
 .successs-card h2 {
-    font-size: 1.7rem;
-    margin: 20px 0;
-    text-align: center;
+	font-size: 1.7rem;
+	margin: 15px 0;
+	text-align: center;
 }
 
 .successs-card p {
-    font-size: 1.2rem;
-    line-height: 1.3; /* Altura de línea para mejor legibilidad */
-    padding: 20px;
+	font-size: 1.2rem;
+	line-height: 1.4; /* Altura de línea para mejor legibilidad */
+	padding: 20px;
 }
-
