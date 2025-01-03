@@ -1,80 +1,102 @@
+/*------------------------------------------------*/
+/*-----------BACKEND DEVELOPMENT WEB--------------*/
+/*------------------------------------------------*/
+/*definimos el border-box como estilo gobal*/
+body {
+    box-sizing: border-box;
+}
 /* Contenedor Header */
 .header-backend {
-	height: 450px; /* Altura */
-	background: linear-gradient(
-		to bottom,
-		black,
-		rgb(29, 41, 77)
-	); /* Gradiente vertical */
-	border-bottom-left-radius: 90px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: white;
-	font-size: 3.3rem;
-	text-align: center;
+    min-height: 450px; /* Altura mínima del contenedor */
+    background: linear-gradient(to bottom, black, rgb(29, 41, 77)); /* Gradiente de fondo vertical */
+    border-bottom-left-radius: 90px; /* Borde redondeado inferior izquierdo */
+    display: flex; /* Habilitamos flexbox */
+    justify-content: center; /* Centramos horizontalmente */
+    align-items: center; /* Centramos verticalmente */
+    color: white; /* Texto en blanco */
+    font-size: 5rem; /* Tamaño de fuente */
+    text-align: center; /* Centramos el texto */
 }
-/* Contenedor de imágenes */
-.img-container {
-	display: flex; /* Alineación en fila */
-	justify-content: space-evenly; /* Centrado horizontal */
-	align-items: center; /* Centrado vertical */
-	gap: 20px; /* Espaciado entre imágenes */
-	margin: 40px 0; /* Separación con otros elementos */
+
+/*------------ CONTENEDOR SWIPER -----------------*/
+
+/* Contenedor principal del Swiper */
+.swiper-container {
+    display: flex; /* Habilitamos flexbox */
+    width: 100%; /* Ancho completo */
+    height: 500px; /* Altura fija */
+    max-height: 100%; /* Limita la altura al tamaño de la ventana */
 }
-.img-container img {
-	width: 350px; /* Ajuste proporcional */
-	border-radius: 5px;
+
+/* Slides dentro del Swiper */
+.swiper-slide {
+    display: flex; /* Habilitamos flexbox */
+    text-align: center; /* Centramos horizontalmente el contenido */
+    align-items: center; /* Centramos verticalmente el contenido */
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
 }
+
+/* Estilo de las imágenes dentro del Swiper */
+.swiper-slide img {
+    width: 600px; /* Ancho fijo */
+    height: 100%; /* Altura completa */
+    max-height: 100%; /* Evita que excedan el tamaño del slide */
+    display: inline-block; /* Evita espacios adicionales debajo de la imagen */
+    object-fit: contain; /* Mantiene las proporciones originales de la imagen */
+}
+
 /* Back-End Info */
 .back-end-info {
-	background-color: #d9d9d9;
-	margin: 30px auto;
-	padding: 20px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	background-color: var(--grisFondoStandard); /* Fondo gris claro */
+    margin: 30px auto; /* Espaciado y centrado horizontal */
+    padding: 20px; /* Espaciado interno */
+    display: flex; /* Habilitamos flexbox */
+    align-items: center; /* Centramos verticalmente */
+    justify-content: space-between; /* Espaciamos elementos uniformemente */
 }
 /* Estilo del artículo */
 .back-end-info article {
 	max-width: var(--MaximaAnchuraTextosEncabezados);
-	margin: 40px 7% 40px 15%;
+	margin: 40px 7% 40px 15%; /* Margen personalizado */
 	line-height: 1.3; /*Espaciado interlineal para facilitar la lectura*/
 }
 /* Espaciados dentro del artículo */
 .back-end-info h2,
 .back-end-success h2 {
 	margin: 20px 0;
-	font-size: 1.8rem;
+	font-size: 1.8rem;/* Tamaño de fuente*/
 }
 .back-end-info p,
 .back-end-success p {
-	font-size: 1.2rem;
+	font-size: 1.2rem;/* Tamaño de fuente*/
 }
 .back-end-info ul {
 	margin: 10px 0;
 	padding-left: 20px;
-	font-size: 1.2rem;
+	font-size: 1.2rem;/* Tamaño de fuente*/
 }
 .back-end-info ul li {
 	margin: 10px 0;
 }
 /* Estilo de la imagen */
 .back-end-info img {
-	margin-right: 10%;
-	object-fit: cover;
-	align-self: center;
-	border-radius: 15px;
-	box-shadow: 5px 5px 5px rgba(0, 59, 109, 0.5);
-	width: 650px;
+	margin-right: 10%; /* Margen derecho */
+    object-fit: cover; /* Asegura que las imágenes ocupen el espacio de manera uniforme */
+    align-self: center; /* Alinea verticalmente dentro del contenedor */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 5px 5px 5px rgba(0, 59, 109, 0.5); /* Sombra sutil */
+    width: 650px; /* Ancho fijo */
 }
+
 /* Back-End Success */
+
 .back-end-success {
 	background-color: white; /* Fondo blanco */
 	text-align: left; /* Alineación del texto */
 }
 .back-end-success article {
-	margin: 40px 7% 40px 15%;
+	margin: 40px 7% 40px 15%; /* Margen personalizado */
 }
 /* Contenedor de tarjetas */
 .success-content {
@@ -82,15 +104,15 @@
 	grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
 	gap: 60px; /* Espaciado entre columnas */
 	max-width: var(--MaximaAnchuraCardsFrontEnd);
-	margin: auto;
-	justify-content: center;
-	align-items: center;
-	padding: 20px;
-	box-sizing: border-box;
+	margin: auto; /* Centrado automático */
+    justify-content: center; /* Alineación horizontal */
+    align-items: center; /* Alineación vertical */
+    padding: 20px; 
 }
+
 /* Tarjetas */
 .successs-card {
-	background-color: #d9d9d9; /* Fondo gris claro */
+	background-color: var(--grisFondoStandard); /* Fondo gris claro */
 	border-radius: 10px; /* Bordes redondeados */
 	padding: 20px; /* Espaciado interno */
 	text-align: left; /* Texto ajustado */
@@ -103,10 +125,11 @@
 }
 
 .successs-card:hover {
-	transform: scale(1.18); /* Aumentar tamaño en un 10% */
-	border: solid 1px rgb(59, 59, 59);
+    transform: scale(1.2); /* Aumenta el tamaño al pasar el ratón */
+    border: solid 1px rgb(59, 59, 59); /* Borde adicional en hover */
 }
 
+/* Estilo del texto dentro de las tarjetas */
 .successs-card h2 {
 	font-size: 1.7rem;
 	margin: 15px 0;

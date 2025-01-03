@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="css/estilos.css" />
     <!-- cargamos la css especifica-->
     <link rel="stylesheet" href="css/backend.css" />
+    <!-- Incluir los estilos css desde CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -45,17 +47,31 @@
     <h1 class="header-backend">Back-End Development</h1>
 
     <!--Imágenes-->
-    <section class="img-container">
-        <img src="img/nodejs_logo_definitiu.png" alt="Logo de Node.js" />
-        <img src="img/django_definitiu.png" alt="Logo de Django" />
-        <img src="img/Springboot_definitiu.png" alt="Logo de Springboot" />
-        <img src="img/laravel_definitiu.png" alt="Logo de Laravel" />
-    </section>
+    <!--Contenido galeria SwiperJS-->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="img/nodejs_logo_definitiu.png" alt="Logo de Node.js" />
+            </div>
+            <div class="swiper-slide">
+                <img src="img/django_definitiu.png" alt="Logo de Django" />
+            </div>
+            <div class="swiper-slide">
+                <img src="img/Springboot_definitiu.png" alt="Logo de Springboot" />
+            </div>
+            <div class="swiper-slide">
+                <img src="img/laravel_definitiu.png" alt="Logo de Laravel" />
+            </div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+    </div>
 
     <section class="back-end-info">
         <article>
-
-            <h2>Black Code Consulting: Innovación y Eficiencia en Desarrollo Backend</h2>
+            <h2>
+                Black Code Consulting: Innovación y Eficiencia en Desarrollo Backend
+            </h2>
             <p>
                 En Black Code Consulting, somos expertos en el desarrollo backend
                 utilizando tecnologías de vanguardia como Node.js, Django, Spring Boot
@@ -76,19 +92,20 @@
             <h2>¿Qué hacemos?</h2>
             <ul>
                 <li>
-                    <strong> Servidores de Alto Rendimiento:</strong> Diseñamos e implementamos servidores
-                    que garantizan un rendimiento óptimo, incluso bajo altos volúmenes
-                    de tráfico y datos.
+                    <strong> Servidores de Alto Rendimiento:</strong> Diseñamos e
+                    implementamos servidores que garantizan un rendimiento óptimo,
+                    incluso bajo altos volúmenes de tráfico y datos.
                 </li>
                 <li>
-                    <strong>Gestión de Bases de Datos Complejas:</strong> Nuestro equipo se especializa
-                    en la gestión y optimización de bases de datos, asegurando un acceso
-                    rápido y eficiente a la información.
+                    <strong>Gestión de Bases de Datos Complejas:</strong> Nuestro equipo
+                    se especializa en la gestión y optimización de bases de datos,
+                    asegurando un acceso rápido y eficiente a la información.
                 </li>
                 <li>
-                    <strong>Desarrollo de APIs Rápidas y Seguras:</strong> Creamos APIs personalizadas
-                    que no solo son rápidas, sino también seguras, facilitando la
-                    integración de sistemas y mejorando la experiencia del usuario.
+                    <strong>Desarrollo de APIs Rápidas y Seguras:</strong> Creamos APIs
+                    personalizadas que no solo son rápidas, sino también seguras,
+                    facilitando la integración de sistemas y mejorando la experiencia
+                    del usuario.
                 </li>
             </ul>
             <h2>Nuestro enfoque personalizado</h2>
@@ -100,12 +117,10 @@
                 sistemas empresariales con Spring Boot, o creando proyectos web ágiles
                 con Django y Laravel, estamos listos para enfrentar cualquier desafío.
             </p>
-
         </article>
 
         <!-- Imagen backend database -->
         <img src="img/backEnd_database_definitiu.jpeg" alt="imagen servidor" />
-
     </section>
 
     <section class="back-end-success">
@@ -114,7 +129,7 @@
 
             <p>
                 En Black Code Consulting, estamos comprometidos con la excelencia y la
-                satisfacción del cliente.<br/><br>
+                satisfacción del cliente.<br /><br />
                 A lo largo de nuestra trayectoria, hemos tenido el privilegio de
                 colaborar con diversas empresas, ayudándolas a alcanzar sus objetivos
                 a través de soluciones innovadoras y personalizadas. A continuación,
@@ -128,9 +143,11 @@
             <article class="successs-card">
                 <h2>New Logistiks:</h2>
                 <p>
-                    Implementamos un <strong>sistema de gestión de datos utilizando Django</strong>,
-                    optimizando sus operaciones logísticas y <strong>reduciendo el tiempo de
-                        procesamiento en un 50%</strong>. <br /><br />
+                    Implementamos un
+                    <strong>sistema de gestión de datos utilizando Django</strong>,
+                    optimizando sus operaciones logísticas y
+                    <strong>reduciendo el tiempo de procesamiento en un 50%</strong>.
+                    <br /><br />
                     Esta solución proporcionó una mejor visibilidad de la cadena de
                     suministro y una respuesta más ágil a las demandas del mercado.
                 </p>
@@ -138,27 +155,28 @@
             <article class="successs-card">
                 <h2>ABC Fintech:</h2>
                 <p>
-                    Desarrollamos una <strong>API segura y escalable con Node.js</strong>, que facilitó
-                    la integración de múltiples servicios financieros. <br /><br />
+                    Desarrollamos una
+                    <strong>API segura y escalable con Node.js</strong>, que facilitó la
+                    integración de múltiples servicios financieros. <br /><br />
                     Gracias a esta solución, ABC Fintech pudo lanzar nuevas
-                    funcionalidades en un <strong>30% menos de tiempo</strong>, mejorando su eficiencia
-                    operativa en un mercado dinámico.
+                    funcionalidades en un <strong>30% menos de tiempo</strong>,
+                    mejorando su eficiencia operativa en un mercado dinámico.
                 </p>
             </article>
             <article class="successs-card">
                 <h2>Flow Systems</h2>
                 <p>
-                    Creamos una <strong>plataforma personalizada de gestión de proyectos
-                        utilizando Laravel</strong>, que integró herramientas de colaboración en
-                    tiempo real. <br /><br />
+                    Creamos una
+                    <strong>plataforma personalizada de gestión de proyectos utilizando
+                        Laravel</strong>, que integró herramientas de colaboración en tiempo real.
+                    <br /><br />
 
-                    Como resultado, Flow Systems experimentó un <strong>aumento del 40% en la
-                        productividad</strong> y una notable mejora en la satisfacción del cliente.
+                    Como resultado, Flow Systems experimentó un
+                    <strong>aumento del 40% en la productividad</strong> y una notable
+                    mejora en la satisfacción del cliente.
                 </p>
             </article>
-
         </div>
-
     </section>
 
     <!-- SECCIÓN 5 (S5): footer -->
@@ -200,6 +218,33 @@
         <hr />
         <p id="copyright"><i>&copy; 2024 | Todos los derechos reservados</i></p>
     </footer>
+
+    <!-- Incluir SwiperJS desde CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Script necesario para que funcione la libreria SwiperJs-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        let swiper = new Swiper('.swiper-container', {
+            calculateHeight: true,
+            slidesPerView: 1, // Un slide visible a la vez
+            spaceBetween: 30, // Espacio entre slides
+            effect: 'cube', // Transición con efecto fade
+            cubeEffect: {
+                shadow: false, // Desactivar sombras
+                slideShadows: false, // Sin sombras en las caras del cubo
+            },
+            autoplay: {
+                delay: 3500, // Tiempo entre transiciones
+                pauseOnMouseEnter: true, // Detener al pasar el mouse
+            },
+            loop: true, // Modo de loop infinito
+            speed: 1000, // Velocidad de la transición 
+            pagination: false, // Sin paginación
+            navigation: false, // Sin flechas de navegación
+            centeredSlides: true,
+        });
+    });
+    </script>
 </body>
 
 </html>
