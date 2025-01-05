@@ -1,0 +1,74 @@
+#about-us video {
+	width: 100%; /* El video ocupa todo el ancho */
+	height: 650px; /* Ajusta la altura */
+	object-fit: cover; /* Asegura que el video se ajuste bien */
+}
+#about-us section {
+	width: var(--MaximaAnchuraCardsFrontEnd); /* Ancho del contenido  var=1400px*/
+	margin: 0 auto; /* Centrar la sección */
+	line-height: 1.5; /* Altura de línea para facilitar lectura */
+}
+#about-us section h1 {
+	text-align: center; 
+	font-size: 2.8rem; /* Tamaño del título */
+	margin: 40px;     
+}
+#about-us article{    
+    margin-bottom: 100px;
+    display: flex; /* Diseño en fila */
+    align-items: center; /* Centrado vertical */
+    justify-content: space-between; /* Separar contenido */ 
+}
+#about-us h4 {
+	font-size: 1.5rem; /* Tamaño de los títulos */
+	margin-bottom: 15px; /* Separación del texto */
+}
+#about-us p {
+	margin-bottom: 15px; /* Separación entre párrafos */
+	font-size: 1.1rem; /* Tamaño de fuente de los párrafos */
+}
+/* Estilo para imagenes y para la ubicación */
+#about-us article img, .location-mapa iframe {
+	width: 600px;
+	height: 400px;
+	object-fit: cover; 
+    border-radius: 3px;   
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra para las imágenes */
+}
+.text-content{
+    max-width: 600px;
+    text-align:left;
+}
+/*Texto - Imagen alternos*/
+#about-us article:first-child, #about-us article:nth-child(3) {
+    flex-direction: row; /* Imagen a la derecha */
+}
+
+#about-us article:nth-child(2),#about-us article:nth-child(4) {
+    flex-direction: row-reverse; /* Imagen a la izquierda */
+}
+
+/*Ubicación*/
+/* Contenedor de la dirección y mapa */
+.location-content {
+    display: flex;
+    justify-content: space-between; /* Separar dirección y mapa */
+    align-items: center;   
+    margin: 50px 0 10% 0; 
+}
+/* Detalles de la dirección */
+.location-link {
+    text-decoration: none; /* Sin subrayado */
+    color: black; 
+    display: flex;
+    align-items: center;
+}
+.location-link:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+    color: #033466c7; /* Cambiar color en hover */
+}
+.location-link img {
+    width: 100px; /* Tamaño del icono */    
+    position: relative;
+    top: -10px; /*colocamos el pin a la altura deseada*/
+}
