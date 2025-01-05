@@ -1,4 +1,4 @@
-section {
+.joinUs-img, .talento, .ofertas {
     width: 1400px; /* Ancho fijo */
     height: auto; /* Deja que el alto se ajuste automáticamente */
     position: relative; /* Necesario para usar el truco del contenedor relativo */
@@ -10,7 +10,7 @@ section {
     overflow: hidden; /* Recorta contenido sobrante */
 }
 
-section > img {
+.joinUs-img img {
     width: 100%; /* Imagen ajustada al ancho del contenedor */
     height: 100%; /* Imagen ajustada al alto del contenedor */
     object-fit: cover; /* Llenar el contenedor sin deformar */
@@ -61,7 +61,7 @@ section > img {
 
 /* Estilo de las cartas */
 .oferta-card {
-    background-color: var(--grisTransparenteCard); /* Fondo gris con transparencia */
+    background-color: var(--grisFondoStandard); /* Fondo gris con transparencia */
     border-radius: 15px; /* Bordes redondeados */
     padding: 50px;
     text-align: left;
