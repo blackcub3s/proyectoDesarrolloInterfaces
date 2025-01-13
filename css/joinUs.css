@@ -1,0 +1,93 @@
+.joinUs-img, .talento, .ofertas {
+    width: 1400px; /* Ancho fijo */
+    height: auto; /* Deja que el alto se ajuste automáticamente */
+    position: relative; /* Necesario para usar el truco del contenedor relativo */
+    padding-bottom: calc(1400px / 3); /* Proporción panorámica 3:1, usamos este truco que hemos encontrado ya que en navegador firefox el aspect ratio no funciona como se espera*/
+    margin: 50px auto; /* Centrado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Recorta contenido sobrante */
+}
+
+.joinUs-img img {
+    width: 100%; /* Imagen ajustada al ancho del contenedor */
+    height: 100%; /* Imagen ajustada al alto del contenedor */
+    object-fit: cover; /* Llenar el contenedor sin deformar */
+    position: absolute; /* Necesario para que la imagen se adapte al contenedor */
+    top: 0;
+    left: 0;
+}
+.talento{
+    max-width:var(--MaximaAnchuraTextosEncabezados); /* Ancho de la sección */
+    margin: 0 auto; /* Centra horizontalmente */
+    padding: 20px 0;
+}
+
+.talento h1 {
+    font-size: 3.2rem; /* Tamaño del título */
+    text-align: center; /* Centra horizontalmente */
+}
+
+.talento hr {
+    margin: 15px auto; /* Espaciado del borde superior/inferior */
+    height: 3px; /* Grosor del <hr> */
+    border: none;
+    background: linear-gradient(90deg, red, orange, yellow, greenyellow,aqua,blue, indigo, fuchsia); /* Gradiente */
+}
+
+.talento p {
+    max-width:1000px; 
+    margin: 40px 0; /* Separación entre párrafos */
+    font-size: 1.4rem; 
+    text-align:left; 
+}
+
+/* Encabezado */
+.ofertas h1 {
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+
+/* Contenedor de las ofertas */
+.ofertas-content {
+    max-width: var(--MaximaAnchuraCardsBackEnd); /* Define el ancho máximo del grid */
+    margin: 0 auto;
+    display: grid; 
+    grid-template-rows: repeat(3, 1fr);/*tres filas*/  
+    justify-items: center;
+    gap: 60px; /* Espacio entre las cartas */
+}
+
+/* Estilo de las cartas */
+.oferta-card {
+    background-color: var(--grisFondoStandard); /* Fondo gris con transparencia */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 50px;
+    text-align: left;
+    box-sizing: border-box;
+    width: 100%; /* Ancho completo dentro del grid */
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.25);
+    transition: box-shadow var(--tiempoTransicionEstandar) ease-in-out;
+}
+
+/* Hover de cada carta */
+.oferta-card:hover {
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Títulos dentro de las cartas */
+.oferta-card h2 {
+    font-size: 1.75rem;
+    margin-bottom: 15px;
+}
+
+/* Listas dentro de las cartas */
+.oferta-card ul {
+    padding-left: 20px;   
+}
+
+.oferta-card li {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
