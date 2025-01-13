@@ -32,30 +32,33 @@ contenido de la pagina (por un lado, texto contacto y, por el otro, formulario)*
 #PIfondoContacto form label:nth-of-type(2) {margin-top: 2em;} /*segunda label que cuelga de form (label:"E-mail")*/
 #PIfondoContacto form label:last-of-type{margin-top: 2em;}    /*tercera label que cuelga de form (label:"Comentarios")*/
 
-/*estilos mensaje contacto*/
+/*estilos mensaje contacto (izquierda página)*/
 #PIfondoContacto section > article:first-child {
     font-size: 2em;
     padding-left: 5%;
     padding-right: 5%;
     color: white;
     max-width: 17em;
+    animation: fadeInLeft; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: var(--PI_tiemposFadeINContacto); /* don't forget to set a duration! */
+
 }
 
-#PIfondoContacto section > article:first-child h1 {
-    font-size: 1.5em;
-}
+/*definimos estilos de tamaño distinto en h1 y en p para el mensaje de la izquierda de la pagina*/
+#PIfondoContacto section > article:first-child h1 {font-size: 1.5em;}
+#PIfondoContacto section > article:first-child p {font-size: .6em;}
 
-#PIfondoContacto section > article:first-child p {
-    font-size: .6em;
-}
-
-/*estilos formulario*/
+/*estilos formulario (derecha página)*/
 #PIfondoContacto section > article:last-child  {
     background-color: white;
     margin: 1em;
     border: 1px solid black;
     padding: 2em;
     max-width: 15em;
+    border-radius: .4em;
+
+    animation: fadeInRight; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: var(--PI_tiemposFadeINContacto); /* don't forget to set a duration! */
 }
 
 
@@ -68,17 +71,19 @@ contenido de la pagina (por un lado, texto contacto y, por el otro, formulario)*
 }
 
 
-/*alturas para elementos donde podemos poner texto (inputs y textarea, respectivamente)*/
-#PIfondoContacto section > article:last-child form input {height: 3em;}
-#PIfondoContacto section > article:last-child form textarea {height: 8em;}
+/*alturas para elementos donde podemos poner texto (inputs y textarea, respectivamente) y
+definiciones margen para el texto que se introduzca*/
+#PIfondoContacto section > article:last-child form input {height: 3em; padding-left: 1em; padding-right: 1em;}
+#PIfondoContacto section > article:last-child form textarea {height: 8em; padding: 1em;}
+
 
 
 /*estilos comunes a elementos input y textarea formulario*/
 #PIfondoContacto section > article:last-child form input, 
 #PIfondoContacto section > article:last-child form textarea {
-    border-radius: .5em;
+    border-radius: .4em;
     border: 1px solid black;
-    box-shadow: inset 1px 2px 2px rgb(204, 204, 204); /*NOTA: con el inset conseguimos la smbra por dentro*/
+    box-shadow: inset 1px 2px 2px rgb(217, 217, 217); /*NOTA: con el inset conseguimos la smbra por dentro*/
 }                    /*x   y   blur    colorsombra*/
 
 
@@ -91,12 +96,19 @@ contenido de la pagina (por un lado, texto contacto y, por el otro, formulario)*
     padding: .5em;
     border-radius: .6em;
     border: none;
+
+    transition: background-color var(--tiempoTransicionEstandar) ease-in-out; 
+}
+
+/*definimos el hover para el boton del formulario*/
+#PIfondoContacto section article:last-child button:hover {
+    background-color: var(--colorAzulBotonHover); /* Cambia a un tono más oscuro del color azul */
 }
 
 /*definimos el span de los asteriscos de las labels del formulario,
  que el mockup de figma, si nos fijamos tiene un color distinto*/
 #PIfondoContacto section article:last-child span {
-    color: #6A00FF;
+    color: var(--PI_asteriscFormContacto);
     font-size: .8em;
 
     position: relative;
