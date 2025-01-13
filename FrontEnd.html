@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>black code consulting</title>
+
+    <!--Cargamos la fuente roboto de google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!--Cargamos el CSS de animate.style para hacer animaciones, p. ej menu desplegable de la navbar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- Incluimos el CSS de swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!--cargamos los estilos que hemos definido nosotros-->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/internaFrontEnd.css">
+    <link rel="styleSheet" href="css/estilsGeneralsInternaFront.css">
+
+    <!-- cargamos la CDN de swiper para poder generar los swipes de la galería de diferencias entre
+     tecnologías frontend-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!--Inicializamos el objeto de swiper y habilitamos paginación (saldrán los puntitos por cada página
+    de imagen) y la navegación (saldrán las flechitas de derecha e izquierda)-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function inicializaSwiper() {
+            // INICIALIZO OBJETO SWIPER
+            const swiper = new Swiper('.swiper', {
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination', //habilito paginación
+                    clickable: false, //NO QUEREMOS HACERLO CLICABLE PORQUE LA LÓGICA DE PROGRAMACIÓN HARÍA SALIR MAL LOS COLORES DE LOS CONTENEDORES TORCIDOS
+                },
+                // SI SE QUISIERAN MÁS OPCIONES SE PODRÓAN AÑADIR AQUÓ
+            });
+            
+            //TOMO LOS TRES FONDOS DE CONTENEDOR TORCIDO DEL DOM. OCULTARÉ O MOSTRARÉ CADA
+            //UNO EN FUNCIÓN DE LOS CLICK HECHOS EN LOS PAGINADORES DE SWIPER. LOS SIGUIENTES
+            //ELEMENTOS DEL DOM NO HARÁN SWIPE PERO SE AFECTARÁN AL SWIPEAR, AL CLICAR LAS FLECHITAS, PONIÉNDOSE
+            //AL COLOR CORRESPONDIENTE ASOCIADO CON EL LOGO DE CADA TECNOLOGÍA FRONT-END.
+            const vue = document.querySelector("#PI4cards > article:first-child");
+            const angular = document.querySelector("#PI4cards > article:nth-child(2)");
+            const react = document.querySelector("#PI4cards > article:nth-child(3)");
+            
+            //contenedor torcido al que se le cambiará el color
+            const contTorcido = document.getElementById("contenedorTorcidoTop");
+            arrFondos = [vue, angular, react];
+            var i = 0; //variable para saber dónde estamos
+            
+            //SE NECESITA IMPLEMENTAR UNA LÓGICA QUE HAGA LOS CAMBIOS DE COLOR DEL CONTENEDOR TORCIDO EN FUNCIÓN
+            //DEL VALOR DE ÍNDICE i EN EL QUE NOS ENCONTRAMOS (LA i CAMBIARÁ CON CADA CLICK DE LAS FLECHITAS DE SWIPER)
+            function coloreaContenedor(i, contenedor) {
+                if (i === 0)
+                    contenedor.style.background =  getComputedStyle(document.documentElement).getPropertyValue('--colorVerdeVue'); 
+                else if (i === 1) {
+                    var colorAngularINI = getComputedStyle(document.documentElement).getPropertyValue('--PI_colorAngularGradienteInicio');
+                    var colorAngularFIN = getComputedStyle(document.documentElement).getPropertyValue('--PI_colorAngularGradienteFinal');
+                    contenedor.style.background = `linear-gradient(to bottom, ${colorAngularINI}, ${colorAngularFIN})`;
+                } else if (i === 2)
+                    contenedor.style.background =  getComputedStyle(document.documentElement).getPropertyValue('--PI_colorReact');
+            }
+
+
+            //Navego a la DERECHA usando los eventos que swiper lleva 
+            //ya "built-in" en la libreria (botón SIGUIENTE  >  )
+            swiper.on('slideNextTransitionStart', () => { 
+                arrFondos[i].style.display = "none";    //oculto actual
+                arrFondos[i+1].style.display = "grid"; //muestro el siguiente
+                ++i;                                    //incremento indice posicional
+                
+                coloreaContenedor(i, contTorcido);     //PONGO EL COLOR QUE TOQUE AL CONTENEDOR TORCIDO
+            });
+
+            //Navego a la IZQUIERDA usando los eventos que swiper lleva 
+            //ya "built-in" en la libreria (botón ANTERIOR  <  )
+            swiper.on('slidePrevTransitionStart', () => {   //navego a la izquierda
+                arrFondos[i].style.display = "none";        //oculto actual
+                arrFondos[i-1].style.display = "grid";     //muestro el anterior
+                --i;                                        //decremento indice posicional
+                
+                coloreaContenedor(i, contTorcido);      //PONGO EL COLOR QUE TOQUE AL CONTENEDOR TORCIDO
+            });
+        });
+    </script>
+
+    <!--Cargamos el archivo de wow.js desde su CDN para poder conseguir que las animaciones de animate.css se activen
+    mediante el scroll-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script> 
+
+    <!-- También Añadimos el objeto instanciado de wow.js para poder iniciar las animaciones de animate.css cuando 
+     el usuario haga scroll hacia donde se apliquen las mismas -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function instanciaWow() {
+            new WOW().init();
+        });
+    </script>
+</head>
+<body>
+
+    <!-- SECCIÓN 0 (S0) -- HEADER: barra de navegación-->
+    <header>
+        <nav>
+            <!-- Aplicamos estilos para la barra de navegación -crucial añadir elemento span para poder tratar la imagen aparte -->
+            <ul>
+                <li>
+                    <span>Servicios</span> <img src="img/flechaDesplegablePaint.png" alt="v">
+                    <ul>
+                        <li><a href="#">Front-end</a></li>
+                        <li><a href="#">Back-end</a></li>
+                        <li><a href="#">IA & BigData</a></li>
+                    </ul>
+                </li>
+                <li><span><a href="#">Quiénes somos</a></span></li>
+                <li><span><a href="#">Incorpórate</a></span></li>
+                <li><span><a href="#">Contacto</a></span></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <!-- SECCIÓN 1 (S1): PIpresentacionFrontEnd:
+      texto de presentación con gradiente lineal
+       simple -->
+    <section id="PIpresentacionFrontEnd">
+        <!--doble gradiente lineal (mejora en la lógica de programación vs la landing: UN SOLO DIV)-->
+        <div>
+            <h1>Front-End development</h1>
+        </div> 
+        <div></div> <!--linea roja de separación-->
+    </section> 
+
+    <!--SECCIÓN 2 (S2): características de los 
+    frameworks de front -->
+    <section id="PIcaracteristicasFrameworksFront">
+        
+        <!-- div:first-child:    contiene el titulo y subtítulo de la sección-->
+        <div>
+            <h1 class="PItituloFront">¿En qué desarrollamos y por qué?</h1>
+            <p class="PIsubTituloFront"><i>Desarrollamos el cliente en vue, angular y react. Son los tres 
+                frameworks  de front-end más codiciados y aceptados en el
+                mercado, y te pueden proporcionar las siguentes ventajas:</i></p>
+        </div>
+
+        <!--div:last-child:   cards de características compartidas entre los frameworks-->
+        <div>
+            <!-- Primera Card: la de la escalera.
+                [animación animate.css iniciada por wow.js con animación fadeInLeft]-->
+            <article class="cartaFrontEndPI wow animate__animated animate__fadeInLeft" data-wow-duration="1s" data-wow-delay=".25s">
+                <h1 class = "PIsubTituloFront">Aplicaciones escalables por componentes</h1>
+                <img src="img/internaFrontEnd/escaletaCroppedDefinitiu.png" alt="imagenNoCargo">
+                <h2>Consigue hacer crecer tu aplicación web de
+                    forma <span class="roig">modular</span> y segura. Idóneos para aplicaciones grandes o que tienen previsión de crecer rápidamente.</h2>
+            </article>
+
+            <!--Segunda Card: la del rayo.
+                [animación animate.css iniciada por wow.js con animación fadeInUp]-->
+            <article class="cartaFrontEndPI wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay=".75s">
+                <h1 class = "PIsubTituloFront">Interfaces dinámicas y reactivas</h1>
+                <img src="img/internaFrontEnd/llampDefinitiuv2.png" alt="imagenNoCargo">
+                <h2>Actualizan automática- mente el cliente de las aplicaciones web en 
+                    respuesta a cambios de datos <span class="roig">sin recargar toda la
+                     página</span>, mejorando la velocidad de carga y la experiencia 
+                     de usuario. </h2>
+            </article>
+
+            <!-- Tercera Card: la del icono de comunidad.
+                [animación animate.css iniciada por wow.js con animación fadeInRight]-->
+            <article class="cartaFrontEndPI wow animate__animated animate__fadeInRight" data-wow-duration="1s" data-wow-delay="1.25s">
+                <h1 class = "PIsubTituloFront">Comunidad y soporte</h1>
+                <img src="img/internaFrontEnd/iconoComunitatDevDef.png" alt="imagenNoCargo">
+                <h2>Los tres frameworks tienen una comunidad de
+                    desarrollo enorme que <span class="roig">facilita 
+                    encontrar soluciones</span> a problemas frecuentes</h2>
+            </article>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3 (S3): diferencias de los frameworks (swiper) -->
+    <section id="PIdiferenciasFrameworksFront">
+
+        <h1 class="PItituloFront">¿Qué diferencias fundamentales hay entre
+            los tres frameworks?</h1>
+
+        <!-- Swiper -->
+        <div class="swiper">
+            <div class="swiper-wrapper">
+
+                <!-- slider VUE-->
+                <section class="swiper-slide">
+                    <!-- Esquerra: logo tecnologia (vue) -->
+                    <article>
+                        <h1>Vue.js</h1>
+                        <img src="img/Vue.png" alt="logo vue no cargó">
+                    </article>
+
+                    <!-- Dreta: fragment codi tecnologia (component vue) -->
+                    <article>
+                        <img src="img/internaFrontEnd/fragmentCodiVueGPT4.png" alt="img componente vue no cargó">
+                    </article>
+                </section>
+
+                <!-- slider ANGULAR-->
+                <section class="swiper-slide">
+                    <!-- Esquerra: logo tecnologia (ANGULAR) -->
+                    <article>
+                        <h1>Angular.js</h1>
+                        <img src="img/angularDefinitiu.png" alt="logo ANGULAR no cargó">
+                    </article>
+
+                    <!-- Dreta: fragment codi tecnologia (component ANGULAR) -->
+                    <article>
+                        <img src="img/internaFrontEnd/fragmentCodiVueGPT4.png" alt="img componente ANGULAR no cargó">
+                    </article>
+                </section>
+
+                <!-- slider REACT-->
+                <section class="swiper-slide">
+                    <!-- Esquerra: logo tecnologia (ANGULAR) -->
+                    <article>
+                        <h1>React.js</h1>
+                        <img src="img/reactDefinitiu.png" alt="logo REACT no cargó" width="20%">
+                    </article>
+
+                    <!-- Dreta: fragment codi tecnologia (component ANGULAR) -->
+                    <article>
+                        <img src="img/internaFrontEnd/fragmentCodiVueGPT4.png" alt="img componente REACT no cargó">
+                    </article>
+                </section>
+            </div>
+
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- Add Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
+    </section>
+
+
+    <!-- SECCIÓN 4 (S4): diferencias de los frameworks
+      (cards y contenedor fondo color framework, torcido) -->
+    <div id = "contenedorTorcidoTop"></div>
+    <section id = "PI4cards">
+
+        <!-- vue 4 cards-->
+        <article>
+            <article class="cardDiferenciasFront wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-delay=".1s">
+                <h1>Suave curva de aprendizaje</h1>
+                <p>Vue permite <span class = "groc">aprender lo necesario en poco tiempo</span> para manejar el framework. Si eres una PYME y tienes recursos limitados es un framework idóneo.</p>
+            </article>
+            <article class="cardDiferenciasFront wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-delay=".3s">
+                <h1 class = "saltoLinea">Integración 
+                    gradual</h1>
+                <p>A diferencia de angular o react, vue se puede <span class = "groc">integrar en partes específicas</span> de una aplicación existente sin modificar la totalidad del proyecto.</p>
+            </article>
+            <article class="cardDiferenciasFront  wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-delay=".5s">
+                <h1>Sistema de enlace de datos reactivo</h1>
+                <p>En este sistema, cualquier cambio en los datos del modelo subyacente <span class="groc">se refleja instantáneamente en la interfaz</span> de usuario sin necesidad de intervención manual.</p>
+            </article>
+            <article class="cardDiferenciasFront  wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-delay=".7s">
+                <h1>Ecosistema de datos liviano pero extensible</h1>
+                <p>A diferencia de angular, vue es un Ecosistema liviano  que te da la potestad de <span class="groc">agregar más herramientas</span> tales como (extensiones, plugins, etc) conforme tu proyecto  crezca.</p>
+            </article>
+        </article>
+
+        <!-- angular 4 cards-->
+        <article>
+            <article class="cardDiferenciasFront">
+                <h1>Arquitectura robusta y escalable</h1>
+                <p>Angular utiliza una arquitectura basada en módulos y servicios, <span class="groc">ideal para estructurar proyectos grandes</span> desde el principio.</p>
+            </article>
+            <article class="cardDiferenciasFront">
+                <h1>Inyección de dependencias</h1>
+                <p>Angular ofrece un sistema de inyección de dependencias <span class="groc">nativo y poderoso</span>, lo que facilita la reutilización de código y la gestión de dependencias.</p>
+            </article>
+            <article class="cardDiferenciasFront">
+                <h1>Herramientas y soporte</h1>
+                <p>Proporciona herramientas avanzadas como Angular CLI y soporte oficial de Google, <span class="groc">asegurando estabilidad</span> y mejoras continuas.</p>
+            </article>
+            <article class="cardDiferenciasFront">
+                <h1>Directivas personalizables</h1>
+                <p>Angular permite crear directivas propias, <span class="groc">dando flexibilidad</span> para extender la funcionalidad del HTML según las necesidades del proyecto.</p>
+            </article>
+        </article>
+
+        <!-- react 4 cards-->
+        <article>
+            <article class="cardDiferenciasFront">
+                <h1>Virtual DOM eficiente</h1>
+                <p>React utiliza un Virtual DOM que <span class="groc">optimiza el rendimiento</span> al minimizar las actualizaciones en el DOM real.</p>
+            </article>
+            <article class="cardDiferenciasFront">
+                <h1>Flexibilidad en el ecosistema</h1>
+                <p>React proporciona un núcleo ligero que se puede <span class="groc">complementar con librerías específicas</span>, adaptándose perfectamente a las necesidades del proyecto.</p>
+            </article>
+            <article class="cardDiferenciasFront">
+                <h1>Componentes funcionales con hooks</h1>
+                <p>Gracias a los hooks, React permite <span class="groc">gestionar estados y efectos</span> de forma sencilla y eficiente en componentes funcionales.</p>
+            </article>
+            <article class="cardDiferenciasFront">
+                <h1>Comunidad activa y recursos abundantes</h1>
+                <p>React cuenta con una <span class="groc">comunidad muy activa</span>, ofreciendo una amplia gama de recursos, tutoriales y soporte en línea.</p>
+            </article>
+        </article>
+    </section> 
+
+    <!-- SECCION 5: S5 | tabla comparativa
+     frameworks (no variable)-->
+    <div id="fondoTablaDiferencias"></div>
+    <section id = "PItablaDiferencias">
+        <article>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="wow animate__animated animate__fadeIn" data-wow-duration="1s" data-wow-delay="0s">Característica</th>
+                        <th class="wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-delay=".5s">Vue.js</th>
+                        <th class="wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-delay=".75s">React.js</th>
+                        <th class="wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-delay="1s">Angular</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-delay="0s">
+                        <td>Curva de aprendizaje amigable</td>
+                        <td>o</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-delay=".0s">
+                        <td>Integración gradual (progresivo)</td>
+                        <td>o</td>
+                        <td>o</td>
+                        <td></td>
+                    </tr>
+                    <tr class="wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-delay=".0s">
+                        <td>Sistema de enlace de datos reactivo</td>
+                        <td>o</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-delay=".0s">
+                        <td>Ecosistema liviano pero extensible</td>
+                        <td>o</td>
+                        <td>o</td>
+                        <td></td>
+                    </tr>
+                    <tr class="wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-delay=".0s">
+                        <td>Virtual DOM</td>
+                        <td></td>
+                        <td>o</td>
+                        <td></td>
+                    </tr>
+                    <tr class="wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-delay=".0s">
+                        <td>Uso de JSX para interfaces complejas</td>
+                        <td></td>
+                        <td>o</td>
+                        <td></td>
+                    </tr>
+                    <tr class="wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-delay=".0s">
+                        <td>Alto rendimiento en interfaces grandes</td>
+                        <td></td>
+                        <td>o</td>
+                        <td></td>
+                    </tr>
+                    <tr class="wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-delay=".0s">
+                        <td>Ecosistema amplio (React Native, etc.)</td>
+                        <td></td>
+                        <td>o</td>
+                        <td></td>
+                    </tr>
+                    <tr class="wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-delay=".0s">
+                        <td>Flexibilidad total en elección de herramientas</td>
+                        <td></td>
+                        <td>o</td>
+                        <td></td>
+                    </tr>
+                    <tr class="wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-delay=".0s">
+                        <td>Framework completo con herramientas integradas</td>
+                        <td></td>
+                        <td></td>
+                        <td>o</td>
+                    </tr>
+                    <tr class="wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-delay=".0s">
+                        <td>Basado en TypeScript</td>
+                        <td></td>
+                        <td></td>
+                        <td>o</td>
+                    </tr>
+                    <tr class="wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-delay=".0s">
+                        <td>Inyección de dependencias</td>
+                        <td></td>
+                        <td></td>
+                        <td>o</td>
+                    </tr>
+                    <tr class="wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-delay=".0s">
+                        <td>Patrón MVVM (Model-View-ViewModel)</td>
+                        <td></td>
+                        <td></td>
+                        <td>o</td>
+                    </tr>
+                    <tr class="wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-delay=".0s">
+                        <td>Estructura robusta y escalable</td>
+                        <td></td>
+                        <td></td>
+                        <td>o</td>
+                    </tr>
+                    <tr class="wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-delay=".0s">
+                        <td>Ideal para grandes aplicaciones empresariales</td>
+                        <td></td>
+                        <td></td>
+                        <td>o</td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+    </section>
+
+
+    <!-- SECCIÓN 6 (S6): footer -->   
+    <footer>
+        <div class="footer-content">  <!-- Contenedor footer-->
+            <div class="footer-column">
+                <h1>Servicios</h1>
+                <ul> 
+                    <li><a href="#">Front-end Development</a></li>
+                    <li><a href="#">Back-end Development</a></li>
+                    <li><a href="#">IA & Big Data</a></li>
+                </ul>                
+            </div>
+            <!-- Barra vertical entre columnas -->
+            <div class="footer-vertical-bar"></div>
+
+            <div class="footer-column">
+                <h1>Empresa</h1>
+                <ul>
+                    <li><a href="#">Quiénes somos</a></li>
+                    <li><a href="#">Incorpórate</a></li>
+                    
+                </ul>
+            </div>
+            <!-- Barra vertical entre columnas -->
+            <div class="footer-vertical-bar"></div>
+
+            <div class="footer-column">
+                <h1>Contacto</h1>
+                <ul>
+                    <li><a href="#">info@blackcodeconsulting.com</a></li>
+                    <li><a href="#"><img src="img/linkedin_logoDefinitiu.jpg" width="45" height="45" alt="LinkedIn"></a></li>
+                </ul>
+            </div>
+        </div>    
+        <hr>
+        <p id="copyright"><i>&copy; 2024 | Todos los derechos reservados</i></p>    
+    </footer>
+
+
+
+
+</body>
+</html>

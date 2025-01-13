@@ -1,0 +1,431 @@
+
+/*################################################*/
+/*------------------------------------------------*/
+/*---------PÁGINA INTERNA: FRONTEND.html----------*/
+/*------------------------------------------------*/
+/*################################################*/
+
+
+.PItituloFront {font-size: 2.1rem; margin-top: 1rem;}     
+.PIsubTituloFront {font-size: 1.7rem;} 
+
+/*######################################
+  # SECCIÓN 1 PÁGINA INTERNA FRONTEND: # 
+  #       presentación front end       #
+  ######################################*/
+  
+/*Altura del contenedor con doble gradiente
+ negro a azul claro*/
+#PIpresentacionFrontEnd > div:first-child {
+    background: linear-gradient(to bottom, var(--colorBarraNavegacion) 0%, var(--PI_colorMedioGradienteAZULOSCUROFrontEnd) 50%, var(--PI_colorMedioGradienteAZULCLAROFrontEnd) 100%);
+    height: 27.5em;
+    color: white;
+    text-align: center;
+}
+
+/*título de la presentación*/
+#PIpresentacionFrontEnd > div:first-child h1 {
+    position: relative;
+    top: 40%;
+    font-size: 2.7em;
+    animation: fadeIn;  /*ponemos un fundido de entrada al título de la página*/
+    animation-duration: 2s;
+}
+
+/*línea roja*/
+#PIpresentacionFrontEnd > div:nth-child(2) {
+    height: .9em;
+    background: red;
+}
+
+/*###########################################
+  # SECCIÓN 2 PÁGINA INTERNA (PI) FRONTEND: # 
+  #       caracteristicas de los            #
+  #        frameworks (título,              #
+  #        subtítulo y 3 cards)             #
+  ###########################################*/
+
+
+
+/*DEFINIMOS UN ANCHO MÁXIMO PARA ESTA PARTE*/
+#PIcaracteristicasFrameworksFront {
+    width: 100%;
+    max-width: var(--MaximaAnchuraCardsPIfrontend);
+    margin: 0 auto; /*Centramos todo este contenedor horizontalmente (cards y titulo y subtítulo que las antecede)*/
+}
+
+/*POSICIONO TÍTULO "¿En Qué desarrollamos y por qué?"*/
+#PIcaracteristicasFrameworksFront > div > h1 {
+    padding-top: 2.5em;
+    padding-left: 1em;
+}
+
+/*POSICIONO SUBTÍTULO "desarrollamos el cliente en vue, 
+angular y react. [...] las siguentes ventajas:"*/
+#PIcaracteristicasFrameworksFront > div > p {
+    padding-left: 5.3em;
+    padding-right: 5em;
+    padding-top: 1.5em;
+}
+
+
+
+/*DEFINO UN GRID DE TRES COLUMNAS y los estilos 
+para el CONTENEDOR DE LAS CARDS DE CARACTERÍSTICAS DE LOS 
+FRAMEWORKS (página interna de frontend)*/
+#PIcaracteristicasFrameworksFront div:last-child {
+    padding-top: 3.5em;
+    max-width: var(--MaximaAnchuraCardsPIfrontend);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /*defino las 3 columnas con grid*/
+    text-align: center;         /*MANTENGO EL TEXTO CENTRADO DENTRO DE CADA CARD*/
+    justify-items: center;       /* CENTRO LAS 3 CARDS HORIZONTALMENTE*/
+}
+
+/*definimos  el estilo de CADA CARD de características 
+de la página interna FrontEnd mediante la clase .cartaFrontEndPI*/
+#PIcaracteristicasFrameworksFront .cartaFrontEndPI {
+    width: 300px; /* Hemos optado para definir las cards con ancho fijo por más control */
+    aspect-ratio: 1/1.618; /* Proporción aurea --> 1:618 (ancho:alto) */
+    border-radius: 1em;
+    padding: .2em 1.9em 1em 1.9em; /*damos espacio entre borde card y su contenido. Con esto tambien empequeñecemos anchura del text e imagenes*/
+    box-sizing: border-box; /* Para asegurarse de que el padding no afecte el tamaño */
+    box-shadow: 0px 5px 4px rgba(143, 141, 141, 0.3); 
+    background: linear-gradient(to bottom, var(--g), var(--r)); /* GRADIENTE YA ESTA HECHO BIEN, NO TOCAR */
+    transition: box-shadow var(--tiempoTransicionEstandar) ease-in-out; /*para el hover de cada carta*/
+}
+
+/*DEFINO ESTILOS PARA LOS 
+TEXTOS DE LAS CARDS (USAMOS H1 Y H2):*/
+#PIcaracteristicasFrameworksFront div:last-child article h1 {margin-top: .5em;}
+#PIcaracteristicasFrameworksFront div:last-child article h2 {font-size: 1.3em; text-align: left;}
+
+/*DEFINO ESTILOS PARA LAS IMÁGENES DE LAS CARDS (elemento img):
+  -- IMAGEN (ESCALERA) ----- PRIMERA CARD de características*/
+#PIcaracteristicasFrameworksFront div:last-child article:first-child > img {width: 80%; padding-top: .6em; padding-bottom: 1.5em;}
+/*-- IMAGEN (RAYO) --------- SEGUNDA CARD de características*/
+#PIcaracteristicasFrameworksFront div:last-child article:nth-child(2) > img {width: 40%; padding-top: .6em;}
+/*-- IMAGEN (COMUNIDAD) ---- TERCERA CARD de características*/
+#PIcaracteristicasFrameworksFront div:last-child article:last-child > img {width: 75%; padding-top: 2em; padding-bottom: 2.4em;}
+
+
+/*COLOR ROJO PARA LOS SPANS DE LAS CARDS*/
+#PIcaracteristicasFrameworksFront .roig {color: red;}
+
+
+
+/*DEFINIMOS HOVERS PARA LAAS IMAGENES DE LAS CARDS DE CARACTERÍSTICAS FRONTEND*/
+/*PARA LOS HOVER DE LAS IMÁGENES DE LAS CARTAS DE FRONTEND (DEFINIDAS IGUAL QUE LAS 
+CARDS DEL FRONT-END DE LA LANDING PAGE)*/
+#PIcaracteristicasFrameworksFront .cartaFrontEndPI img {transition: transform var(--tiempoTransicionEstandar) ease-in-out; /*para el hover*/}
+#PIcaracteristicasFrameworksFront .cartaFrontEndPI img:hover {transform: scale(var(--aumentoTamanyoEstandar));} /*hover de imagen vue, aumenta de tamaño al pasar por encima*/
+
+
+
+/*ANIMACIONES PARA LAS CARDS [A (hover) i B (animateStyle)]*/
+
+/*-----------------------------------------------------*/
+/*A: Animamos el box-shadow y el background con hover:-*/
+/*-----------------------------------------------------*/
+#PIcaracteristicasFrameworksFront .cartaFrontEndPI {
+    transition: box-shadow var(--tiempoTransicionEstandar) ease-in-out;
+    /*NOTA: ojo que el background NO se puede animar con transition (el background-color sí, 
+    pero en este caso queremos cambiar de un gradiente lineal a otro gradiente
+    lineal, y no nos sirve usar la propiedad background-color)*/    
+}
+
+#PIcaracteristicasFrameworksFront .cartaFrontEndPI:hover {
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(to bottom, var(--gHover), var(--rHover)); /*NO se puede definir transition ease-in-out para esta propiedad*/
+}
+
+
+
+/*#################################################
+    SECCIÓN 3 PÁGINA INTERNA (PI) FRONTEND:   
+          diferencias entre los  3 frameworks 
+          de frontend:
+                3A: título.
+                3B: galeria swiper 3 frameworks
+  #################################################*/
+
+
+
+/**************************/
+/* 3A: Titulo (¿En qué 
+   desarrollamos y por qué?)
+/**************************/
+#PIdiferenciasFrameworksFront > h1 {
+    text-align: center;
+    padding-top: 2.6em;
+    animation: fadeIn;  /*ponemos un fundido de entrada al título*/
+    animation-duration: 3d;
+}
+
+
+
+
+/*******************/
+/*3B) Galería swiper*/
+/*******************/
+
+
+/*ponemos un extra de altura al contenedor de diferencias para que
+el contenedor de swiper no se solape con el contenedor superior */
+#PIdiferenciasFrameworksFront {
+    padding-top: 1em;
+    padding-bottom: 15em;
+}
+
+/*definimos anchura y altura del contenedor de swiper*/
+#PIdiferenciasFrameworksFront .swiper {
+    width: 70%; /*anchura del contenedor swiper (ojo con los botones)*/
+    height: 40em; /*Altura contenedor swiper*/
+    max-width: var(--MaximaAnchuraCardsPIfrontend);
+}
+#PIdiferenciasFrameworksFront .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center; /*centro verticalemnte*/
+    font-size: 18px;
+    background: #fff; /* Background color for slides */
+}
+
+/*Definimos stiling de cada imagen que muestrara un component de codi
+de vue, react o angular.*/
+#PIdiferenciasFrameworksFront .swiper-slide article:last-child img {
+    width: 400px;
+    border-radius: .4em;
+    margin-right: 1em;
+}
+
+/*Ponemos un padding para separar la imagen del logo de la tecnología
+front end con la imagen del componente de esta tecnología*/
+#PIdiferenciasFrameworksFront .swiper-slide article:last-child {
+    padding-left: 5em;
+}
+
+/*Definimos la anchura de cada logo del slider (vue, react o angular).*/
+#PIdiferenciasFrameworksFront .swiper-slide article:first-child img {
+    width: 250px;
+}
+
+/*Definimos la posicion del título h1 que hay encima de 
+de cada logo del slider (vue, react o angular).*/
+#PIdiferenciasFrameworksFront .swiper-slide article:first-child h1 {
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+
+/*#################################################
+    SECCIÓN 4 (S4) PI4cards FRONT END (Página Interna -PI-): 
+        A) Fondos Variables
+        B) Diseño de las 4 cards
+
+  #################################################*/
+
+
+
+/************************************/
+/** 4A) Fondos variables y 4 cards **/
+/************************************/
+
+
+#contenedorTorcidoTop {
+    z-index: 2;   /*ponemos detras del fondo de las cards*/
+
+    position: relative;
+    right: 20em; /*movemos a la izquierda el contenedor para esconder también espacios blancos por la izquierda*/
+    top: -10em;
+    height: 80em;
+
+    transform: rotate(-10deg); /*DEFINO LA TRANSFORMACIÓN PARA TORCER EL CONTENEDOR (transform)*/
+    background-color: var(--colorVerdeVue);
+
+    /*hacemos más ancho el contenedor torcido para esconder los espacios enblanco 
+    que se generan por la derecha con la rotación de 10 grados*/
+    /*CUIDADO: genera barra horizontal que corregimos con overflow-x en el elemento padre: ver [4A_1]*/
+    width: 140%;  
+}
+/*ver [4A_1]: corrección de la barra horizontal mencionada en #contenedorTorcidoTop*/
+body {overflow-x: hidden;} 
+
+
+#PIdiferenciasFrameworksFront {z-index: 1;} 
+#PI4cards {
+    z-index: 3; /*ponemos por delante las cards y le fondo de las mismas*/
+    
+    position: relative; /*posicionamiento relativo, muy importante*/
+    bottom: 70em;       /*posicionamos desde abajo para ponerlo encima del contenedorTorcidoTop*/
+
+    max-width: var(--PIancho4cardsFront);
+    margin: 0 auto; /*centrado horizontalmente*/
+}
+
+
+
+
+
+/*contenedor 4cards vue*/
+#PI4cards > article:first-child {
+    height: 15em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /*dos columnas definidas con grid*/
+    place-items: center;            /*centrar cada card horizontalmente dentro de la celda grid*/
+}
+
+/*contenedor 4cards angular*/
+#PI4cards > article:nth-child(2) {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    height: 15em;
+} 
+
+/*contenedor 4cards react*/
+#PI4cards > article:last-child {
+    display: none;
+    height: 15em;
+    grid-template-columns: 1fr 1fr;
+} 
+
+
+
+
+/***********************************/
+/** 4A)Diseño de las 4 cards **/
+/***********************************/
+
+
+#PI4cards .cardDiferenciasFront {
+    width: 350px; /* Hemos optado para definir las cards con ancho fijo por más control */
+    aspect-ratio: 300/287; /* Proporción de figma (ancho/alto)*/
+    background-color: var(--grisTransparenteCard); /* Color de fondo, por ejemplo u ngris con transparencia */
+    border-radius: 1.4em;
+    padding: 45px; /*damos espacio entre borde card y su contenido. Con esto tambien empequeñecemos anchura del text e imagenes*/
+    box-sizing: border-box; /* Para asegurarse de que el padding no afecte el tamaño */
+    box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.15);
+
+    transition: box-shadow var(--tiempoTransicionEstandar) ease-in-out; /*para el hover de cada carta*/
+    background: linear-gradient(to bottom, var( --PI_inicioCard_VUE), var(--PI_finCard_VUE));
+
+    text-align: center;
+}
+
+#PI4cards .cardDiferenciasFront h1 {
+    font-size: 1.6em;
+}
+
+#PI4cards .cardDiferenciasFront p {
+    font-size: 1.3em;
+    margin-top: 1.4em;
+    color: white;
+}
+
+/*una forma de definir salto de linea en CSS
+  sin usar el <br> de HTML, mejor práctica*/
+.saltoLinea {white-space: pre-line;}
+
+/*spans para las 4 cards*/
+.groc {color: var(--PI_colorSpans4cards);}
+
+/*Ponemos un espacio debajo de las 4cards 
+para poder conseguir  */
+#PI4cards > article > article {margin-bottom: 5.8em;}
+
+/*para el hover*/
+#PI4cards article .cardDiferenciasFront {transition: box-shadow var(--tiempoTransicionEstandar) ease-in-out;}
+#PI4cards article .cardDiferenciasFront:hover {box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.4);}
+
+#fondoTablaDiferencias {
+    position: relative;
+    height: 2424px;  /*808px de alto de cada contenedor de figma por 3 = 2424px*/
+    background: linear-gradient(to bottom, white 0%, var(--marronClaroTabla) 33%, var(--marronOscuroTabla) 66%, var(--negroFooter) 100%);
+}
+
+
+
+
+/*#################################################
+    SECCIÓN 5 (S5) tabla comparativa
+        frameworks (no variable con swiper, siempre visible)
+  #################################################*/
+
+#PItablaDiferencias {
+    position: absolute;
+    margin: 0 auto;
+
+    top: 219em; /*subimos la tabla arriba para solaparla con el fondo con gradiente*/
+    left: 50%; /*IMPORTANTE: ponemos punto superior izquierdo de la tabla al centro*/
+    transform: translateX(-50%); /*IMPORTANTE: movemos la mitad del ancho de la tabla hacia la izquierda para centrar finalmente la tabla*/
+   
+    z-index: 3; /*por ENCIMA del contenedor torcido y de sus cards*/
+    
+    /*max-width: 600px;*/
+}
+
+
+#PItablaDiferencias table {
+    border-collapse: collapse; /*Hacemos que los borders de la tabla colapsen en uno solo para que se vean lineas finas */
+    background-color: white;
+    box-shadow: 8px 7px 2px rgba(0, 0, 0, 0.25);
+}
+
+
+
+#PItablaDiferencias th {border-bottom: 1px solid black;}
+#PItablaDiferencias th, #PItablaDiferencias td {padding: .83em 1em;}
+#PItablaDiferencias th {font-size: var(--tamanyoTabla);}
+
+/*PONEMOS LA SEPARACION VERTICAL ENTRE LA PRIMERA COLUMNA DE LA TABLA Y 
+LA SEGUNDA COLUMNA DONDE PONEMOS LAS CARACTERISTICAS DE VUE*/
+#PItablaDiferencias th:first-child {border-right: 1px solid black;}
+#PItablaDiferencias td:first-child {border-right: 1px solid black;}
+
+/*PONEMOS LA SEPARACION VERTICAL ENTRE LA LA SEGUNDA COLUMNA DONDE PONEMOS
+LAS CARACTERISTICAS DE VUE Y LA COLUMNA DE REACT*/
+#PItablaDiferencias th:nth-child(2){border-right: 1px solid black;}
+#PItablaDiferencias td:nth-child(2) {border-right: 1px solid black;}
+
+/*PONEMOS LA SEPARACION VERTICAL ENTRE LA COLUNA DE REACT Y LA DE ANGULAR*/
+#PItablaDiferencias th:nth-child(3){border-right: 1px solid black;}
+#PItablaDiferencias td:nth-child(3) {border-right: 1px solid black;}
+
+#PItablaDiferencias td {
+    font-size: var(--tamanyoTabla);
+    text-align: center;
+}
+
+#PItablaDiferencias td:first-child {
+    text-align: left;
+}
+
+/*LAS FILAS IMPARES APARECEN EN UN COLOR LIGERAMENTE DISTINTO A LAS IMPARES*/
+#PItablaDiferencias tbody tr:nth-child(even) {background-color: #f9f9f9;}
+#PItablaDiferencias tbody tr:nth-child(odd) {background-color: white;}
+
+/*PONGO ESTILO DISTINTO PARA EL HEADER DE LA PRIMERA COLUMNA DE LA TABLA: TÍTULO CARACTERÍSTICA AL CENTRO Y NEGRITA*/
+#PItablaDiferencias table thead tr th:first-child {
+    color: black;
+    text-align: center;
+}
+
+/*PONEMOS COLOR VERDE VUE AL HEADER DE VUE*/
+#PItablaDiferencias table thead tr th:nth-child(2) {
+    background-color: var(--colorVerdeVue);
+    color: white; /*verd vue*/
+    text-align: center;
+}
+/*PONEMOS COLOR AZUL REACT AL HEADER DE REACT*/
+#PItablaDiferencias table thead tr th:nth-child(3) {
+    color: white;
+    background-color: var(--PI_colorReact); /*blau react*/
+    text-align: center;
+}        
+
+ /*PONEMOS COLOR LILA ANGULAR HEADER DE ANGULAR*/
+ #PItablaDiferencias table thead tr th:nth-child(4) {
+    color: white;
+    background: linear-gradient(90deg, var(--PI_colorAngularGradienteInicio), var(--PI_colorAngularGradienteFinal));
+    text-align: center;
+}
