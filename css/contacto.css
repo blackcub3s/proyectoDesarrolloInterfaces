@@ -34,6 +34,8 @@ contenido de la pagina (por un lado, texto contacto y, por el otro, formulario)*
 
 /*estilos mensaje contacto (izquierda página)*/
 #PIfondoContacto section > article:first-child {
+    position: relative;
+    top: -.6em; /*lo subimos un poquito*/
     font-size: 2em;
     padding-left: 5%;
     padding-right: 5%;
@@ -45,7 +47,7 @@ contenido de la pagina (por un lado, texto contacto y, por el otro, formulario)*
 }
 
 /*definimos estilos de tamaño distinto en h1 y en p para el mensaje de la izquierda de la pagina*/
-#PIfondoContacto section > article:first-child h1 {font-size: 1.5em;}
+#PIfondoContacto section > article:first-child h1 {font-size: 1.5em; margin-bottom: .2em;}
 #PIfondoContacto section > article:first-child p {font-size: .6em;}
 
 /*estilos formulario (derecha página)*/
