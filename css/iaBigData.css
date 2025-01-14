@@ -1,0 +1,25 @@
+/*----página interna-----*/
+/*----iaBigData.css-----*/
+/*----------------------*/
+
+/*contenedor de la presentacion IA + logo python*/
+#PI_contenedorCabezalIA > section:first-child {
+    height: 30em;
+    background: linear-gradient(to bottom, 
+                                var(--colorBarraNavegacion) 2em, 
+                                var(--PI_grisIA_gradiente) 30em
+                                );
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    color: white;
+    padding-top: 11.5em;
+}
+
+/*l'h1 de la seccio inicial de la 
+subpagina IA bigdata*/
+#PI_contenedorCabezalIA > section:first-child h1 {font-size: 4em;}
+
+/*la imatge de python (compte que només es veu be en protocol
+http i no com a file (PER EXEMPLE: OBRIR EN live server de VSCODE)*/
+#PI_contenedorCabezalIA > section:first-child img {width: 13em;}

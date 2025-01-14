@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA y Big Dato</title>
+
+    <!--Cargamos la fuente roboto de google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!--Cargamos el CSS de animate.style para hacer animaciones, p. ej menu desplegable de la navbar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!--cargamos los estilos que hemos definido nosotros-->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="styleSheet" href="css/estilsGenerals_iaBigData.css">
+    <link rel="styleSheet" href="css/iaBigData.css">
+
+
+    <!--Cargamos el archivo de wow.js desde su CDN para poder conseguir que las animaciones de animate.css se activen
+    mediante el scroll-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script> 
+
+    <!-- También Añadimos el objeto instanciado de wow.js para poder iniciar las animaciones de animate.css cuando 
+     el usuario haga scroll hacia donde se apliquen las mismas -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function instanciaWow() {
+            new WOW().init();
+        });
+    </script>
+
+</head>
+<body>
+
+    <!-- HEADER: barra de navegación-->
+    <header>
+        <nav>
+            <!-- Aplicamos estilos para la barra de navegación -crucial añadir elemento span para poder tratar la imagen aparte -->
+            <ul>
+                <li>
+                    <span>Servicios</span> <img src="img/flechaDesplegablePaint.png" alt="v">
+                    <ul>
+                        <li><a href="#">Front-end</a></li>
+                        <li><a href="#">Back-end</a></li>
+                        <li><a href="#">IA & BigData</a></li>
+                    </ul>
+                </li>
+                <li><span><a href="#">Quiénes somos</a></span></li>
+                <li><span><a href="#">Incorpórate</a></span></li>
+                <li><span><a href="#">Contacto</a></span></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <!-- contenedor BLA BLA-->
+    <section id="PI_contenedorCabezalIA">
+        <section> <!-- section: first-child-->
+            <h1>IA & BigData</h1>
+            <img src="/img/ia/pythonLogoOnly.svg" alt="logo python no cargó!">
+        </section>
+    </section>
+    
+
+
+    <!-- footer -->   
+    <footer>
+        <div class="footer-content">  <!-- Contenedor footer-->
+            <div class="footer-column">
+                <h1>Servicios</h1>
+                <ul> 
+                    <li><a href="#">Front-end Development</a></li>
+                    <li><a href="#">Back-end Development</a></li>
+                    <li><a href="#">IA & Big Data</a></li>
+                </ul>                
+            </div>
+            <!-- Barra vertical entre columnas -->
+            <div class="footer-vertical-bar"></div>
+
+            <div class="footer-column">
+                <h1>Empresa</h1>
+                <ul>
+                    <li><a href="#">Quiénes somos</a></li>
+                    <li><a href="#">Incorpórate</a></li>
+                    
+                </ul>
+            </div>
+            <!-- Barra vertical entre columnas -->
+            <div class="footer-vertical-bar"></div>
+
+            <div class="footer-column">
+                <h1>Contacto</h1>
+                <ul>
+                    <li><a href="#">info@blackcodeconsulting.com</a></li>
+                    <li><a href="#"><img src="img/linkedin_logoDefinitiu.jpg" width="45" height="45" alt="LinkedIn"></a></li>
+                </ul>
+            </div>
+        </div>    
+        <hr>
+        <p id="copyright"><i>&copy; 2024 | Todos los derechos reservados</i></p>    
+    </footer>
+
+
+
+
+</body>
+</html>
