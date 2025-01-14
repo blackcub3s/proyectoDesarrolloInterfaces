@@ -23,3 +23,20 @@ subpagina IA bigdata*/
 /*la imatge de python (compte que només es veu be en protocol
 http i no com a file (PER EXEMPLE: OBRIR EN live server de VSCODE)*/
 #PI_contenedorCabezalIA > section:first-child img {width: 13em;}
+
+#PI_contenedorTituloLibDESARROLLO > section:first-child > h1 {
+    font-size: 1.8em;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    padding: .5em 0; /*paddingp or arriba y por abajo con la shorthand*/
+    
+    position: relative;
+    top: 8em; /*bajajmos el h1 un poco para que este igual que en figma sin mover nada del contenedor padre*/
+}
+
+#PI_contenedorTituloLibDESARROLLO > section:first-child {
+    text-align: center;
+    color: white;
+    height: 37.844em;
+    background-color: red;
+}
