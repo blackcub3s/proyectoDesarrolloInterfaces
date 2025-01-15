@@ -6,8 +6,8 @@
 #PI_contenedorCabezalIA > section:first-child {
     height: 30em;
     background: linear-gradient(to bottom, 
-                                var(--colorBarraNavegacion) 2em, 
-                                var(--PI_grisIA_gradiente) 30em
+                                var(--colorBarraNavegacion), 
+                                var(--PI_grisIA_gradiente)
                                 );
     display: grid;
     grid-template-columns: 1fr;
@@ -16,27 +16,66 @@
     padding-top: 11.5em;
 }
 
-/*l'h1 de la seccio inicial de la 
+/*l'h1 de la seccion inicial de la 
 subpagina IA bigdata*/
 #PI_contenedorCabezalIA > section:first-child h1 {font-size: 4em;}
 
-/*la imatge de python (compte que només es veu be en protocol
-http i no com a file (PER EXEMPLE: OBRIR EN live server de VSCODE)*/
+/*la imagen de python (abrir con vscode, solo se ve bien
+con protocolo http, no con protocolo file)*/
 #PI_contenedorCabezalIA > section:first-child img {width: 13em;}
 
-#PI_contenedorTituloLibDESARROLLO > section:first-child > h1 {
+/*clase para subtitulos de IAbigData (usada dos veces)*/
+.subTitulosIA {
     font-size: 1.8em;
+    color: white;
     border-top: 1px solid white;
     border-bottom: 1px solid white;
     padding: .5em 0; /*paddingp or arriba y por abajo con la shorthand*/
-    
+    text-align: center;
     position: relative;
     top: 8em; /*bajajmos el h1 un poco para que este igual que en figma sin mover nada del contenedor padre*/
 }
 
 #PI_contenedorTituloLibDESARROLLO > section:first-child {
-    text-align: center;
-    color: white;
     height: 37.844em;
     background-color: red;
+    background: linear-gradient(to bottom, 
+                    var(--PI_grisIA_gradiente), 
+                    var(--PI_amarilloIA_gradiente)
+                    );
+}
+
+
+/*estilos para los pares imagen y texto de cada libreria*/
+.dosColumnasIA {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2em; /*tamaño de las letras*/
+}
+
+/*comandos ESPECÍFICOS para imagenes que estén dentro 
+   de una celda de GRID*/
+.dosColumnasIA img {
+    justify-self: center; /* centro imagen horizontalmente en la celda grid */
+    align-self: center; /* centro imagen VERTICALMENTE en la celda grid */
+}
+#PI_pares_LibreriaImagen article:first-child img {width: 4em;} /*anchura imagen pyspark*/
+#PI_pares_LibreriaImagen article:nth-child(2) img {width: 4em;} /*amchura imagen openai*/
+
+
+
+
+
+
+
+
+
+
+
+#PI_contenedorTituloLibDATOS {
+    height: 69em; /*TO DO*/
+    background-color: green;  /*TO DO*/
 }
