@@ -4,7 +4,7 @@
 
 /*contenedor de la presentacion IA + logo python*/
 #PI_contenedorCabezalIA > section:first-child {
-    height: 30em;
+    height: 20em;
     background: linear-gradient(to bottom, 
                                 var(--colorBarraNavegacion), 
                                 var(--PI_grisIA_gradiente)
@@ -18,11 +18,14 @@
 
 /*l'h1 de la seccion inicial de la 
 subpagina IA bigdata*/
-#PI_contenedorCabezalIA > section:first-child h1 {font-size: 4em;}
+#PI_contenedorCabezalIA > section:first-child h1 {
+    font-size: 4em;
+    text-shadow: 0px 6px 2px rgba(255, 255, 0, 0.25); /*es el box shadow, pero del texto :). Tomamos el color original de figma, pasado a RGB y añadiendo la opacidad del 25%*/
+}
 
 /*la imagen de python (abrir con vscode, solo se ve bien
 con protocolo http, no con protocolo file)*/
-#PI_contenedorCabezalIA > section:first-child img {width: 13em;}
+#PI_contenedorCabezalIA > section:first-child img {width: 13em; padding-top: 5em;}
 
 /*clase para subtitulos de IAbigData (usada dos veces)*/
 .subTitulosIA {
@@ -34,6 +37,7 @@ con protocolo http, no con protocolo file)*/
     text-align: center;
     position: relative;
     top: 8em; /*bajajmos el h1 un poco para que este igual que en figma sin mover nada del contenedor padre*/
+    text-shadow: 0px 4px 1px rgba(0, 0, 0, 0.25); /*es el box shadow, pero del texto :). Tomamos el color original de figma, pasado a RGB y añadiendo la opacidad del 25%*/
 }
 
 #PI_contenedorTituloLibDESARROLLO > section:first-child {
@@ -50,10 +54,10 @@ con protocolo http, no con protocolo file)*/
 .dosColumnasIA {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     text-align: center;
-    font-size: 2em; /*tamaño de las letras*/
+    font-size: 1.7em; /*tamaño de las letras*/
 }
 
 /*comandos ESPECÍFICOS para imagenes que estén dentro 
@@ -62,10 +66,14 @@ con protocolo http, no con protocolo file)*/
     justify-self: center; /* centro imagen horizontalmente en la celda grid */
     align-self: center; /* centro imagen VERTICALMENTE en la celda grid */
 }
-#PI_pares_LibreriaImagen article:first-child img {width: 4em;} /*anchura imagen pyspark*/
-#PI_pares_LibreriaImagen article:nth-child(2) img {width: 4em;} /*amchura imagen openai*/
 
-
+#PI_pares_LibreriaImagen article p span {color: red;} /*emfatizamos partes del codigo*/
+#PI_pares_LibreriaImagen article p {padding: 1.5em;}
+#PI_pares_LibreriaImagen article:first-child img {width: 12em;} /*anchura imagen pyspark*/
+#PI_pares_LibreriaImagen article:nth-child(2) img {width: 7em;} /*amchura imagen openai*/
+#PI_pares_LibreriaImagen article:nth-child(3) img {width: 5.5em;} /*anchura imagen openCV*/
+#PI_pares_LibreriaImagen article:nth-child(4) img {width: 9em;} /*anchura imagen sklearn*/
+#PI_pares_LibreriaImagen article:nth-child(5) img {width: 13em;} /*anchura imagen tensorflow*/
 
 
 
