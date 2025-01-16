@@ -67,8 +67,15 @@ con protocolo http, no con protocolo file)*/
     align-self: center; /* centro imagen VERTICALMENTE en la celda grid */
 }
 
+
+#PI_pares_LibreriaImagen {
+    position: relative; /*MUY IMPORTANTE*/
+    top: -15em;         /*DESPLAZAMOS HACIA ARRIBA EL TEXTO E IMAGENES -PERO EL FONDO LO DEJAMOS DONDE ESTABA-*/
+}
+
+
 #PI_pares_LibreriaImagen article p span {color: red;} /*emfatizamos partes del codigo*/
-#PI_pares_LibreriaImagen article p {padding: 1.5em;}
+#PI_pares_LibreriaImagen article p {padding: 1.5em; color: white;}
 #PI_pares_LibreriaImagen article:first-child img {width: 12em;} /*anchura imagen pyspark*/
 #PI_pares_LibreriaImagen article:nth-child(2) img {width: 7em;} /*amchura imagen openai*/
 #PI_pares_LibreriaImagen article:nth-child(3) img {width: 5.5em;} /*anchura imagen openCV*/
@@ -76,6 +83,15 @@ con protocolo http, no con protocolo file)*/
 #PI_pares_LibreriaImagen article:nth-child(5) img {width: 13em;} /*anchura imagen tensorflow*/
 
 
+#PI_soloFondoParLibImg {
+    /*background-color: green;*/
+   background: linear-gradient(to bottom, 
+        var(--PI_amarilloIA_gradiente), 
+        var(--PI_amarilloIA_BRILLANTE_gradiente)
+    );
+
+    height: 68em;
+}
 
 
 
@@ -83,7 +99,51 @@ con protocolo http, no con protocolo file)*/
 
 
 
-#PI_contenedorTituloLibDATOS {
-    height: 69em; /*TO DO*/
-    background-color: green;  /*TO DO*/
+/*ponemos el background al bloque que enlaza la parte de librerias machine learning
+con la parte de datos. donde esta el titulo de datos (librerias de manipulación [...] de datos*/
+#PI_contenedorLibDatos section:first-child {
+    height: 28.5em; /*TO DO*/
+    /*background-color: green;  /*TO DO*/
+    background: linear-gradient(to bottom, 
+        var(--PI_amarilloIA_BRILLANTE_gradiente), 
+        var(--PI_rojoDatos_SUAVE_gradiente)
+    );
+
+    padding-top: 18em; /*conseguimos el efecto de estirar el h1 hacia abajo para cuadrarlo con el figma*/
+}
+
+
+#PI_pares_datosImagen {
+    background-color: var(--PI_rojoDatos_SUAVE_gradiente);
+}
+#PI_pares_datosImagen > section:first-child {
+    position: relative;
+    top: -3em;
+}
+
+#PI_pares_datosImagen article p span {color: #00BBFF;} /*emfatizamos partes del codigo*/
+#PI_pares_datosImagen article p {padding: 1.5em; color: white;}
+#PI_pares_datosImagen article:first-child img {width: 12em;} /*anchura imagen pandas*/
+#PI_pares_datosImagen article:nth-child(2) img {width: 16em;} /*anchura imagen plotly*/
+#PI_pares_datosImagen article:nth-child(3) img {width: 13em;} /*anchura imagen seaborn*/
+
+#PI_pares_LibreriaImagen article {
+    padding-bottom: 0em;
+}
+
+#PI_pares_datosImagen article {
+    padding-bottom: 0em;
+}
+
+
+#PI_pares_datosImagen article:first-child p {width: 12em;} /*texto asociado a pandas lo hacemos más compacto para cuadrad con figma*/
+#PI_pares_datosImagen article:nth-child(2) p {width: 12.5em;} /*texto asociado a plotly lo hacemos más compacto para cuadrar con figma*/
+#PI_pares_datosImagen article:last-child p {width: 12.5em;} /*texto asociado a seaborn lo hacemos más compacto para cuadrar con figma*/
+
+
+
+
+#PI_transicionIaBigData_a_footer {
+    background-color: green;
+    height: 30em;
 }
