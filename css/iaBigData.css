@@ -18,10 +18,21 @@
 
 /*l'h1 de la seccion inicial de la 
 subpagina IA bigdata*/
-#PI_contenedorCabezalIA > section:first-child h1 {
+
+/*definimos animación con animate.css i un hover atractvo a l'h1 de "IA & BigData" que se ve nada más acceder a la página*/
+#PI_contenedorCabezalIA h1 {
+    animation: fadeIn; 
+    animation-duration: 2s;
+
     font-size: 4em;
     text-shadow: 0px 6px 2px rgba(255, 255, 0, 0.25); /*es el box shadow, pero del texto :). Tomamos el color original de figma, pasado a RGB y añadiendo la opacidad del 25%*/
+
+    transition: ease-in-out transform var(--tiempoTransicionEstandar), 
+                ease-in-out text-shadow var(--tiempoTransicionEstandar);
 }
+#PI_contenedorCabezalIA h1:hover {transform: scale(1.02); text-shadow: 0px 9px 2px rgba(255, 255, 0, 0.25);}
+
+
 
 /*la imagen de python (abrir con vscode, solo se ve bien
 con protocolo http, no con protocolo file)*/
@@ -158,25 +169,35 @@ con la parte de datos. donde esta el titulo de datos (librerias de manipulación
 
 
 
-/*PONEMOS LA DROP SHADOW EN CADA IMAGEN DE DATOS Y DE LIBRERIA DE MACHINE LEARNING
-(añadimos también un hover, para conseguir que la sombra cambie y no sea estática. Con el hover,
-no solamente movemos la sombra sino que tambieé conseguirmos que tenga menos blur,
-permitiendo al usuario ver la sombra más enfocada cuando justamente pasa el ratón por encima)*/
+/*PONEMOS DROP SHADOW N CADA IMAGEN DE DATOS Y DE LIBRERIA DE MACHINE LEARNING
+(añadimos también un hover, para conseguir que la sombra cambie y no sea estática (y que la escala también cambie). 
+Con el hover, no solamente movemos la sombra y aumentaremos el tamaño de cada imagen, sino que tambié conseguirmos que
+tenga menos blur, permitiendo al usuario ver la sombra más enfocada cuando justamente pasa el ratón por encima)*/
 #PI_pares_LibreriaImagen img, #PI_pares_datosImagen img {
     filter: drop-shadow(0px 10px 3px rgba(0, 0, 0, 0.25)); 
-    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out,
+                transform var(--tiempoTransicionEstandar) ease-in-out;
 }
 
 #PI_pares_LibreriaImagen img:hover, #PI_pares_datosImagen img:hover {
     filter: drop-shadow(0px 15px 1px rgba(0, 0, 0, 0.25));
+    transform: scale(1.02);
 }
 
-/*drop shadow al logo grande de python y animación con hover
-no hemos podido simular el drop shadow de colores mixtos que conseguimos
+/*drop shadow al logo grande de python y animación con hover de la transformación (logo sale a fuera) y a la vez
+de la sombra para hacelro más realista. No hemos podido simular el drop shadow de colores mixtos que conseguimos
 con figma (donde es fácil afectar a distintos componentes del svg por separado). Así que
 en este caso hemos optado por, simplemente, poner un drop-shadow simple.*/
 #PI_contenedorCabezalIA img {
     filter: drop-shadow(0px 10px 1px rgba(0, 0, 0, 0.25));
-    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out, 
+                transform var(--tiempoTransicionEstandar) ease-in-out;
 }
-#PI_contenedorCabezalIA img:hover {filter: drop-shadow(0px 13px 1px rgba(0, 0, 0, 0.25));}
+#PI_contenedorCabezalIA img:hover {filter: drop-shadow(0px 15px 1px rgba(0, 0, 0, 0.25)); transform: scale(1.02);}
+
+
+
+#PI_contenedorCabezalIA img {
+    animation: fadeInUp; 
+    animation-duration: 1.2s;
+}
