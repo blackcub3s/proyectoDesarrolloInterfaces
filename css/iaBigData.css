@@ -154,3 +154,19 @@ con la parte de datos. donde esta el titulo de datos (librerias de manipulación
                                 var(--negroFooter));
 
 }
+
+
+
+
+/*PONEMOS LA DROP SHADOW EN CADA IMAGEN DE DATOS Y DE LIBRERIA DE MACHINE LEARNING
+(añadimos también un hover, para conseguir que la sombra cambie y no sea estática. Con el hover,
+no solamente movemos la sombra sino que tambieé conseguirmos que tenga menos blur,
+permitiendo al usuario ver la sombra más enfocada cuando justamente pasa el ratón por encima)*/
+#PI_pares_LibreriaImagen img, #PI_pares_datosImagen img {
+    filter: drop-shadow(0px 10px 3px rgba(0, 0, 0, 0.25)); 
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
+}
+
+#PI_pares_LibreriaImagen img:hover, #PI_pares_datosImagen img:hover {
+    filter: drop-shadow(0px 15px 1px rgba(0, 0, 0, 0.25));
+}
