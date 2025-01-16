@@ -146,4 +146,11 @@ con la parte de datos. donde esta el titulo de datos (librerias de manipulación
 #PI_transicionIaBigData_a_footer {
     background-color: green;
     height: 30em;
+
+    background: linear-gradient(to bottom, 
+                                var(--PI_rojoDatos_SUAVE_gradiente), 
+                                var(--PI_rojoDatos_OSCURO_gradiente), 
+                                var(--PI_rojoDatos_MUYOSCURO_gradiente), 
+                                var(--negroFooter));
+
 }
