@@ -144,8 +144,8 @@ con la parte de datos. donde esta el titulo de datos (librerias de manipulación
 
 
 #PI_transicionIaBigData_a_footer {
-    background-color: green;
-    height: 30em;
+    
+    height: 40em;
 
     background: linear-gradient(to bottom, 
                                 var(--PI_rojoDatos_SUAVE_gradiente), 
@@ -170,3 +170,13 @@ permitiendo al usuario ver la sombra más enfocada cuando justamente pasa el rat
 #PI_pares_LibreriaImagen img:hover, #PI_pares_datosImagen img:hover {
     filter: drop-shadow(0px 15px 1px rgba(0, 0, 0, 0.25));
 }
+
+/*drop shadow al logo grande de python y animación con hover
+no hemos podido simular el drop shadow de colores mixtos que conseguimos
+con figma (donde es fácil afectar a distintos componentes del svg por separado). Así que
+en este caso hemos optado por, simplemente, poner un drop-shadow simple.*/
+#PI_contenedorCabezalIA img {
+    filter: drop-shadow(0px 10px 1px rgba(0, 0, 0, 0.25));
+    transition: filter var(--tiempoTransicionEstandar) ease-in-out;
+}
+#PI_contenedorCabezalIA img:hover {filter: drop-shadow(0px 13px 1px rgba(0, 0, 0, 0.25));}
