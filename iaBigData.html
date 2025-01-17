@@ -75,7 +75,7 @@
                             type: 'line',
                             backgroundColor: 'rgba(255, 99, 132, .5)',
                             borderColor: 'rgba(255, 99, 132, 1)',
-                            borderWidth: 1,
+                            borderWidth: 2,
                             fill: false,
                             tension: 1 // Sin curvatura
                         },
@@ -89,7 +89,7 @@
                                 };
                             }),
                             backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderColor: '#00BBFF', //¡CUIDADO!: es el mismo valor que la global CSS --PI_azulGrafico
                             borderWidth: 2
                         }
                     ]
@@ -145,6 +145,17 @@
 
     </script>
 
+    <!--Cada vez qeu se carga el gráfico se cargarán unos valores distintos, combinación de funciones
+    aleatorias y funcioness gausianas. Parece interesante permitir al usuario que explire el gráfico-->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const botoAct = document.getElementById("botonActualiza");
+            botoAct.addEventListener("click", () => {
+                location.reload();
+            });
+        });
+    </script>
+    
     
 
 </head>
@@ -265,6 +276,13 @@
                         <p class = "wow animate__animated animate__fadeIn" data-wow-delay=".3s" data-wow-duration="1s">Es <span>la evolución de matplotlib</span>: una biblioteca de visualización que facilita la creación de gráficos atractivos, proporcionando una interfaz simple para trabajar con datos tanto categóricos como  continuos.</p>
                         <img src="/img/ia/seabornDefinitiu.png" alt="seaborn no cargó" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
                     </article>
+                    <article class="dosColumnasIA">
+                        <img src="/img/ia/chartJs.png" alt="TensorFlow no cargó!" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
+                        <p class = "wow animate__animated animate__fadeIn" data-wow-delay=".3s" data-wow-duration="1s">Chart.js es una Librería
+                            JavaScript que podemos utilizar para <span>visualizar gráficos
+                            en el front-end</span>, consumiéndolos de un back-end en Flask o Django.
+                            <u>Véase ejemplo de un scatterplot debajo:</u></p>
+                    </article>
                 </section>
             </section>
         </section>
@@ -278,6 +296,15 @@
     <section id = "alargandoNegroPreFooter">
         <canvas id="myChart"></canvas>
     </section>
+
+    <section id ="contenedorBotonActualiza">
+        <section>
+            <button id = "botonActualiza">¡modifica gráfico!</button>
+        </section>
+    </section>
+
+
+
 
 
     

@@ -136,18 +136,19 @@ con la parte de datos. donde esta el titulo de datos (librerias de manipulación
 
 #PI_pares_datosImagen {
     background-color: var(--PI_rojoDatos_SUAVE_gradiente);
+    height: 60em;
 }
 #PI_pares_datosImagen > section:first-child {
     position: relative;
     top: -3em;
 }
 
-#PI_pares_datosImagen article p span {color: #00BBFF;} /*emfatizamos partes del codigo*/
+#PI_pares_datosImagen article p span {color: var(--PI_azulGrafico);} /*emfatizamos partes del codigo*/
 #PI_pares_datosImagen article p {padding: 1.5em; color: white;}
 #PI_pares_datosImagen article:first-child img {width: 12em;} /*anchura imagen pandas*/
 #PI_pares_datosImagen article:nth-child(2) img {width: 16em;} /*anchura imagen plotly*/
 #PI_pares_datosImagen article:nth-child(3) img {width: 13em;} /*anchura imagen seaborn*/
-
+#PI_pares_datosImagen article:nth-child(4) img {width: 7em;} /*anchura imagen chart.js*/
 #PI_pares_LibreriaImagen article {
     padding-bottom: 0em;
 }
@@ -214,6 +215,34 @@ en este caso hemos optado por, simplemente, poner un drop-shadow simple.*/
 
 #alargandoNegroPreFooter {
     background-color: var(--negroFooter);
-    height: 60em;
+    height: 32em;
     color: white;
 }
+
+/*Definimos el conetnedor del botón y el botón
+para refrescar la página (dispuesto debajo del gráfico)*/
+#contenedorBotonActualiza {
+    top: -3em;
+    display: grid;
+    place-items: center;
+    background-color: black;
+    padding: 4em 0 10em 0em;
+}
+#botonActualiza {
+    color: red;
+    font-size: 1em;
+    border-radius: .4em;
+    padding: .5em;
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+    transition: ease-in-out background-color var(--tiempoTransicionEstandar), 
+                ease-in-out transform var(--tiempoTransicionEstandar);
+}
+
+#botonActualiza:hover {
+    background-color: rgb(89, 33, 33);
+    transform: scale(1.02);
+
+}
+
