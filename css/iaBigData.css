@@ -211,3 +211,9 @@ en este caso hemos optado por, simplemente, poner un drop-shadow simple.*/
     animation: fadeInUp; 
     animation-duration: 1.2s;
 }
+
+#alargandoNegroPreFooter {
+    background-color: var(--negroFooter);
+    height: 60em;
+    color: white;
+}

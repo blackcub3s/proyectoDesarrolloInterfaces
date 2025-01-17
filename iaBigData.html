@@ -29,6 +29,124 @@
         });
     </script>
 
+
+    <!--Añadimos el script para añadir el gráfico de chart.js y 
+    el codigo para el grafico y su CSS asociado-->
+    <style>
+        #myChart {
+            margin: 0 auto;
+
+            width: 1000px !important;
+            height: 500px !important;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            
+            //PRE:media y desviacioin tipica
+            //POST: Se genera un valor aleatorio siguiendo una distribucion normal de media mean y stdev 1.
+            //NOTA: Función obtenida de stackoverflow en  https://stackoverflow.com/questions/25582882/javascript-math-random-normal-distribution-gaussian-bell-curve
+            function gaussianRandom(mean=0, stdev=1) {
+                const u = 1 - Math.random(); // Converting [0,1) to (0,1]
+                const v = Math.random();
+                const z = Math.sqrt( -2.0 * Math.log( u ) ) * Math.cos( 2.0 * Math.PI * v );
+                // Transform to the desired mean and standard deviation:
+                return z * stdev + mean;
+            }            
+            
+            var ctx = document.getElementById('myChart').getContext('2d');
+
+            const max = 40;
+            const min = 10;
+            dt = Math.floor(Math.random() * (max - min + 1)) + min; //dt entero en rango [10,40]
+            m = Math.floor(Math.random() * (5 - (-5) + 1)) -5; //m es pendiende te la recta (rangos posibles de -5 a 5)
+            b = 30;
+            
+            var myChart = new Chart(ctx, {
+                type: 'scatter', // Cambiado a scatter
+                responsive: true,
+                data: {
+                    datasets: [
+                    {
+                            label: `Recta f(x) = ${m}x + ${b}`,
+                            data: [{ x: 0, y: b }, // Punto inicial (x = 0, y = b)
+                                { x: 100, y: m * 100 + b }], // Punto final (x = 100, y = m*100 + b)
+                            type: 'line',
+                            backgroundColor: 'rgba(255, 99, 132, .5)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1,
+                            fill: false,
+                            tension: 1 // Sin curvatura
+                        },
+                        {
+                            label: `200 valores generados alrededor de [f(x) = ${m}x + ${b}] | Creados tomando f(x) + X para todo valor x donde X∼N(μ,σ) con μ=0 y σ=${dt})`,
+                            data: Array.from({ length: 200 }, () => {
+                                const x = Math.random() * 100;
+                                return {
+                                    x: x,
+                                    y: m*x + b + gaussianRandom(0, dt) // y = 2x + 3 al que sumamos o restamos valores de media cero y desviación tipica dt entre [10 y 40].
+                                };
+                            }),
+                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 2
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            type: 'linear', // Escala lineal para scatter plot
+                            position: 'bottom',
+                            title: {
+                                display: true,
+                                text: 'X',
+                                color: 'white'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Y',
+                                color:"white"
+                            }
+                        }
+                    }, 
+                    plugins: {
+                        title: {
+                            display: true, // Mostrar el título
+                            text: ['Réplica de una regresión lineal',
+                                '(NOTA: puntos creados a partir de la recta, no al revés)'], // Título del gráfico
+                            font: {
+                                size: 30, // Tamaño de la fuente
+                                weight: 'bold' // Estilo de la fuente
+                            },
+                            padding: {
+                                top: 20, // Espaciado superior
+                                bottom: 20 // Espaciado inferior
+                            },
+                            color:"white"
+                        },
+                        legend: { // Configuración de la leyenda
+                            labels: {
+                                color: 'white' // Cambiar el color del texto de la leyenda
+                            }
+                        }
+                    }
+            
+            
+                }
+            
+        
+            });
+        });
+
+    </script>
+
+    
+
 </head>
 <body>
 
@@ -152,11 +270,14 @@
         </section>
     </section>
 
+    <!--contenedor vacío que nos transporta al color negro de la footer y del gráfico
+    hecho con chart.js-->
     <section id = "PI_transicionIaBigData_a_footer"></section>
 
-
-
-
+    <!-- contenedor donde pondremos el gráfico-->
+    <section id = "alargandoNegroPreFooter">
+        <canvas id="myChart"></canvas>
+    </section>
 
 
     
