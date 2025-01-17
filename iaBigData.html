@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA y Big Data</title>
+
+    <!--Cargamos la fuente roboto de google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!--Cargamos el CSS de animate.style para hacer animaciones, p. ej menu desplegable de la navbar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!--cargamos los estilos que hemos definido nosotros-->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="styleSheet" href="css/estilsGenerals_iaBigData.css">
+    <link rel="styleSheet" href="css/iaBigData.css">
+
+
+    <!--Cargamos el archivo de wow.js desde su CDN para poder conseguir que las animaciones de animate.css se activen
+    mediante el scroll-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script> 
+
+    <!-- También Añadimos el objeto instanciado de wow.js para poder iniciar las animaciones de animate.css cuando 
+     el usuario haga scroll hacia donde se apliquen las mismas -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function instanciaWow() {
+            new WOW().init();
+        });
+    </script>
+
+
+    <!--Añadimos el script para añadir el gráfico de chart.js y 
+    el codigo para el grafico y su CSS asociado-->
+    <style>
+        #myChart {
+            margin: 0 auto;
+
+            width: 1000px !important;
+            height: 500px !important;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            
+            //PRE:media y desviacioin tipica
+            //POST: Se genera un valor aleatorio siguiendo una distribucion normal de media mean y stdev 1.
+            //NOTA: Función obtenida de stackoverflow en  https://stackoverflow.com/questions/25582882/javascript-math-random-normal-distribution-gaussian-bell-curve
+            function gaussianRandom(mean=0, stdev=1) {
+                const u = 1 - Math.random(); // Converting [0,1) to (0,1]
+                const v = Math.random();
+                const z = Math.sqrt( -2.0 * Math.log( u ) ) * Math.cos( 2.0 * Math.PI * v );
+                // Transform to the desired mean and standard deviation:
+                return z * stdev + mean;
+            }            
+            
+            var ctx = document.getElementById('myChart').getContext('2d');
+
+            const max = 40;
+            const min = 10;
+            dt = Math.floor(Math.random() * (max - min + 1)) + min; //dt entero en rango [10,40]
+            m = Math.floor(Math.random() * (5 - (-5) + 1)) -5; //m es pendiende te la recta (rangos posibles de -5 a 5)
+            b = 30;
+            
+            var myChart = new Chart(ctx, {
+                type: 'scatter', // Cambiado a scatter
+                responsive: true,
+                data: {
+                    datasets: [
+                    {
+                            label: `Recta f(x) = ${m}x + ${b}`,
+                            data: [{ x: 0, y: b }, // Punto inicial (x = 0, y = b)
+                                { x: 100, y: m * 100 + b }], // Punto final (x = 100, y = m*100 + b)
+                            type: 'line',
+                            backgroundColor: 'rgba(255, 99, 132, .5)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 2,
+                            fill: false,
+                            tension: 1 // Sin curvatura
+                        },
+                        {
+                            label: `200 valores generados alrededor de [f(x) = ${m}x + ${b}] | Creados tomando f(x) + X para todo valor x donde X∼N(μ,σ) con μ=0 y σ=${dt})`,
+                            data: Array.from({ length: 200 }, () => {
+                                const x = Math.random() * 100;
+                                return {
+                                    x: x,
+                                    y: m*x + b + gaussianRandom(0, dt) // y = 2x + 3 al que sumamos o restamos valores de media cero y desviación tipica dt entre [10 y 40].
+                                };
+                            }),
+                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            borderColor: '#00BBFF', //¡CUIDADO!: es el mismo valor que la global CSS --PI_azulGrafico
+                            borderWidth: 2
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            type: 'linear', // Escala lineal para scatter plot
+                            position: 'bottom',
+                            title: {
+                                display: true,
+                                text: 'X',
+                                color: 'white'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Y',
+                                color:"white"
+                            }
+                        }
+                    }, 
+                    plugins: {
+                        title: {
+                            display: true, // Mostrar el título
+                            text: ['Réplica de una regresión lineal',
+                                '(NOTA: puntos creados a partir de la recta, no al revés)'], // Título del gráfico
+                            font: {
+                                size: 30, // Tamaño de la fuente
+                                weight: 'bold' // Estilo de la fuente
+                            },
+                            padding: {
+                                top: 20, // Espaciado superior
+                                bottom: 20 // Espaciado inferior
+                            },
+                            color:"white"
+                        },
+                        legend: { // Configuración de la leyenda
+                            labels: {
+                                color: 'white' // Cambiar el color del texto de la leyenda
+                            }
+                        }
+                    }
+            
+            
+                }
+            
+        
+            });
+        });
+
+    </script>
+
+    <!--Cada vez qeu se carga el gráfico se cargarán unos valores distintos, combinación de funciones
+    aleatorias y funcioness gausianas. Parece interesante permitir al usuario que explire el gráfico-->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const botoAct = document.getElementById("botonActualiza");
+            botoAct.addEventListener("click", () => {
+                location.reload();
+            });
+        });
+    </script>
+    
+    
+
+</head>
+<body>
+
+    <!-- HEADER: barra de navegación-->
+    <header>
+        <nav>
+            <!-- Aplicamos estilos para la barra de navegación -crucial añadir elemento span para poder tratar la imagen aparte -->
+            <ul>
+                <li>
+                    <span>Servicios</span> <img src="img/flechaDesplegablePaint.png" alt="v">
+                    <ul>
+                        <li><a href="#">Front-end</a></li>
+                        <li><a href="#">Back-end</a></li>
+                        <li><a href="#">IA & BigData</a></li>
+                    </ul>
+                </li>
+                <li><span><a href="#">Quiénes somos</a></span></li>
+                <li><span><a href="#">Incorpórate</a></span></li>
+                <li><span><a href="#">Contacto</a></span></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <!-- contenedor capçalera IA-->
+    <section id="PI_contenedorCabezalIA">
+        <section> <!-- section: first-child-->
+            <h1><span>IA</span> & BigData</h1>
+            <img src="/img/ia/pythonLogoOnly.svg" alt="logo python no cargó!">
+        </section>
+    </section>
+
+
+    <!-- CONJUNTO TITULO Y LIBRERIAS MACHINE LEARNING -->
+    <section>
+        <!-- contenedor capçalera IA-->
+        <section id="PI_contenedorTituloLibDESARROLLO">
+            <section> <!-- section: first-child-->
+                <h1 class="subTitulosIA">Librerías de machine learning con las que desarrollamos</h1>
+            </section>
+        </section>
+            
+        <!--BLOQUES informacion pares libreria e imagen-->
+        <section id = "PI_soloFondoParLibImg">
+            <section id ="PI_pares_LibreriaImagen">
+                <article class = "dosColumnasIA">
+                    <img src="/img/ia/pySparkDefinitiu.png" alt="pySparkNoCargo" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s"> 
+                    <p class = "wow animate__animated animate__fadeIn" data-wow-delay=".3s" data-wow-duration="1s">Framework que permite ejecutar código Python en <span>clusters distribuidos</span> usando 
+                        Apache Spark, optimizando el procesamiento de grandes 
+                        volúmenes de datos en paralelo y mejorando el rendimiento.</p>
+                </article>
+
+                <article class = "dosColumnasIA">
+                    <p class = "wow animate__animated animate__fadeIn" data-wow-delay=".3s" data-wow-duration="1s">El módulo OpenAI permite integrar modelos de inteligencia artificial de OpenAI:
+                        <span>GPT 4</span> en tus aplicaciones hacer procesamiento de 
+                        lenguaje natural, generación de texto o chat-bots, etc.</p>
+                    <img src="/img/ia/openAI.png" alt = "openAI no cargó!" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
+                </article>
+
+                <article class = "dosColumnasIA">
+                    <img src="/img/ia/OpenCVlogoFinal.png" alt = "openCV no cargó!" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
+                    <p class = "wow animate__animated animate__fadeIn" data-wow-delay=".3s" data-wow-duration="1s">OpenCV es una biblioteca para procesamiento de imágenes y visión por computadora, 
+                        que facilita tareas como <span>detección de objetos</span>, reconocimiento facial y 
+                        manipulación de imagen y vídeo.</p>
+                </article>
+
+                <article class="dosColumnasIA">
+                    <p class = "wow animate__animated animate__fadeIn" data-wow-delay=".3s" data-wow-duration="1s">Scikit-learn (sklearn) es una biblioteca que proporciona 
+                        <span>algoritmos para modelos de machine learning</span>: clasificación, regresión, 
+                        clustering y reducción de dimensionalidad.</p>
+                    <img src="/img/ia/sklearnDefinitiu.png" alt="sklearn no cargó!" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
+                </article>
+                
+                <article class="dosColumnasIA">
+                    <img src="/img/ia/TensorFlowLogo.png" alt="TensorFlow no cargó!" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
+                    <p class = "wow animate__animated animate__fadeIn" data-wow-delay=".3s" data-wow-duration="1s">TensorFlow es una biblioteca de Python para 
+                        construir y entrenar modelos de<span>
+                            machine learning
+                            y deep learning
+                        </span>, especializada en redes neuronales y 
+                        procesamiento en <span>GPUs o TPUs para mejorar el rendimiento</span>.</p>
+                </article>
+                
+            </section>
+        </section>
+    </section>
+
+
+
+
+
+    <!-- CONJUNTO TITULO Y LIBRERIAS MACHINE LEARNING -->
+    <section>
+        <!-- contenedor cabezera datos-->
+        <section id = "PI_contenedorLibDatos">  
+            <section> <!-- section: first-child-->
+                <h1 class = "subTitulosIA">Librerías de manipulación y visualización de datos</h1>
+            </section>
+        </section>
+
+        <!--BLOQUES informacion pares libreria DATOS e imagen-->
+        <!--COPIA DE DALT <section id = "PI_soloFondoParLibImg">-->
+        <!--BLOQUES informacion pares libreria e imagen-->
+        <section id = "PI_ParesDatos_Img">
+            <section id ="PI_pares_datosImagen">
+                <section> <!--fem que sigui slidable cap amunt sense alterar el fons-->
+                    <article class = "dosColumnasIA">
+                        <p class = "wow animate__animated animate__fadeIn" data-wow-delay=".3s" data-wow-duration="1s">Biblioteca para<span> manipulación y análisis de datos</span>, que proporciona estructuras como DataFrames para trabajar con datos tabulares de manera eficiente..</p>
+                        <img src="/img/ia/pandasDefinitiu.png" alt="pandas no cargó" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
+                    </article>
+                    <article class = "dosColumnasIA">
+                        <img src="/img/ia/PlotlyLogo.png" alt="plotly no cargó" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
+                        <p class = "wow animate__animated animate__fadeIn" data-wow-delay=".3s" data-wow-duration="1s">biblioteca para crear <span>gráficos interactivos y visualizaciones avanzadas</span>. Es compatible con gráficos 2D y 3D y tiene un amplio repertorio de gráficos interactivos.</p>
+                    </article>
+                    <article class = "dosColumnasIA">
+                        <p class = "wow animate__animated animate__fadeIn" data-wow-delay=".3s" data-wow-duration="1s">Es <span>la evolución de matplotlib</span>: una biblioteca de visualización que facilita la creación de gráficos atractivos, proporcionando una interfaz simple para trabajar con datos tanto categóricos como  continuos.</p>
+                        <img src="/img/ia/seabornDefinitiu.png" alt="seaborn no cargó" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
+                    </article>
+                    <article class="dosColumnasIA">
+                        <img src="/img/ia/chartJs.png" alt="TensorFlow no cargó!" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
+                        <p class = "wow animate__animated animate__fadeIn" data-wow-delay=".3s" data-wow-duration="1s">Chart.js es una Librería
+                            JavaScript que podemos utilizar para <span>visualizar gráficos
+                            en el front-end</span>, consumiéndolos de un back-end en Flask o Django.
+                            <u>Véase ejemplo de un scatterplot debajo:</u></p>
+                    </article>
+                </section>
+            </section>
+        </section>
+    </section>
+
+    <!--contenedor vacío que nos transporta al color negro de la footer y del gráfico
+    hecho con chart.js-->
+    <section id = "PI_transicionIaBigData_a_footer"></section>
+
+    <!-- contenedor donde pondremos el gráfico-->
+    <section id = "alargandoNegroPreFooter">
+        <canvas id="myChart"></canvas>
+    </section>
+
+    <section id ="contenedorBotonActualiza">
+        <section>
+            <button id = "botonActualiza">¡modifica gráfico!</button>
+        </section>
+    </section>
+
+
+
+
+
+    
+
+
+    <!-- footer -->   
+    <footer>
+        <div class="footer-content">  <!-- Contenedor footer-->
+            <div class="footer-column">
+                <h1>Servicios</h1>
+                <ul> 
+                    <li><a href="#">Front-end Development</a></li>
+                    <li><a href="#">Back-end Development</a></li>
+                    <li><a href="#">IA & Big Data</a></li>
+                </ul>                
+            </div>
+            <!-- Barra vertical entre columnas -->
+            <div class="footer-vertical-bar"></div>
+
+            <div class="footer-column">
+                <h1>Empresa</h1>
+                <ul>
+                    <li><a href="#">Quiénes somos</a></li>
+                    <li><a href="#">Incorpórate</a></li>
+                    
+                </ul>
+            </div>
+            <!-- Barra vertical entre columnas -->
+            <div class="footer-vertical-bar"></div>
+
+            <div class="footer-column">
+                <h1>Contacto</h1>
+                <ul>
+                    <li><a href="#">info@blackcodeconsulting.com</a></li>
+                    <li><a href="#"><img src="img/linkedin_logoDefinitiu.jpg" width="45" height="45" alt="LinkedIn"></a></li>
+                </ul>
+            </div>
+        </div>    
+        <hr>
+        <p id="copyright"><i>&copy; 2024 | Todos los derechos reservados</i></p>    
+    </footer>
+
+
+
+
+</body>
+</html>
