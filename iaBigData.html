@@ -85,7 +85,7 @@
                                 const x = Math.random() * 100;
                                 return {
                                     x: x,
-                                    y: m*x + b + gaussianRandom(0, dt) // y = 2x + 3 al que sumamos o restamos valores de media cero y desviación tipica dt entre [10 y 40].
+                                    y: m*x + b + gaussianRandom(0, dt) // y = 2x + 3 al que sumamos o restamos valores genearados según una distribución normal de media cero y desviación tipica dt -NOTA: dt, a cada carga de la página, será un enterno en el intervalo [10,40] para mostrar el gráfico de puntos con distintas dispersiones.
                                 };
                             }),
                             backgroundColor: 'rgba(54, 162, 235, 0.2)',
