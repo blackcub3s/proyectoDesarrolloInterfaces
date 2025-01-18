@@ -13,7 +13,7 @@ contenido de la pagina (por un lado, texto contacto y, por el otro, formulario)*
     display: grid;
     grid-template-columns: 6fr 4fr; /*tres fracciones la parte izquierda (mensaje de contacto) y dos la derecha (mensaje de formulario)*/
     align-items: center; /*centramos verticalmente tanto la parte izquierda (mensaje contacto) como derecha (form) de la pagina*/
-    height: 40em;
+    padding: 3em;
 
 
     max-width: 1000px; /*definimos ancho máximo de la pagina para que no se mueva al hacer zoom out*/
@@ -76,7 +76,7 @@ contenido de la pagina (por un lado, texto contacto y, por el otro, formulario)*
 /*alturas para elementos donde podemos poner texto (inputs y textarea, respectivamente) y
 definiciones margen para el texto que se introduzca*/
 #PIfondoContacto section > article:last-child form input {height: 3em; padding-left: 1em; padding-right: 1em;}
-#PIfondoContacto section > article:last-child form textarea {height: 8em; padding: 1em;}
+#PIfondoContacto section > article:last-child form textarea {height: 8em; padding: 1em; resize: none;} /*resize:none nos permite evitar que el usuario pueda redimensionar la textarea con el ratón*/
 
 
 
