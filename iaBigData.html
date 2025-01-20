@@ -85,7 +85,7 @@
                                 const x = Math.random() * 100;
                                 return {
                                     x: x,
-                                    y: m*x + b + gaussianRandom(0, dt) // y = 2x + 3 al que sumamos o restamos valores de media cero y desviación tipica dt entre [10 y 40].
+                                    y: m*x + b + gaussianRandom(0, dt) // y = 2x + 3 al que sumamos o restamos valores genearados según una distribución normal de media cero y desviación tipica dt -NOTA: dt, a cada carga de la página, será un enterno en el intervalo [10,40] para mostrar el gráfico de puntos con distintas dispersiones.
                                 };
                             }),
                             backgroundColor: 'rgba(54, 162, 235, 0.2)',
@@ -169,14 +169,14 @@
                 <li>
                     <span>Servicios</span> <img src="img/flechaDesplegablePaint.png" alt="v">
                     <ul>
-                        <li><a href="#">Front-end</a></li>
-                        <li><a href="#">Back-end</a></li>
-                        <li><a href="#">IA & BigData</a></li>
+                        <li><a href="FrontEnd.html">Front-end</a></li>
+                        <li><a href="backend.html">Back-end</a></li>
+                        <li><a href="iaBigData.html">IA & BigData</a></li>
                     </ul>
                 </li>
-                <li><span><a href="#">Quiénes somos</a></span></li>
-                <li><span><a href="#">Incorpórate</a></span></li>
-                <li><span><a href="#">Contacto</a></span></li>
+                <li><span><a href="aboutUs.html">Quiénes somos</a></span></li>
+                <li><span><a href="joinUs.html">Incorpórate</a></span></li>
+                <li><span><a href="contact.html">Contacto</a></span></li>
             </ul>
         </nav>
     </header>
@@ -186,7 +186,7 @@
     <section id="PI_contenedorCabezalIA">
         <section> <!-- section: first-child-->
             <h1><span>IA</span> & BigData</h1>
-            <img src="/img/ia/pythonLogoOnly.svg" alt="logo python no cargó!">
+            <img src="img/ia/pythonLogoOnly.svg" alt="logo python no cargó!">
         </section>
     </section>
 
@@ -204,7 +204,7 @@
         <section id = "PI_soloFondoParLibImg">
             <section id ="PI_pares_LibreriaImagen">
                 <article class = "dosColumnasIA">
-                    <img src="/img/ia/pySparkDefinitiu.png" alt="pySparkNoCargo" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s"> 
+                    <img src="img/ia/pySparkDefinitiu.png" alt="pySparkNoCargo" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s"> 
                     <p class = "wow animate__animated animate__fadeIn" data-wow-delay=".3s" data-wow-duration="1s">Framework que permite ejecutar código Python en <span>clusters distribuidos</span> usando 
                         Apache Spark, optimizando el procesamiento de grandes 
                         volúmenes de datos en paralelo y mejorando el rendimiento.</p>
@@ -214,11 +214,11 @@
                     <p class = "wow animate__animated animate__fadeIn" data-wow-delay=".3s" data-wow-duration="1s">El módulo OpenAI permite integrar modelos de inteligencia artificial de OpenAI:
                         <span>GPT 4</span> en tus aplicaciones hacer procesamiento de 
                         lenguaje natural, generación de texto o chat-bots, etc.</p>
-                    <img src="/img/ia/openAI.png" alt = "openAI no cargó!" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
+                    <img src="img/ia/openAI.png" alt = "openAI no cargó!" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
                 </article>
 
                 <article class = "dosColumnasIA">
-                    <img src="/img/ia/OpenCVlogoFinal.png" alt = "openCV no cargó!" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
+                    <img src="img/ia/OpenCVlogoFinal.png" alt = "openCV no cargó!" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
                     <p class = "wow animate__animated animate__fadeIn" data-wow-delay=".3s" data-wow-duration="1s">OpenCV es una biblioteca para procesamiento de imágenes y visión por computadora, 
                         que facilita tareas como <span>detección de objetos</span>, reconocimiento facial y 
                         manipulación de imagen y vídeo.</p>
@@ -228,11 +228,11 @@
                     <p class = "wow animate__animated animate__fadeIn" data-wow-delay=".3s" data-wow-duration="1s">Scikit-learn (sklearn) es una biblioteca que proporciona 
                         <span>algoritmos para modelos de machine learning</span>: clasificación, regresión, 
                         clustering y reducción de dimensionalidad.</p>
-                    <img src="/img/ia/sklearnDefinitiu.png" alt="sklearn no cargó!" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
+                    <img src="img/ia/sklearnDefinitiu.png" alt="sklearn no cargó!" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
                 </article>
                 
                 <article class="dosColumnasIA">
-                    <img src="/img/ia/TensorFlowLogo.png" alt="TensorFlow no cargó!" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
+                    <img src="img/ia/TensorFlowLogo.png" alt="TensorFlow no cargó!" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
                     <p class = "wow animate__animated animate__fadeIn" data-wow-delay=".3s" data-wow-duration="1s">TensorFlow es una biblioteca de Python para 
                         construir y entrenar modelos de<span>
                             machine learning
@@ -266,18 +266,18 @@
                 <section> <!--fem que sigui slidable cap amunt sense alterar el fons-->
                     <article class = "dosColumnasIA">
                         <p class = "wow animate__animated animate__fadeIn" data-wow-delay=".3s" data-wow-duration="1s">Biblioteca para<span> manipulación y análisis de datos</span>, que proporciona estructuras como DataFrames para trabajar con datos tabulares de manera eficiente..</p>
-                        <img src="/img/ia/pandasDefinitiu.png" alt="pandas no cargó" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
+                        <img src="img/ia/pandasDefinitiu.png" alt="pandas no cargó" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
                     </article>
                     <article class = "dosColumnasIA">
-                        <img src="/img/ia/PlotlyLogo.png" alt="plotly no cargó" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
+                        <img src="img/ia/PlotlyLogo.png" alt="plotly no cargó" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
                         <p class = "wow animate__animated animate__fadeIn" data-wow-delay=".3s" data-wow-duration="1s">biblioteca para crear <span>gráficos interactivos y visualizaciones avanzadas</span>. Es compatible con gráficos 2D y 3D y tiene un amplio repertorio de gráficos interactivos.</p>
                     </article>
                     <article class = "dosColumnasIA">
                         <p class = "wow animate__animated animate__fadeIn" data-wow-delay=".3s" data-wow-duration="1s">Es <span>la evolución de matplotlib</span>: una biblioteca de visualización que facilita la creación de gráficos atractivos, proporcionando una interfaz simple para trabajar con datos tanto categóricos como  continuos.</p>
-                        <img src="/img/ia/seabornDefinitiu.png" alt="seaborn no cargó" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
+                        <img src="img/ia/seabornDefinitiu.png" alt="seaborn no cargó" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
                     </article>
                     <article class="dosColumnasIA">
-                        <img src="/img/ia/chartJs.png" alt="TensorFlow no cargó!" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
+                        <img src="img/ia/chartJs.png" alt="TensorFlow no cargó!" class = "wow animate__animated animate__fadeIn" data-wow-delay=".5s" data-wow-duration="1s">
                         <p class = "wow animate__animated animate__fadeIn" data-wow-delay=".3s" data-wow-duration="1s">Chart.js es una Librería
                             JavaScript que podemos utilizar para <span>visualizar gráficos
                             en el front-end</span>, consumiéndolos de un back-end en Flask o Django.
@@ -316,9 +316,9 @@
             <div class="footer-column">
                 <h1>Servicios</h1>
                 <ul> 
-                    <li><a href="#">Front-end Development</a></li>
-                    <li><a href="#">Back-end Development</a></li>
-                    <li><a href="#">IA & Big Data</a></li>
+                    <li><a href="FrontEnd.html">Front-end Development</a></li>
+                    <li><a href="backend.html">Back-end Development</a></li>
+                    <li><a href="iaBigData.html">IA & Big Data</a></li>
                 </ul>                
             </div>
             <!-- Barra vertical entre columnas -->
@@ -327,9 +327,8 @@
             <div class="footer-column">
                 <h1>Empresa</h1>
                 <ul>
-                    <li><a href="#">Quiénes somos</a></li>
-                    <li><a href="#">Incorpórate</a></li>
-                    
+                    <li><a href="aboutUs.html">Quiénes somos</a></li>
+                    <li><a href="joinUs.html">Incorpórate</a></li>
                 </ul>
             </div>
             <!-- Barra vertical entre columnas -->
@@ -339,12 +338,13 @@
                 <h1>Contacto</h1>
                 <ul>
                     <li><a href="#">info@blackcodeconsulting.com</a></li>
+                    <li><a href="contact.html">formulario</a></li>
                     <li><a href="#"><img src="img/linkedin_logoDefinitiu.jpg" width="45" height="45" alt="LinkedIn"></a></li>
                 </ul>
             </div>
         </div>    
         <hr>
-        <p id="copyright"><i>&copy; 2024 | Todos los derechos reservados</i></p>    
+        <p id="copyright"><i>&copy; 2024 | Todos los derechos reservados</i></p>       
     </footer>
 
 
