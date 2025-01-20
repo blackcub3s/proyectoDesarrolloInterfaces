@@ -11,7 +11,7 @@
 contenido de la pagina (por un lado, texto contacto y, por el otro, formulario)*/
 #PIfondoContacto section {
     display: grid;
-    grid-template-columns: 6fr 4fr; /*tres fracciones la parte izquierda (mensaje de contacto) y dos la derecha (mensaje de formulario)*/
+    grid-template-columns: 6fr 4fr; /*seis fracciones en la parte izquierda (mensaje de contacto) y cuatro a la derecha (mensaje de formulario)*/
     align-items: center; /*centramos verticalmente tanto la parte izquierda (mensaje contacto) como derecha (form) de la pagina*/
     padding: 3em;
 
