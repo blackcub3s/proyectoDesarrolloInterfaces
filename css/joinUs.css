@@ -44,9 +44,14 @@
 }
 
 /* Encabezado */
-.ofertas h1 {
+.ofertas h2 {
     font-size: 2rem;
+    margin-bottom: 30px;
+}
+.ofertas p{
     margin-bottom: 50px;
+    font-size: 1.2rem;
+    text-align: center;
 }
 
 /* Contenedor de las ofertas */
@@ -81,7 +86,11 @@
     font-size: 1.75rem;
     margin-bottom: 15px;
 }
-
+/*Enlaces cards*/
+.oferta-card a{
+    text-decoration: none;
+    color: black;
+}
 /* Listas dentro de las cartas */
 .oferta-card ul {
     padding-left: 20px;   

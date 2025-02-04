@@ -14,7 +14,7 @@ body {
     justify-content: center; /* Centramos horizontalmente */
     align-items: center; /* Centramos verticalmente */
     color: white; /* Texto en blanco */
-    font-size: 5rem; /* Tamaño de fuente */
+    font-size: 3rem; /* Tamaño de fuente */
     text-align: center; /* Centramos el texto */
 }
 
@@ -24,7 +24,7 @@ body {
 .swiper-container {
     display: flex; /* Habilitamos flexbox */
     width: 100%; /* Ancho completo */
-    height: 500px; /* Altura fija */
+    height: 400px; /* Altura fija */
     max-height: 100%; /* Limita la altura al tamaño de la ventana */
 }
 
@@ -53,7 +53,6 @@ body {
     padding: 20px; /* Espaciado interno */
     display: flex; /* Habilitamos flexbox */
     align-items: center; /* Centramos verticalmente */
-    justify-content: space-between; /* Espaciamos elementos uniformemente */
 }
 /* Estilo del artículo */
 .back-end-info article {
