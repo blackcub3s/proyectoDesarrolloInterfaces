@@ -55,6 +55,81 @@
     satelite de python en contenedor ia*/
     --X: 23em; 
     --Y: 27em;
+
+
+   
+    /* ------------------------------------------
+    /* ---- ESTILOS GENERALES iaBigData.html ---- 
+    /* ------------------------------------------*/
+
+    --PI_grisIA_gradiente: #424242;
+    --PI_amarilloIA_gradiente: #B39840;
+    --PI_amarilloIA_BRILLANTE_gradiente: #FFC300;
+    --PI_rojoDatos_SUAVE_gradiente: #EF6B6B;
+    --PI_rojoDatos_OSCURO_gradiente: #9D4545;
+    --PI_rojoDatos_MUYOSCURO_gradiente: #682C2C;
+    --PI_azulGrafico: #00BBFF;
+
+
+
+
+    /* ------------------------------------------
+    /* ---- ESTILOS GENERALES Contacto.html ---- 
+    /* ------------------------------------------*/
+
+    /*COLOR DE FONDO DE PAGINA CONTACTO*/
+    --PI_gradienteIzqContacto: #8D4378;
+    --PI_gradienteDerContacto: #2F415D;
+    --PI_asteriscFormContacto: #6A00FF;
+    
+    /*TIEMPO DE LA ANIMACIÓN DE ANIMATE STYLE PARA LA PÁGINA DE CONTACTO*/
+    --PI_tiemposFadeINContacto: 1.5s;
+
+
+
+
+
+
+
+    /* ----------------------------------------------------------
+    /* ---- ESTILOS GENERALES FrontEnd.html (pagina interna) ---- 
+    /* ----------------------------------------------------------*/
+
+    /*DOS COLORES EXTRA PARA EL DOBLE GRADIENTE LINEAL
+    DE LA SUBPÁGINA INTERNA FRONTEND*/
+    --PI_colorMedioGradienteAZULOSCUROFrontEnd: #002672;
+    --PI_colorMedioGradienteAZULCLAROFrontEnd: #697DFF;
+ 
+    /*COLORES PARA LAS CARDS PRIMERAS CARDS DE LA PÁGINA INTERNA DEL FRONTEND*/
+    --PI_colorInicioGradienteCARDSVUE: #E7DFFF; /*PI significa Página Interna (una página que no es la landing page)*/
+    --PI_colorFinGradienteCardsPaginaInternaFrontEnd: #16005D;
+
+    /*COLORES PARA LAS 4 CARDS DE LA SECCIÓN DE DIFERENCIAS DE LA PÁGINA INTERNA DEL FRONTEND*/
+    --PI_colorAngularGradienteFinal: #ee2494;
+    --PI_colorAngularGradienteInicio: #b424e4;
+    --PI_colorReact: #087ea4;
+    --PI_colorSpans4cards: #FFB007;
+
+    
+    /*GRADIENTE LINEAL DE CADA CARD (DE LAS 4CARDS DE LA SECCIÓN DE DIFERENCIAS DE LA PÁGINA INTERNA DEL FRONTEND*/
+    --PI_inicioCard_VUE: #E7DFFF4c;  /*color original figma #E7DFFF al que se le ha aplicado opacidad del 30%*/
+    --PI_finCard_VUE: #16005D4c;     /*color original figma #16005D al que se le ha aplicado opacidad del 30%*/
+    
+    --g: #C0BABA4C; /*color original figma C0BABA al que hemos aplicado opacidad del 30%*/
+    --r: #DB8C8C4C; /*color original figma DB8C8C al que se le ha aplicado opacidad del 30%*/
+    --gHover: #938e8e4c;
+    --rHover: #d251514c;
+
+    /*GRADIENTES FONDO TABLA DIFERENCIAS FRONT-END*/
+    --marronClaroTabla: #D4BEBE;
+    --marronOscuroTabla: #968787;
+
+    /*ANCHO MÁXIMO DE LAS CARDS DE LA PÁGINA INTERNA DE FRONTEND*/
+    --MaximaAnchuraCardsPIfrontend: 1025px;
+    --PIancho4cardsFront: 860px;
+
+    /*TAMAÑO DE LETRA DE LA TABLA DE LA PÁGINA INTERNA DEL FRONTEND*/
+    --tamanyoTabla: 1.5em;    
 }
 
 /*quitamos márgenes y padding de los elementos, 
