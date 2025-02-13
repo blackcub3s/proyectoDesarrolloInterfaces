@@ -161,6 +161,40 @@ ella -para lo definido en rem o em-. */
 
 html {font-size: 16px;}  /*APUNTE NO MODIFICAR: Se destroza todo*/
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*################################################*/
+/*------------------------------------------------*/
+/*----ESTILOS index.html + navBar + footer.html----*/
+/*------------------------------------------------*/
+/*################################################*/
+
+
+
+
+
+
+
+
+
+
+
 /*TAMAÑO DE LOS TITULOS QUE ENCABEZAN CADA SECCIÓN
 (FRONTEND, BACKEND, IA, ETC)*/
 .tituloSeccion {font-size: 2.5rem;}     /*son 40 px en figma. Con el font-size del root a 16 con 2.5rem tenemos los 40px (40 = 16*2.5)*/
@@ -977,3 +1011,11 @@ pueda expandirse sin límite horizontalmente
 footer > div {
 	max-width: var(--MaximaAnchuraFooter);
 }
+
+
+
+
+
+
+
+
