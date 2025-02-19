@@ -2258,5 +2258,10 @@ body {
     top: -10px; /*colocamos el pin a la altura deseada*/
 }
 
-
+/*AÑADIDO ÚLTIMA HORA, PARA TODAS LAS PAGINAS INTERNAS*/
+#botonHome {
+    position: absolute;
+    top: .7em;
+    left: .7em;
+}
 
