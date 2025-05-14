@@ -4,8 +4,23 @@
 
 Este proyecto ha sido desarrollado por:
 
-- **Santiago Sanchez Sans**
+- **Santiago Sánchez Sans**:
+    * Desarrollo íntegro e individual de:
+        * [frontEnd.html](https://blackcub3s.github.io/proyectoDesarrolloInterfaces/FrontEnd.html)
+        * [iaBigData.html](https://blackcub3s.github.io/proyectoDesarrolloInterfaces/iaBigData.html)
+        * [contact.html](https://blackcub3s.github.io/proyectoDesarrolloInterfaces/contact.html)
+        * navBar (todas las páginas)
 - **Jorge Muñoz Carrión**
+    * Desarrollo íntegro e individual de:
+        * [aboutUs.html](https://blackcub3s.github.io/proyectoDesarrolloInterfaces/aboutUs.html)
+        * [joinUs.html](https://blackcub3s.github.io/proyectoDesarrolloInterfaces/joinUs.html)
+        * Footer (todas las páginas)
+
+- **Jorge y Santiago**:
+    * Desarrollo en conjunto de:
+        * [index.html](https://blackcub3s.github.io/proyectoDesarrolloInterfaces/index.html):
+            * Subsecciones contenedor onda, frontend y bigData (**Santiago**)
+            * Subsección back-end (**Jorge**)
 
 Ambos somos estudiantes del **IES Abastos** y hemos pensado que sería buena idea desarrollar una página para lo que podría ser un negocio de consultoría IT o de desarrollo de software orientado full-stack y ciencia de datos.
 
